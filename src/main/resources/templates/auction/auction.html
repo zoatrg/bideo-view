@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440" />
+    <title>경매</title>
+    <link rel="stylesheet" href="../../static/css/auction/auction.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="../../static/js/auction/event.js"></script>
+    <script src="../../static/js/auction/service.js"></script>
+    <script src="../../static/js/auction/layout.js"></script>
+</head>
+<body>
+
+<div class="Auction-Page-Wrapper">
+    <div class="Auction-Content-Layout">
+        <main class="Auction-Watch-Main">
+
+            <!-- 비디오 플레이어 영역 -->
+            <section class="Auction-Video-Section">
+
+                <!-- 비디오 표시 부분 -->
+                <div class="Auction-Player-Container">
+                    <div class="Auction-Player-Screen">
+                        <!-- 비디오 또는 썸네일 -->
+                    </div>
+                </div>
+
+                <!-- 상품 정보 및 예술관 정보 부분 -->
+                <div class="Auction-Item-Info">
+                    <!-- 상품명 -->
+                    <h1 class="Auction-Item-Title">경매 상품 이름</h1>
+                    <!-- 예술관 정보 -->
+                    <div class="Auction-Gallery-Row">
+                        <!-- 좌측: 썸네일 + 예술관명 + 팔로워수 -->
+                        <div class="Auction-Gallery-Profile">
+                            <div class="Auction-Gallery-Thumbnail"></div>
+                            <div class="Auction-Gallery-Meta">
+                                <span class="Auction-Gallery-Name">예술관 이름</span>
+                                <span class="Auction-Gallery-Followers">팔로워 1,234명</span>
+                            </div>
+                        </div>
+
+                        <!-- 우측: 팔로우 버튼 -->
+                        <button class="Auction-Gallery-FollowBtn">팔로우</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 입찰 채팅 패널 -->
+            <aside class="Auction-Bid-Panel">
+
+                <!-- 채팅 헤더 -->
+                <div class="Auction-Bid-Header">
+                    <div class="Auction-Bid-Title">
+                        <span class="Auction-Bid-TitleText">??? 상품 입찰</span>
+                    </div>
+                </div>
+
+                <!-- 입찰 메시지 목록 -->
+                <div class="Auction-Bid-Messages">
+                    <!-- 입찰 남은 시간 -->
+                    <div class="Auction-Bid-Timer">
+                        <div class="Auction-Bid-Content">
+                            <span class="Auction-RemainTimer-Text">남은 시간</span>
+                            <span class="Auction-RemainTimer-Time">00 : 00 : 00</span>
+                        </div>
+                    </div>
+
+                    <!-- 각 하나의 채팅 -->
+                    <!--  -->
+                    <div class="Auction-Bid-Item">
+                        <div class="Auction-Bid-Avatar">
+                            <div class="Auction-Bid-AvatarCircle"></div>
+                        </div>
+                        <div class="Auction-Bid-Content">
+                            <span class="Auction-Bid-Username">@mezzo369</span>
+                            <span class="Auction-Bid-Text">10,000원 입찰했습니다.</span>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <!--  -->
+                    <div class="Auction-Bid-Item">
+                        <div class="Auction-Bid-Avatar">
+                            <div class="Auction-Bid-AvatarCircle">A</div>
+                        </div>
+                        <div class="Auction-Bid-Content">
+                            <span class="Auction-Bid-Username">@ajaa8277</span>
+                            <span class="Auction-Bid-Text">15,000원 입찰했습니다.</span>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+
+                <!-- 입찰 입력창 -->
+                <div class="Auction-Bid-InputArea">
+                    <!-- 참가자 입력창 -->
+                    <div class="Auction-Bid-InputWrapper">
+                        <input class="Auction-Bid-Input" type="text" placeholder="입찰할 금액을 입력해주세요" />
+                        <div class="Auction-Bid-InputActions">
+                            <button class="Auction-Bid-SubmitBtn" aria-label="입찰 제출">
+                                <svg class="Auction-Bid-SubmitIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                    <path d="M201.6 217.4L182.9 198.7C170.4 186.2 170.4 165.9 182.9 153.4L297.6 38.6C310.1 26.1 330.4 26.1 342.9 38.6L361.6 57.4C374.1 69.9 374.1 90.2 361.6 102.7L246.9 217.4C234.4 229.9 214.1 229.9 201.6 217.4zM308 275.7L276.6 244.3L388.6 132.3L508 251.7L396 363.7L364.6 332.3L132.6 564.3C117 579.9 91.7 579.9 76 564.3C60.3 548.7 60.4 523.4 76 507.7L308 275.7zM422.9 438.6C410.4 426.1 410.4 405.8 422.9 393.3L537.6 278.6C550.1 266.1 570.4 266.1 582.9 278.6L601.6 297.3C614.1 309.8 614.1 330.1 601.6 342.6L486.9 457.4C474.4 469.9 454.1 469.9 441.6 457.4L422.9 438.7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 경매자 제어 -->
+                </div>
+            </aside>
+        </main>
+    </div>
+</div>
+</body>
+</html>

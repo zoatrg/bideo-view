@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../static/css/layout/youtube-shell-overrides.css">
+  <link rel="stylesheet" href="../../static/css/common/font.css">
+</head>
+
+<body>
+  <div id="masthead-container" class="style-scope ytd-app">
+    <ytd-masthead id="masthead" logo-type="YOUTUBE_PREMIUM_LOGO" slot="masthead" class="masthead-finish"
+      frosted-glass-mode="without-chipbar" role="banner"
+      guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-masthead--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><iron-media-query
+        class="style-scope ytd-masthead" style="display: none;">
+      </iron-media-query>
+      <div id="ticker" class="style-scope ytd-masthead"></div>
+      <div id="interstitial" class="style-scope ytd-masthead"></div>
+      <div id="background" class="style-scope ytd-masthead"></div>
+      <div id="container" class="style-scope ytd-masthead">
+        <div id="start" class="style-scope ytd-masthead">
+          <yt-icon-button id="back-button"
+            class="style-scope ytd-masthead"><!--css-build:shady--><!--css_build_scope:yt-icon-button--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_icon_button.yt.icon.button.css.js--><button
+              id="button" class="style-scope yt-icon-button" aria-label="뒤로">
+              <yt-icon icon="yt-icons:arrow-back" class="style-scope ytd-masthead" disable-upgrade="">
+              </yt-icon>
+            </button><yt-interaction id="interaction"
+              class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+              <div class="stroke style-scope yt-interaction"></div>
+              <div class="fill style-scope yt-interaction"></div>
+            </yt-interaction></yt-icon-button>
+          <tp-yt-paper-tooltip id="back-button-tooltip" for="back-button" class="style-scope ytd-masthead"
+            disable-upgrade="">
+            뒤로
+          </tp-yt-paper-tooltip>
+          <yt-icon-button id="guide-button" toggleable="true"
+            class="style-scope ytd-masthead"><!--css-build:shady--><!--css_build_scope:yt-icon-button--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_icon_button.yt.icon.button.css.js--><button
+              id="button" class="style-scope yt-icon-button" aria-label="가이드" aria-pressed="true">
+              <yt-icon id="guide-icon"
+                class="style-scope ytd-masthead"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                      aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                      <path
+                        d="M20 5H4a1 1 0 000 2h16a1 1 0 100-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Z">
+                      </path>
+                    </svg></div>
+                </span></yt-icon>
+            </button><yt-interaction id="interaction"
+              class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+              <div class="stroke style-scope yt-interaction"></div>
+              <div class="fill style-scope yt-interaction"></div>
+            </yt-interaction></yt-icon-button>
+
+          <ytd-topbar-logo-renderer id="logo"
+            class="style-scope ytd-masthead"><!--css-build:shady--><!--css_build_scope:ytd-topbar-logo-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+              class="yt-simple-endpoint style-scope ytd-topbar-logo-renderer" id="logo" aria-label="" href="/"
+              title="YouTube Premium 홈">
+              <div class="style-scope ytd-topbar-logo-renderer">
+                <ytd-logo class="style-scope ytd-topbar-logo-renderer"
+                  is-red-logo=""><!--css-build:shady--><!--css_build_scope:ytd-logo--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><yt-icon
+                    id="logo-icon"
+                    class="style-scope ytd-logo"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                      class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                      <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                          xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-red-svg_yt9" class="external-icon"
+                          width="101" height="20" viewBox="0 0 101 20" focusable="false" aria-hidden="true"
+                          style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                          <g>
+                            <path
+                              d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                              fill="#FF0033"></path>
+                            <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+                          </g>
+                          <g id="youtube-paths_yt9">
+                            <path
+                              d="M32.1819 2.10016V18.9002H34.7619V12.9102H35.4519C38.8019 12.9102 40.5619 11.1102 40.5619 7.57016V6.88016C40.5619 3.31016 39.0019 2.10016 35.7219 2.10016H32.1819ZM37.8619 7.63016C37.8619 10.0002 37.1419 11.0802 35.4019 11.0802H34.7619V3.95016H35.4519C37.4219 3.95016 37.8619 4.76016 37.8619 7.13016V7.63016Z">
+                            </path>
+                            <path
+                              d="M41.982 18.9002H44.532V10.0902C44.952 9.37016 45.992 9.05016 47.302 9.32016L47.462 6.33016C47.292 6.31016 47.142 6.29016 47.002 6.29016C45.802 6.29016 44.832 7.20016 44.342 8.86016H44.162L43.952 6.54016H41.982V18.9002Z">
+                            </path>
+                            <path
+                              d="M55.7461 11.5002C55.7461 8.52016 55.4461 6.31016 52.0161 6.31016C48.7861 6.31016 48.0661 8.46016 48.0661 11.6202V13.7902C48.0661 16.8702 48.7261 19.1102 51.9361 19.1102C54.4761 19.1102 55.7861 17.8402 55.6361 15.3802L53.3861 15.2602C53.3561 16.7802 53.0061 17.4002 51.9961 17.4002C50.7261 17.4002 50.6661 16.1902 50.6661 14.3902V13.5502H55.7461V11.5002ZM51.9561 7.97016C53.1761 7.97016 53.2661 9.12016 53.2661 11.0702V12.0802H50.6661V11.0702C50.6661 9.14016 50.7461 7.97016 51.9561 7.97016Z">
+                            </path>
+                            <path
+                              d="M60.1945 18.9002V8.92016C60.5745 8.39016 61.1945 8.07016 61.7945 8.07016C62.5645 8.07016 62.8445 8.61016 62.8445 9.69016V18.9002H65.5045L65.4845 8.93016C65.8545 8.37016 66.4845 8.04016 67.1045 8.04016C67.7745 8.04016 68.1445 8.61016 68.1445 9.69016V18.9002H70.8045V9.49016C70.8045 7.28016 70.0145 6.27016 68.3445 6.27016C67.1845 6.27016 66.1945 6.69016 65.2845 7.67016C64.9045 6.76016 64.1545 6.27016 63.0845 6.27016C61.8745 6.27016 60.7345 6.79016 59.9345 7.76016H59.7845L59.5945 6.54016H57.5445V18.9002H60.1945Z">
+                            </path>
+                            <path
+                              d="M74.0858 4.97016C74.9858 4.97016 75.4058 4.67016 75.4058 3.43016C75.4058 2.27016 74.9558 1.91016 74.0858 1.91016C73.2058 1.91016 72.7758 2.23016 72.7758 3.43016C72.7758 4.67016 73.1858 4.97016 74.0858 4.97016ZM72.8658 18.9002H75.3958V6.54016H72.8658V18.9002Z">
+                            </path>
+                            <path
+                              d="M79.9516 19.0902C81.4116 19.0902 82.3216 18.4802 83.0716 17.3802H83.1816L83.2916 18.9002H85.2816V6.54016H82.6416V16.4702C82.3616 16.9602 81.7116 17.3202 81.1016 17.3202C80.3316 17.3202 80.0916 16.7102 80.0916 15.6902V6.54016H77.4616V15.8102C77.4616 17.8202 78.0416 19.0902 79.9516 19.0902Z">
+                            </path>
+                            <path
+                              d="M90.0031 18.9002V8.92016C90.3831 8.39016 91.0031 8.07016 91.6031 8.07016C92.3731 8.07016 92.6531 8.61016 92.6531 9.69016V18.9002H95.3131L95.2931 8.93016C95.6631 8.37016 96.2931 8.04016 96.9131 8.04016C97.5831 8.04016 97.9531 8.61016 97.9531 9.69016V18.9002H100.613V9.49016C100.613 7.28016 99.8231 6.27016 98.1531 6.27016C96.9931 6.27016 96.0031 6.69016 95.0931 7.67016C94.7131 6.76016 93.9631 6.27016 92.8931 6.27016C91.6831 6.27016 90.5431 6.79016 89.7431 7.76016H89.5931L89.4031 6.54016H87.3531V18.9002H90.0031Z">
+                            </path>
+                          </g>
+                        </svg></div>
+                    </span></yt-icon></ytd-logo>
+              </div>
+              <ytd-yoodle-renderer class="style-scope ytd-topbar-logo-renderer" hide-lottie="" is-red-logo=""
+                hidden=""><!--css-build:shady--><!--css_build_scope:ytd-yoodle-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                <picture class="style-scope ytd-yoodle-renderer">
+                  <source type="image/webp" class="style-scope ytd-yoodle-renderer" srcset="">
+                  <img class="style-scope ytd-yoodle-renderer" src="">
+                </picture>
+                <ytd-logo class="style-scope ytd-yoodle-renderer" is-red-logo=""
+                  hidden=""><!--css-build:shady--><!--css_build_scope:ytd-logo--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><yt-icon
+                    id="logo-icon"
+                    class="style-scope ytd-logo"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                      class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                      <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                          xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt3" width="93" height="20"
+                          viewBox="0 0 93 20" focusable="false" aria-hidden="true"
+                          style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                          <g>
+                            <path
+                              d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                              fill="#FF0033"></path>
+                            <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+                          </g>
+                          <g id="youtube-paths_yt3">
+                            <path
+                              d="M37.1384 18.8999V13.4399L40.6084 2.09994H38.0184L36.6984 7.24994C36.3984 8.42994 36.1284 9.65994 35.9284 10.7999H35.7684C35.6584 9.79994 35.3384 8.48994 35.0184 7.22994L33.7384 2.09994H31.1484L34.5684 13.4399V18.8999H37.1384Z">
+                            </path>
+                            <path
+                              d="M44.1003 6.29994C41.0703 6.29994 40.0303 8.04994 40.0303 11.8199V13.6099C40.0303 16.9899 40.6803 19.1099 44.0403 19.1099C47.3503 19.1099 48.0603 17.0899 48.0603 13.6099V11.8199C48.0603 8.44994 47.3803 6.29994 44.1003 6.29994ZM45.3903 14.7199C45.3903 16.3599 45.1003 17.3899 44.0503 17.3899C43.0203 17.3899 42.7303 16.3499 42.7303 14.7199V10.6799C42.7303 9.27994 42.9303 8.02994 44.0503 8.02994C45.2303 8.02994 45.3903 9.34994 45.3903 10.6799V14.7199Z">
+                            </path>
+                            <path
+                              d="M52.2713 19.0899C53.7313 19.0899 54.6413 18.4799 55.3913 17.3799H55.5013L55.6113 18.8999H57.6012V6.53994H54.9613V16.4699C54.6812 16.9599 54.0312 17.3199 53.4212 17.3199C52.6512 17.3199 52.4113 16.7099 52.4113 15.6899V6.53994H49.7812V15.8099C49.7812 17.8199 50.3613 19.0899 52.2713 19.0899Z">
+                            </path>
+                            <path d="M62.8261 18.8999V4.14994H65.8661V2.09994H57.1761V4.14994H60.2161V18.8999H62.8261Z">
+                            </path>
+                            <path
+                              d="M67.8728 19.0899C69.3328 19.0899 70.2428 18.4799 70.9928 17.3799H71.1028L71.2128 18.8999H73.2028V6.53994H70.5628V16.4699C70.2828 16.9599 69.6328 17.3199 69.0228 17.3199C68.2528 17.3199 68.0128 16.7099 68.0128 15.6899V6.53994H65.3828V15.8099C65.3828 17.8199 65.9628 19.0899 67.8728 19.0899Z">
+                            </path>
+                            <path
+                              d="M80.6744 6.26994C79.3944 6.26994 78.4744 6.82994 77.8644 7.73994H77.7344C77.8144 6.53994 77.8744 5.51994 77.8744 4.70994V1.43994H75.3244L75.3144 12.1799L75.3244 18.8999H77.5444L77.7344 17.6999H77.8044C78.3944 18.5099 79.3044 19.0199 80.5144 19.0199C82.5244 19.0199 83.3844 17.2899 83.3844 13.6099V11.6999C83.3844 8.25994 82.9944 6.26994 80.6744 6.26994ZM80.7644 13.6099C80.7644 15.9099 80.4244 17.2799 79.3544 17.2799C78.8544 17.2799 78.1644 17.0399 77.8544 16.5899V9.23994C78.1244 8.53994 78.7244 8.02994 79.3944 8.02994C80.4744 8.02994 80.7644 9.33994 80.7644 11.7299V13.6099Z">
+                            </path>
+                            <path
+                              d="M92.6517 11.4999C92.6517 8.51994 92.3517 6.30994 88.9217 6.30994C85.6917 6.30994 84.9717 8.45994 84.9717 11.6199V13.7899C84.9717 16.8699 85.6317 19.1099 88.8417 19.1099C91.3817 19.1099 92.6917 17.8399 92.5417 15.3799L90.2917 15.2599C90.2617 16.7799 89.9117 17.3999 88.9017 17.3999C87.6317 17.3999 87.5717 16.1899 87.5717 14.3899V13.5499H92.6517V11.4999ZM88.8617 7.96994C90.0817 7.96994 90.1717 9.11994 90.1717 11.0699V12.0799H87.5717V11.0699C87.5717 9.13994 87.6517 7.96994 88.8617 7.96994Z">
+                            </path>
+                          </g>
+                        </svg></div>
+                    </span></yt-icon></ytd-logo>
+                <ytd-lottie-player class="lottie-player style-scope ytd-yoodle-renderer">
+                </ytd-lottie-player>
+              </ytd-yoodle-renderer>
+            </a>
+            <span id="country-code" class="style-scope ytd-topbar-logo-renderer">
+              KR
+            </span>
+          </ytd-topbar-logo-renderer>
+          <div id="skip-navigation" class="style-scope ytd-masthead"><ytd-button-renderer
+              class="style-scope ytd-masthead" button-renderer=""
+              button-next=""><!--css-build:shady--><yt-button-shape><button
+                  class="yt-spec-button-shape-next yt-spec-button-shape-next--tonal yt-spec-button-shape-next--mono yt-spec-button-shape-next--size-m yt-spec-button-shape-next--enable-backdrop-filter-experiment"
+                  title="" aria-label="탐색 건너뛰기" aria-disabled="false">
+                  <div class="yt-spec-button-shape-next__button-text-content"><span
+                      class="yt-core-attributed-string yt-core-attributed-string--white-space-no-wrap" role="text"
+                      style="">탐색 건너뛰기</span></div><yt-touch-feedback-shape aria-hidden="true"
+                    class="yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response">
+                    <div class="yt-spec-touch-feedback-shape__stroke"></div>
+                    <div class="yt-spec-touch-feedback-shape__fill"></div>
+                  </yt-touch-feedback-shape>
+                </button></yt-button-shape><tp-yt-paper-tooltip offset="8"
+                disable-upgrade=""></tp-yt-paper-tooltip></ytd-button-renderer></div>
+        </div>
+        <div id="center" class="style-scope ytd-masthead">
+          <yt-searchbox role="search" client-ve-type="10349"
+            class="ytSearchboxComponentHost ytSearchboxComponentDesktop ytd-masthead">
+            <div class="ytSearchboxComponentInputContainer">
+              <div class="ytSearchboxComponentInputBox">
+                <form action="/results" class="ytSearchboxComponentSearchForm"><input
+                    class="ytSearchboxComponentInput yt-searchbox-input title" name="search_query" aria-controls="i0"
+                    aria-expanded="true" type="text" autocomplete="off" autocorrect="off" spellcheck="false"
+                    aria-autocomplete="list" role="combobox" placeholder="검색"></form>
+                <div class="ytSearchboxComponentYtdTextInputAssistantWrapper"><ytd-text-input-assistant
+                    class="ytdTextInputAssistantHost"><button class="ytdTextInputAssistantButton"><img
+                        class="ytdTextInputAssistantIcon" tia_field_name="search_query" tia_disable_swap="true"
+                        tia_property="youtube" src="//www.gstatic.com/inputtools/images/tia.png"
+                        alt=""></button></ytd-text-input-assistant></div>
+              </div><button aria-label="Search" class="ytSearchboxComponentSearchButton" title="검색"><span
+                  class="ytIconWrapperHost"><span class="yt-icon-shape ytSpecIconShapeHost">
+                    <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                        xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                        aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                        <path
+                          d="M11 2a9 9 0 105.641 16.01.966.966 0 00.152.197l3.5 3.5a1 1 0 101.414-1.414l-3.5-3.5a1 1 0 00-.197-.153A8.96 8.96 0 0020 11a9 9 0 00-9-9Zm0 2a7 7 0 110 14 7 7 0 010-14Z">
+                        </path>
+                      </svg></div>
+                  </span></span></button>
+            </div>
+            <div id="i0" role="listbox" hidden="true"
+              class="ytSearchboxComponentSuggestionsContainer ytSearchboxComponentSuggestionsContainerScrollable"
+              style="min-width: 536px;"></div>
+          </yt-searchbox>
+          <yt-icon-button id="search-button-narrow"
+            class="style-scope ytd-masthead"><!--css-build:shady--><!--css_build_scope:yt-icon-button--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_icon_button.yt.icon.button.css.js--><button
+              id="button" class="style-scope yt-icon-button" aria-label="검색">
+              <yt-icon class="topbar-icons style-scope ytd-masthead" icon="yt-icons:search" disable-upgrade="">
+              </yt-icon>
+              <tp-yt-paper-tooltip for="search-button-narrow" class="style-scope ytd-masthead" disable-upgrade=""
+                hidden="">
+                검색
+              </tp-yt-paper-tooltip>
+            </button><yt-interaction id="interaction"
+              class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+              <div class="stroke style-scope yt-interaction"></div>
+              <div class="fill style-scope yt-interaction"></div>
+            </yt-interaction></yt-icon-button>
+          <div id="voice-search-button" class="style-scope ytd-masthead">
+            <ytd-button-renderer class="style-scope ytd-masthead" button-renderer=""
+              button-next=""><!--css-build:shady--><yt-button-shape><button
+                  class="yt-spec-button-shape-next yt-spec-button-shape-next--text yt-spec-button-shape-next--mono yt-spec-button-shape-next--size-m yt-spec-button-shape-next--icon-only-default yt-spec-button-shape-next--enable-backdrop-filter-experiment"
+                  title="" aria-label="음성으로 검색" aria-disabled="false">
+                  <div aria-hidden="true" class="yt-spec-button-shape-next__icon"><span class="ytIconWrapperHost"
+                      style="width: 24px; height: 24px;"><span class="yt-icon-shape ytSpecIconShapeHost">
+                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                              d="M18.063 14.5a1 1 0 111.73 1A8.998 8.998 0 0113 19.942V22a1 1 0 11-2 0v-2.058A8.999 8.999 0 014.206 15.5l.866-.5.865-.5a7.002 7.002 0 0012.125 0ZM12 1a5 5 0 015 5v5a5 5 0 01-10 0V6a5 5 0 015-5ZM4.572 14.134a1 1 0 011.365.366l-1.731 1a1 1 0 01.366-1.366ZM12 3a3 3 0 00-3 3v5a3 3 0 106 0V6a3 3 0 00-3-3Z">
+                            </path>
+                          </svg></div>
+                      </span></span></div><yt-touch-feedback-shape aria-hidden="true"
+                    class="yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response">
+                    <div class="yt-spec-touch-feedback-shape__stroke"></div>
+                    <div class="yt-spec-touch-feedback-shape__fill"></div>
+                  </yt-touch-feedback-shape>
+                </button></yt-button-shape><tp-yt-paper-tooltip offset="8" role="tooltip" tabindex="-1"
+                aria-label="tooltip"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-tooltip--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_tooltip.tp.yt.paper.tooltip.css.js-->
+                <div id="tooltip" class="hidden style-scope tp-yt-paper-tooltip" style-target="tooltip">
+                  음성으로 검색
+                </div>
+              </tp-yt-paper-tooltip></ytd-button-renderer>
+          </div>
+          <div id="ai-companion-button" class="style-scope ytd-masthead" hidden="">
+          </div>
+        </div>
+        <div id="end" class="style-scope ytd-masthead">
+          <div id="masthead-skeleton-icons" slot="masthead-skeleton">
+            <div class="masthead-skeleton-icon"></div>
+            <div class="masthead-skeleton-icon"></div>
+            <div class="masthead-skeleton-icon"></div>
+          </div>
+          <div id="buttons" class="style-scope ytd-masthead"><ytd-button-renderer class="style-scope ytd-masthead"
+              button-renderer="" button-next=""><!--css-build:shady--><yt-button-shape><button
+                  class="yt-spec-button-shape-next yt-spec-button-shape-next--tonal yt-spec-button-shape-next--mono yt-spec-button-shape-next--size-m yt-spec-button-shape-next--icon-leading yt-spec-button-shape-next--enable-backdrop-filter-experiment"
+                  title="" aria-label="만들기">
+                  <div aria-hidden="true" class="yt-spec-button-shape-next__icon"><span class="ytIconWrapperHost"
+                      style="width: 24px; height: 24px;"><span class="yt-icon-shape ytSpecIconShapeHost">
+                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                              d="M12 3a1 1 0 00-1 1v7H4a1 1 0 000 2h7v7a1 1 0 002 0v-7h7a1 1 0 000-2h-7V4a1 1 0 00-1-1Z">
+                            </path>
+                          </svg></div>
+                      </span></span></div>
+                  <div class="yt-spec-button-shape-next__button-text-content"><span
+                      class="yt-core-attributed-string yt-core-attributed-string--white-space-no-wrap" role="text"
+                      style="">만들기</span></div><yt-touch-feedback-shape aria-hidden="true"
+                    class="yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response">
+                    <div class="yt-spec-touch-feedback-shape__stroke"></div>
+                    <div class="yt-spec-touch-feedback-shape__fill"></div>
+                  </yt-touch-feedback-shape>
+                </button></yt-button-shape><tp-yt-paper-tooltip offset="8"
+                disable-upgrade=""></tp-yt-paper-tooltip></ytd-button-renderer><ytd-notification-topbar-button-renderer
+              class="style-scope ytd-masthead"><!--css-build:shady--><!--css_build_scope:ytd-notification-topbar-button-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><yt-icon-button
+                id="icon"
+                class="style-scope ytd-notification-topbar-button-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon-button--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_icon_button.yt.icon.button.css.js--><button
+                  id="button" class="style-scope yt-icon-button" aria-label="알림">
+                  <yt-icon-badge-shape>
+                    <div class="yt-spec-icon-badge-shape yt-spec-icon-badge-shape--type-notification">
+                      <div class="yt-spec-icon-badge-shape__icon"><span class="ytIconWrapperHost"><span
+                            class="yt-icon-shape ytSpecIconShapeHost">
+                            <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                focusable="false" aria-hidden="true"
+                                style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                <path
+                                  d="M16 19a4 4 0 11-8 0H4.765C3.21 19 2.25 17.304 3.05 15.97l1.806-3.01A1 1 0 005 12.446V8a7 7 0 0114 0v4.446c0 .181.05.36.142.515l1.807 3.01c.8 1.333-.161 3.029-1.716 3.029H16ZM12 3a5 5 0 00-5 5v4.446a3 3 0 01-.428 1.543L4.765 17h14.468l-1.805-3.01A3 3 0 0117 12.445V8a5 5 0 00-5-5Zm-2 16a2 2 0 104 0h-4Z">
+                                </path>
+                              </svg></div>
+                          </span></span></div>
+                      <div class="yt-spec-icon-badge-shape__badge">4</div>
+                    </div>
+                  </yt-icon-badge-shape>
+                </button><yt-interaction id="interaction"
+                  class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                  <div class="stroke style-scope yt-interaction"></div>
+                  <div class="fill style-scope yt-interaction"></div>
+                </yt-interaction></yt-icon-button>
+              <tp-yt-paper-tooltip class="style-scope ytd-notification-topbar-button-renderer" role="tooltip"
+                tabindex="-1"
+                aria-label="tooltip"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-tooltip--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_tooltip.tp.yt.paper.tooltip.css.js-->
+                <div id="tooltip" class="hidden style-scope tp-yt-paper-tooltip" style-target="tooltip">
+                  알림
+                </div>
+              </tp-yt-paper-tooltip>
+            </ytd-notification-topbar-button-renderer><ytd-topbar-menu-button-renderer class="style-scope ytd-masthead"
+              use-keyboard-focused=""><!--css-build:shady--><!--css_build_scope:ytd-topbar-menu-button-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+              <button id="avatar-btn" aria-haspopup="true" class="style-scope ytd-topbar-menu-button-renderer"
+                aria-label="계정 메뉴">
+                <yt-img-shadow height="32" width="32" class="style-scope ytd-topbar-menu-button-renderer no-transition"
+                  loaded=""
+                  style="background-color: transparent;"><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                    id="img" draggable="false" class="style-scope yt-img-shadow" alt="아바타 이미지" height="32" width="32"
+                    src="https://yt3.googleusercontent.com/5fHEIs3KKq0CrpuF-IpHCTBon6kgd-7lt5CEYzQYrZoCl3L4fhKpaLtWRJ_j-eLXpl9F2ev1bg=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+              </button>
+              <ps-dom-if class="style-scope ytd-topbar-menu-button-renderer"><template
+                  is="dom-if"></template></ps-dom-if>
+              <div id="button" class="style-scope ytd-topbar-menu-button-renderer"></div>
+            </ytd-topbar-menu-button-renderer></div>
+        </div>
+      </div>
+    </ytd-masthead>
+  </div>
+  <tp-yt-app-drawer id="guide" align="start" role="navigation" class="style-scope ytd-app"
+    style="transition-duration: 0ms; touch-action: pan-y;" position="left" swipe-open="" opened=""
+    persistent=""><!--css-build:shady--><!--css_build_scope:tp-yt-app-drawer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_app_layout.tp_yt_app_drawer.tp.yt.app.drawer.css.js-->
+    <div id="scrim" class="style-scope tp-yt-app-drawer" style="transition-duration: 0ms;"></div>
+
+
+    <div id="contentContainer" class="style-scope tp-yt-app-drawer" position="left" style="transition-duration: 0ms;"
+      swipe-open="" opened="" persistent="">
+
+      <div id="guide-wrapper" class="style-scope ytd-app">
+        <div id="guide-spacer" class="style-scope ytd-app"></div>
+        <div id="guide-content" class="style-scope ytd-app">
+          <div id="header" class="style-scope ytd-app" hidden="">
+
+            <yt-icon-button id="guide-button" pressed="true" toggleable="true" class="style-scope ytd-app"
+              aria-label="가이드"><!--css-build:shady--><!--css_build_scope:yt-icon-button--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_icon_button.yt.icon.button.css.js--><button
+                id="button" class="style-scope yt-icon-button" aria-pressed="true">
+                <yt-icon id="guide-icon" icon="yt-icons:menu"
+                  class="style-scope ytd-app"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                    class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                    <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                        xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                        aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                        <path
+                          d="M20 5H4a1 1 0 000 2h16a1 1 0 100-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Z">
+                        </path>
+                      </svg></div>
+                  </span></yt-icon>
+              </button><yt-interaction id="interaction"
+                class="circular style-scope yt-icon-button"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                <div class="stroke style-scope yt-interaction"></div>
+                <div class="fill style-scope yt-interaction"></div>
+              </yt-interaction></yt-icon-button>
+            <ytd-topbar-logo-renderer
+              class="style-scope ytd-app"><!--css-build:shady--><!--css_build_scope:ytd-topbar-logo-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                class="yt-simple-endpoint style-scope ytd-topbar-logo-renderer" id="logo" aria-label="" href="/"
+                title="YouTube Premium 홈">
+                <div class="style-scope ytd-topbar-logo-renderer">
+                  <ytd-logo class="style-scope ytd-topbar-logo-renderer"
+                    is-red-logo=""><!--css-build:shady--><!--css_build_scope:ytd-logo--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><yt-icon
+                      id="logo-icon"
+                      class="style-scope ytd-logo"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                        class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                            xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-red-svg_yt10" class="external-icon"
+                            width="101" height="20" viewBox="0 0 101 20" focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <g>
+                              <path
+                                d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                                fill="#FF0033"></path>
+                              <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+                            </g>
+                            <g id="youtube-paths_yt10">
+                              <path
+                                d="M32.1819 2.10016V18.9002H34.7619V12.9102H35.4519C38.8019 12.9102 40.5619 11.1102 40.5619 7.57016V6.88016C40.5619 3.31016 39.0019 2.10016 35.7219 2.10016H32.1819ZM37.8619 7.63016C37.8619 10.0002 37.1419 11.0802 35.4019 11.0802H34.7619V3.95016H35.4519C37.4219 3.95016 37.8619 4.76016 37.8619 7.13016V7.63016Z">
+                              </path>
+                              <path
+                                d="M41.982 18.9002H44.532V10.0902C44.952 9.37016 45.992 9.05016 47.302 9.32016L47.462 6.33016C47.292 6.31016 47.142 6.29016 47.002 6.29016C45.802 6.29016 44.832 7.20016 44.342 8.86016H44.162L43.952 6.54016H41.982V18.9002Z">
+                              </path>
+                              <path
+                                d="M55.7461 11.5002C55.7461 8.52016 55.4461 6.31016 52.0161 6.31016C48.7861 6.31016 48.0661 8.46016 48.0661 11.6202V13.7902C48.0661 16.8702 48.7261 19.1102 51.9361 19.1102C54.4761 19.1102 55.7861 17.8402 55.6361 15.3802L53.3861 15.2602C53.3561 16.7802 53.0061 17.4002 51.9961 17.4002C50.7261 17.4002 50.6661 16.1902 50.6661 14.3902V13.5502H55.7461V11.5002ZM51.9561 7.97016C53.1761 7.97016 53.2661 9.12016 53.2661 11.0702V12.0802H50.6661V11.0702C50.6661 9.14016 50.7461 7.97016 51.9561 7.97016Z">
+                              </path>
+                              <path
+                                d="M60.1945 18.9002V8.92016C60.5745 8.39016 61.1945 8.07016 61.7945 8.07016C62.5645 8.07016 62.8445 8.61016 62.8445 9.69016V18.9002H65.5045L65.4845 8.93016C65.8545 8.37016 66.4845 8.04016 67.1045 8.04016C67.7745 8.04016 68.1445 8.61016 68.1445 9.69016V18.9002H70.8045V9.49016C70.8045 7.28016 70.0145 6.27016 68.3445 6.27016C67.1845 6.27016 66.1945 6.69016 65.2845 7.67016C64.9045 6.76016 64.1545 6.27016 63.0845 6.27016C61.8745 6.27016 60.7345 6.79016 59.9345 7.76016H59.7845L59.5945 6.54016H57.5445V18.9002H60.1945Z">
+                              </path>
+                              <path
+                                d="M74.0858 4.97016C74.9858 4.97016 75.4058 4.67016 75.4058 3.43016C75.4058 2.27016 74.9558 1.91016 74.0858 1.91016C73.2058 1.91016 72.7758 2.23016 72.7758 3.43016C72.7758 4.67016 73.1858 4.97016 74.0858 4.97016ZM72.8658 18.9002H75.3958V6.54016H72.8658V18.9002Z">
+                              </path>
+                              <path
+                                d="M79.9516 19.0902C81.4116 19.0902 82.3216 18.4802 83.0716 17.3802H83.1816L83.2916 18.9002H85.2816V6.54016H82.6416V16.4702C82.3616 16.9602 81.7116 17.3202 81.1016 17.3202C80.3316 17.3202 80.0916 16.7102 80.0916 15.6902V6.54016H77.4616V15.8102C77.4616 17.8202 78.0416 19.0902 79.9516 19.0902Z">
+                              </path>
+                              <path
+                                d="M90.0031 18.9002V8.92016C90.3831 8.39016 91.0031 8.07016 91.6031 8.07016C92.3731 8.07016 92.6531 8.61016 92.6531 9.69016V18.9002H95.3131L95.2931 8.93016C95.6631 8.37016 96.2931 8.04016 96.9131 8.04016C97.5831 8.04016 97.9531 8.61016 97.9531 9.69016V18.9002H100.613V9.49016C100.613 7.28016 99.8231 6.27016 98.1531 6.27016C96.9931 6.27016 96.0031 6.69016 95.0931 7.67016C94.7131 6.76016 93.9631 6.27016 92.8931 6.27016C91.6831 6.27016 90.5431 6.79016 89.7431 7.76016H89.5931L89.4031 6.54016H87.3531V18.9002H90.0031Z">
+                              </path>
+                            </g>
+                          </svg></div>
+                      </span></yt-icon></ytd-logo>
+                </div>
+                <ytd-yoodle-renderer class="style-scope ytd-topbar-logo-renderer" hide-lottie=""
+                  hidden=""><!--css-build:shady--><!--css_build_scope:ytd-yoodle-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <picture class="style-scope ytd-yoodle-renderer">
+                    <source type="image/webp" class="style-scope ytd-yoodle-renderer" srcset="">
+                    <img class="style-scope ytd-yoodle-renderer" src="">
+                  </picture>
+                  <ytd-logo class="style-scope ytd-yoodle-renderer"
+                    hidden=""><!--css-build:shady--><!--css_build_scope:ytd-logo--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><yt-icon
+                      id="logo-icon"
+                      class="style-scope ytd-logo"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                        class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                            xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt1" width="93" height="20"
+                            viewBox="0 0 93 20" focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <g>
+                              <path
+                                d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                                fill="#FF0033"></path>
+                              <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+                            </g>
+                            <g id="youtube-paths_yt1">
+                              <path
+                                d="M37.1384 18.8999V13.4399L40.6084 2.09994H38.0184L36.6984 7.24994C36.3984 8.42994 36.1284 9.65994 35.9284 10.7999H35.7684C35.6584 9.79994 35.3384 8.48994 35.0184 7.22994L33.7384 2.09994H31.1484L34.5684 13.4399V18.8999H37.1384Z">
+                              </path>
+                              <path
+                                d="M44.1003 6.29994C41.0703 6.29994 40.0303 8.04994 40.0303 11.8199V13.6099C40.0303 16.9899 40.6803 19.1099 44.0403 19.1099C47.3503 19.1099 48.0603 17.0899 48.0603 13.6099V11.8199C48.0603 8.44994 47.3803 6.29994 44.1003 6.29994ZM45.3903 14.7199C45.3903 16.3599 45.1003 17.3899 44.0503 17.3899C43.0203 17.3899 42.7303 16.3499 42.7303 14.7199V10.6799C42.7303 9.27994 42.9303 8.02994 44.0503 8.02994C45.2303 8.02994 45.3903 9.34994 45.3903 10.6799V14.7199Z">
+                              </path>
+                              <path
+                                d="M52.2713 19.0899C53.7313 19.0899 54.6413 18.4799 55.3913 17.3799H55.5013L55.6113 18.8999H57.6012V6.53994H54.9613V16.4699C54.6812 16.9599 54.0312 17.3199 53.4212 17.3199C52.6512 17.3199 52.4113 16.7099 52.4113 15.6899V6.53994H49.7812V15.8099C49.7812 17.8199 50.3613 19.0899 52.2713 19.0899Z">
+                              </path>
+                              <path
+                                d="M62.8261 18.8999V4.14994H65.8661V2.09994H57.1761V4.14994H60.2161V18.8999H62.8261Z">
+                              </path>
+                              <path
+                                d="M67.8728 19.0899C69.3328 19.0899 70.2428 18.4799 70.9928 17.3799H71.1028L71.2128 18.8999H73.2028V6.53994H70.5628V16.4699C70.2828 16.9599 69.6328 17.3199 69.0228 17.3199C68.2528 17.3199 68.0128 16.7099 68.0128 15.6899V6.53994H65.3828V15.8099C65.3828 17.8199 65.9628 19.0899 67.8728 19.0899Z">
+                              </path>
+                              <path
+                                d="M80.6744 6.26994C79.3944 6.26994 78.4744 6.82994 77.8644 7.73994H77.7344C77.8144 6.53994 77.8744 5.51994 77.8744 4.70994V1.43994H75.3244L75.3144 12.1799L75.3244 18.8999H77.5444L77.7344 17.6999H77.8044C78.3944 18.5099 79.3044 19.0199 80.5144 19.0199C82.5244 19.0199 83.3844 17.2899 83.3844 13.6099V11.6999C83.3844 8.25994 82.9944 6.26994 80.6744 6.26994ZM80.7644 13.6099C80.7644 15.9099 80.4244 17.2799 79.3544 17.2799C78.8544 17.2799 78.1644 17.0399 77.8544 16.5899V9.23994C78.1244 8.53994 78.7244 8.02994 79.3944 8.02994C80.4744 8.02994 80.7644 9.33994 80.7644 11.7299V13.6099Z">
+                              </path>
+                              <path
+                                d="M92.6517 11.4999C92.6517 8.51994 92.3517 6.30994 88.9217 6.30994C85.6917 6.30994 84.9717 8.45994 84.9717 11.6199V13.7899C84.9717 16.8699 85.6317 19.1099 88.8417 19.1099C91.3817 19.1099 92.6917 17.8399 92.5417 15.3799L90.2917 15.2599C90.2617 16.7799 89.9117 17.3999 88.9017 17.3999C87.6317 17.3999 87.5717 16.1899 87.5717 14.3899V13.5499H92.6517V11.4999ZM88.8617 7.96994C90.0817 7.96994 90.1717 9.11994 90.1717 11.0699V12.0799H87.5717V11.0699C87.5717 9.13994 87.6517 7.96994 88.8617 7.96994Z">
+                              </path>
+                            </g>
+                          </svg></div>
+                      </span></yt-icon></ytd-logo>
+                  <ytd-lottie-player class="lottie-player style-scope ytd-yoodle-renderer">
+                  </ytd-lottie-player>
+                </ytd-yoodle-renderer>
+              </a>
+              <span id="country-code" class="style-scope ytd-topbar-logo-renderer">
+                KR
+              </span>
+            </ytd-topbar-logo-renderer>
+          </div>
+          <div id="guide-inner-content" class="style-scope ytd-app">
+
+            <ytd-guide-renderer id="guide-renderer"
+              class="style-scope ytd-app"><!--css-build:shady--><!--css_build_scope:ytd-guide-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+              <div id="sections" class="style-scope ytd-guide-renderer"><ytd-guide-section-renderer
+                  class="style-scope ytd-guide-renderer"
+                  guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-guide-section-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <h3 class="style-scope ytd-guide-section-renderer" hidden="">
+                    <yt-formatted-string id="guide-section-title" link-inherit-color=""
+                      class="style-scope ytd-guide-section-renderer"
+                      is-empty=""><!--css-build:shady--><!--css_build_scope:yt-formatted-string--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_formatted_string.yt.formatted.string.css.js--><yt-attributed-string
+                        class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
+                  </h3>
+                  <div id="items" class="style-scope ytd-guide-section-renderer"><ytd-guide-entry-renderer
+                      class="style-scope ytd-guide-section-renderer" is-primary=""
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="/" title="홈">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                  focusable="false" aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <path
+                                    d="m11.485 2.143-8 4.8-2 1.2a1 1 0 001.03 1.714L3 9.567V20a2 2 0 002 2h6v-7h2v7h6a2 2 0 002-2V9.567l.485.29a1 1 0 001.03-1.714l-2-1.2-8-4.8a1 1 0 00-1.03 0ZM5 8.366l7-4.2 7 4.2V20h-4v-5.5a1.5 1.5 0 00-1.5-1.5h-3A1.5 1.5 0 009 14.5V20H5V8.366Z">
+                                  </path>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">홈</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      is-primary=""
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" title="Shorts">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                  focusable="false" aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <path
+                                    d="m13.467 1.19-8 4.7a5 5 0 00-.255 8.46 5 5 0 005.32 8.462l8-4.7a5 5 0 00.258-8.462 5 5 0 001.641-6.464l-.12-.217a5 5 0 00-6.844-1.78m5.12 2.79a2.999 2.999 0 01-1.067 4.107l-1.327.78a1 1 0 00.096 1.775l.943.423a3 3 0 01.288 5.323l-8 4.7a3 3 0 01-3.039-5.173l1.327-.78a1 1 0 00-.097-1.775l-.942-.423a3 3 0 01-.288-5.323l8-4.7a3 3 0 014.106 1.066ZM15 12l-5-3v6l5-3Z">
+                                  </path>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">Shorts</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer></div>
+                </ytd-guide-section-renderer><ytd-guide-section-renderer class="style-scope ytd-guide-renderer"
+                  guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-guide-section-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <h3 class="style-scope ytd-guide-section-renderer" hidden="">
+                    <yt-formatted-string id="guide-section-title" link-inherit-color=""
+                      class="style-scope ytd-guide-section-renderer"
+                      is-empty=""><!--css-build:shady--><!--css_build_scope:yt-formatted-string--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_formatted_string.yt.formatted.string.css.js--><yt-attributed-string
+                        class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
+                  </h3>
+                  <div id="items" class="style-scope ytd-guide-section-renderer">
+                    <ytd-guide-collapsible-section-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"><!--css-build:shady--><!--css_build_scope:ytd-guide-collapsible-section-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                      <div id="header" class="style-scope ytd-guide-collapsible-section-entry-renderer">
+                        <ytd-guide-entry-renderer id="header-entry" is-header=""
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer" is-primary=""
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="/feed/subscriptions" title="구독">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M18 1H6a2 2 0 00-2 2h16a2 2 0 00-2-2Zm3 4H3a2 2 0 00-2 2v13a2 2 0 002 2h18a2 2 0 002-2V7a2 2 0 00-2-2ZM3 20V7h18v13H3Zm13-6.5L10 10v7l6-3.5Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string
+                                class="title style-scope ytd-guide-entry-renderer">구독</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16"
+                                style="width: 16px; height: 16px;"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914 12l-6.707-6.707a1 1 0 00-1.414 0Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer>
+                      </div>
+                      <div id="section-items" class="style-scope ytd-guide-collapsible-section-entry-renderer"></div>
+                    </ytd-guide-collapsible-section-entry-renderer><ytd-guide-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="클리드에서 새로운 콘텐츠 이용 가능" href="/@clid123" title="클리드">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/miEkO9N7ZiYYIz2llXad3t7NZWHbac1Czj24Lfhn6dXZKVoFqsOXQ-i73LrYPfZGtW5m1ehpzA=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/miEkO9N7ZiYYIz2llXad3t7NZWHbac1Czj24Lfhn6dXZKVoFqsOXQ-i73LrYPfZGtW5m1ehpzA=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">클리드</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="마플 마인크래프트 채널에서 새로운 콘텐츠 이용 가능" href="/@MOMOISDOG" title="마플 마인크래프트 채널">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/3N3XBAuUg1vOTv8R942pYD2F822ssUT9pN8bjM56f54HxpGzc5xAvrbK_2WHUcVBBKWEv2Bk=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/3N3XBAuUg1vOTv8R942pYD2F822ssUT9pN8bjM56f54HxpGzc5xAvrbK_2WHUcVBBKWEv2Bk=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">마플 마인크래프트
+                            채널</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="잡상싱에서 새로운 콘텐츠 이용 가능" href="/@%EC%9E%A1%EC%83%81%EC%8B%B1" title="잡상싱">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/80K7wDoWkUCdDsPwDNvaONYDXWkk4hcB6vfE4sqUoVHp1gzJhvsndzAhncMvXbNNjc2GvdUx8w=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/80K7wDoWkUCdDsPwDNvaONYDXWkk4hcB6vfE4sqUoVHp1gzJhvsndzAhncMvXbNNjc2GvdUx8w=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">잡상싱</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="헌터퐝에서 새로운 콘텐츠 이용 가능" href="/@hunterfwang91" title="헌터퐝">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/ytc/AIdro_mWQEimJUHq5Y-wmqshgIjIklFeJvDpFJBsQq_Og7CKwNY=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/ytc/AIdro_mWQEimJUHq5Y-wmqshgIjIklFeJvDpFJBsQq_Og7CKwNY=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">헌터퐝</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="보따에서 새로운 콘텐츠 이용 가능" href="/@%EB%B3%B4%EB%94%B0" title="보따">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/ehHiWYEi7cxU59YD5gONeoZKoO1L_nwJ1OP8yQWBQ0QPAsEpPimJ_1GXCROfc7c1uPerT64ZlUU=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/ehHiWYEi7cxU59YD5gONeoZKoO1L_nwJ1OP8yQWBQ0QPAsEpPimJ_1GXCROfc7c1uPerT64ZlUU=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">보따</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="가재맨에서 새로운 콘텐츠 이용 가능" href="/@%EA%B0%80%EC%9E%AC%EB%A7%A8" title="가재맨">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/JFuMuaxSMqitJ1re1rCEm88npDkhaO583gEoLJu6BRKrUhfId3_fNruIk_NE7yRqvvpYieqN32s=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/JFuMuaxSMqitJ1re1rCEm88npDkhaO583gEoLJu6BRKrUhfId3_fNruIk_NE7yRqvvpYieqN32s=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">가재맨</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="dot"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" aria-label="승상싱에서 새로운 콘텐츠 이용 가능" href="/@%EC%8A%B9%EC%83%81%EC%8B%B1" title="승상싱">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon class="guide-icon style-scope ytd-guide-entry-renderer"
+                            disable-upgrade="{&quot;thumbnails&quot;:[{&quot;url&quot;:&quot;https://yt3.ggpht.com/PcklUmrEYMjpe8PIviYYCXSjRdY1SfIA5NHKx0ehRcFkp9Fad2Wlc1lZsd-dN7oOAKpMbb6-UQ=s88-c-k-c0x00ffffff-no-rj&quot;}]}"
+                            hidden="">
+                          </yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            style="background-color: transparent;"
+                            loaded=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24"
+                              src="https://yt3.ggpht.com/PcklUmrEYMjpe8PIviYYCXSjRdY1SfIA5NHKx0ehRcFkp9Fad2Wlc1lZsd-dN7oOAKpMbb6-UQ=s88-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">승상싱</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-collapsible-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"
+                      can-show-more=""><!--css-build:shady--><!--css_build_scope:ytd-guide-collapsible-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><ytd-guide-entry-renderer
+                        id="expander-item" role="button" class="style-scope ytd-guide-collapsible-entry-renderer"
+                        line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                          id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                          role="link" title="더보기">
+                          <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                            tabindex="0"
+                            aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                            <yt-icon
+                              class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                    xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                    focusable="false" aria-hidden="true"
+                                    style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                    <path
+                                      d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 16.914l6.707-6.707a1 1 0 000-1.414Z">
+                                    </path>
+                                  </svg></div>
+                              </span></yt-icon>
+                            <yt-img-shadow height="24" width="24"
+                              class="style-scope ytd-guide-entry-renderer no-transition"
+                              hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                width="24"></yt-img-shadow>
+                            <yt-formatted-string
+                              class="title style-scope ytd-guide-entry-renderer">더보기</yt-formatted-string>
+                            <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                              size="16" disable-upgrade="" hidden="">
+                            </yt-icon>
+                            <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                            <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                              disable-upgrade="">
+                            </yt-icon>
+                            <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                          </tp-yt-paper-item>
+                        </a>
+                        <yt-interaction
+                          class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                          <div class="stroke style-scope yt-interaction"></div>
+                          <div class="fill style-scope yt-interaction"></div>
+                        </yt-interaction>
+                      </ytd-guide-entry-renderer>
+                      <div id="expanded" class="style-scope ytd-guide-collapsible-entry-renderer">
+                        <div id="expandable-items" class="style-scope ytd-guide-collapsible-entry-renderer"></div>
+                        <ytd-guide-entry-renderer id="collapser-item" role="button"
+                          class="style-scope ytd-guide-collapsible-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" title="간략히 보기">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M5.293 15.207a1 1 0 001.414 0L12 9.914l5.293 5.293a1 1 0 101.414-1.414L12 7.086l-6.707 6.707a1 1 0 000 1.414Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">간략히
+                                보기</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer>
+                      </div>
+                    </ytd-guide-collapsible-entry-renderer></div>
+                </ytd-guide-section-renderer><ytd-guide-section-renderer class="style-scope ytd-guide-renderer"
+                  guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-guide-section-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <h3 class="style-scope ytd-guide-section-renderer" hidden="">
+                    <yt-formatted-string id="guide-section-title" link-inherit-color=""
+                      class="style-scope ytd-guide-section-renderer"
+                      is-empty=""><!--css-build:shady--><!--css_build_scope:yt-formatted-string--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_formatted_string.yt.formatted.string.css.js--><yt-attributed-string
+                        class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
+                  </h3>
+                  <div id="items" class="style-scope ytd-guide-section-renderer">
+                    <ytd-guide-collapsible-section-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"><!--css-build:shady--><!--css_build_scope:ytd-guide-collapsible-section-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                      <div id="header" class="style-scope ytd-guide-collapsible-section-entry-renderer">
+                        <ytd-guide-entry-renderer id="header-entry" is-header=""
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer" is-primary=""
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="/feed/you" title="내 페이지">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm0 2a9 9 0 016.447 15.276 7 7 0 00-12.895 0A9 9 0 0112 3Zm0 2a4 4 0 100 8 4 4 0 000-8Zm0 2a2 2 0 110 4 2 2 0 010-4Zm-.1 9.001L11.899 16a5 5 0 014.904 3.61A8.96 8.96 0 0112 21a8.96 8.96 0 01-4.804-1.391 5 5 0 014.704-3.608Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">내
+                                페이지</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16"
+                                style="width: 16px; height: 16px;"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914 12l-6.707-6.707a1 1 0 00-1.414 0Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer>
+                      </div>
+                      <div id="section-items" class="style-scope ytd-guide-collapsible-section-entry-renderer">
+                        <ytd-guide-entry-renderer class="style-scope ytd-guide-collapsible-section-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="/feed/history" title="기록">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M8.76 1.487a11 11 0 11-7.54 12.706 1 1 0 011.96-.4 9 9 0 0014.254 5.38A9 9 0 0016.79 4.38 9 9 0 004.518 7H7a1 1 0 010 2H1V3a1 1 0 012 0v2.678a11 11 0 015.76-4.192ZM12 6a1 1 0 00-1 1v5.58l.504.288 3.5 2a1 1 0 10.992-1.736L13 11.42V7a1 1 0 00-1-1Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string
+                                class="title style-scope ytd-guide-entry-renderer">기록</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer><ytd-guide-entry-renderer
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="/feed/playlists" title="재생목록">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M16 15.395a.5.5 0 01.762-.426L22.5 18.5l-5.738 3.531a.5.5 0 01-.762-.425v-6.212ZM14 19H4a1 1 0 110-2h10v2Zm6-8a1 1 0 110 2H4a1 1 0 110-2h16Zm0-6a1 1 0 110 2H4a1 1 0 010-2h16Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string
+                                class="title style-scope ytd-guide-entry-renderer">재생목록</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer><ytd-guide-entry-renderer
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="/playlist?list=WL" title="나중에 볼 동영상">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm0 2a9 9 0 110 18.001A9 9 0 0112 3Zm0 3a1 1 0 00-1 1v5.565l.485.292 3.33 2a1 1 0 001.03-1.714L13 11.435V7a1 1 0 00-1-1Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">나중에 볼
+                                동영상</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer><ytd-guide-entry-renderer
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="/playlist?list=LL" title="좋아요 표시한 동영상">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M9.221 1.795a1 1 0 011.109-.656l1.04.173a4 4 0 013.252 4.784L14 9h4.061a3.664 3.664 0 013.576 2.868A3.68 3.68 0 0121 14.85l.02.087A3.815 3.815 0 0120 18.5v.043l-.01.227a2.82 2.82 0 01-.135.663l-.106.282A3.754 3.754 0 0116.295 22h-3.606l-.392-.007a12.002 12.002 0 01-5.223-1.388l-.343-.189-.27-.154a2.005 2.005 0 00-.863-.26l-.13-.004H3.5a1.5 1.5 0 01-1.5-1.5V12.5A1.5 1.5 0 013.5 11h1.79l.157-.013a1 1 0 00.724-.512l.063-.145 2.987-8.535Zm-1.1 9.196A3 3 0 015.29 13H4v4.998h1.468a4 4 0 011.986.528l.27.155.285.157A10 10 0 0012.69 20h3.606c.754 0 1.424-.483 1.663-1.2l.03-.126a.819.819 0 00.012-.131v-.872l.587-.586c.388-.388.577-.927.523-1.465l-.038-.23-.02-.087-.21-.9.55-.744A1.663 1.663 0 0018.061 11H14a2.002 2.002 0 01-1.956-2.418l.623-2.904a2 2 0 00-1.626-2.392l-.21-.035-2.71 7.741Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">좋아요 표시한
+                                동영상</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer><ytd-guide-entry-renderer
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" href="https://studio.youtube.com/channel/UCrsl3gJl0x-cz5F54N5oLVQ/videos"
+                            title="내 동영상">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M21 3H3a2 2 0 00-2 2v14a2 2 0 002 2h18a2 2 0 002-2V5a2 2 0 00-2-2ZM3 19V5h18v14H3Zm13-7L9.5 8v8l6.5-4Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">내
+                                동영상</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer><ytd-guide-downloads-entry-renderer
+                          class="style-scope ytd-guide-collapsible-section-entry-renderer"><!--css-build:shady--><!--css_build_scope:ytd-guide-downloads-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                          <ytd-guide-entry-renderer id="downloads-entry"
+                            class="style-scope ytd-guide-downloads-entry-renderer" is-primary=""
+                            line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                              id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer"
+                              tabindex="-1" role="link" href="/feed/downloads" title="오프라인 저장 동영상">
+                              <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                                style-target="host" tabindex="0"
+                                aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                                <yt-icon
+                                  class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                    class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                    <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                        xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                        focusable="false" aria-hidden="true"
+                                        style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                        <path
+                                          d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z">
+                                        </path>
+                                      </svg></div>
+                                  </span></yt-icon>
+                                <yt-img-shadow height="24" width="24"
+                                  class="style-scope ytd-guide-entry-renderer no-transition"
+                                  hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                    id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                    width="24"></yt-img-shadow>
+                                <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">오프라인 저장
+                                  동영상</yt-formatted-string>
+                                <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                  size="16" disable-upgrade="" hidden="">
+                                </yt-icon>
+                                <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                                <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                  disable-upgrade="">
+                                </yt-icon>
+                                <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                              </tp-yt-paper-item>
+                            </a>
+                            <yt-interaction
+                              class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                              <div class="stroke style-scope yt-interaction"></div>
+                              <div class="fill style-scope yt-interaction"></div>
+                            </yt-interaction>
+                          </ytd-guide-entry-renderer>
+                        </ytd-guide-downloads-entry-renderer></div>
+                    </ytd-guide-collapsible-section-entry-renderer></div>
+                </ytd-guide-section-renderer><ytd-guide-section-renderer class="style-scope ytd-guide-renderer"
+                  guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-guide-section-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <h3 class="style-scope ytd-guide-section-renderer">
+                    <yt-formatted-string id="guide-section-title" link-inherit-color=""
+                      class="style-scope ytd-guide-section-renderer">탐색</yt-formatted-string>
+                  </h3>
+                  <div id="items" class="style-scope ytd-guide-section-renderer"><ytd-guide-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="/channel/UCkYQyvc_i9hXEo4xic9Hh2g" title="쇼핑">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                  focusable="false" aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <path
+                                    d="M16 6h4a2 2 0 012 2v10a4 4 0 01-4 4H6a4 4 0 01-4-4V8a2 2 0 012-2h4V4.344l.005-.048C8.195 2.32 10.039 1 12 1c1.96 0 3.805 1.32 3.995 3.296l.005.048V6Zm-6 0h4V4.447C13.906 3.732 13.149 3 12 3s-1.906.732-2 1.447V6ZM4 18a2 2 0 002 2h12a2 2 0 002-2V8H4v10Zm11-9a1 1 0 00-1 1v.553c-.094.715-.851 1.447-2 1.447s-1.906-.732-2-1.447V10a1 1 0 00-2 0v.656l.005.048C8.195 12.68 10.04 14 12 14c1.961 0 3.805-1.32 3.995-3.296l.005-.048V10a1 1 0 00-1-1Z">
+                                  </path>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">쇼핑</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      active=""
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ" title="음악">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                  focusable="false" aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <path
+                                    d="M12.514 1.909A1 1 0 0011 2.766v10.992a4.5 4.5 0 102 3.742V9.2l5.485 3.291A1 1 0 0020 11.634V6.966a1 1 0 00-.485-.857l-7-4.2h-.001Z">
+                                  </path>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">음악</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="/feed/storefront?bp=ogUCKAU%3D" title="영화">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                  focusable="false" aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <path
+                                    d="M20 3H4a3 3 0 00-2.587 1.485l-.001.003-.01.015-.072.133-.037.077a3.046 3.046 0 00-.264.869l-.002.011-.011.1-.005.063-.005.06A3.004 3.004 0 001 6v12a3 3 0 003 3h16a3 3 0 003-3V6a3 3 0 00-3-3ZM4 5h1.986l2 2-2 2H3v-.686L4.313 7 3.04 5.725A1 1 0 014 5Zm13.315 2-2-2h3.67l2 2-2 2h-3.67l2-2Zm-6.5 0L8.814 5h3.672l2 2-2 2H8.815l2-2ZM3 18v-7h18v7a1 1 0 01-1 1H4a1 1 0 01-1-1Z">
+                                  </path>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string
+                            class="title style-scope ytd-guide-entry-renderer">영화</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-collapsible-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"
+                      can-show-more=""><!--css-build:shady--><!--css_build_scope:ytd-guide-collapsible-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><ytd-guide-entry-renderer
+                        id="expander-item" role="button" class="style-scope ytd-guide-collapsible-entry-renderer"
+                        line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                          id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                          role="link" title="더보기">
+                          <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                            tabindex="0"
+                            aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                            <yt-icon
+                              class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                    xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                    focusable="false" aria-hidden="true"
+                                    style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                    <path
+                                      d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 16.914l6.707-6.707a1 1 0 000-1.414Z">
+                                    </path>
+                                  </svg></div>
+                              </span></yt-icon>
+                            <yt-img-shadow height="24" width="24"
+                              class="style-scope ytd-guide-entry-renderer no-transition"
+                              hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                width="24"></yt-img-shadow>
+                            <yt-formatted-string
+                              class="title style-scope ytd-guide-entry-renderer">더보기</yt-formatted-string>
+                            <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                              size="16" disable-upgrade="" hidden="">
+                            </yt-icon>
+                            <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                            <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                              disable-upgrade="">
+                            </yt-icon>
+                            <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                          </tp-yt-paper-item>
+                        </a>
+                        <yt-interaction
+                          class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                          <div class="stroke style-scope yt-interaction"></div>
+                          <div class="fill style-scope yt-interaction"></div>
+                        </yt-interaction>
+                      </ytd-guide-entry-renderer>
+                      <div id="expanded" class="style-scope ytd-guide-collapsible-entry-renderer">
+                        <div id="expandable-items" class="style-scope ytd-guide-collapsible-entry-renderer"></div>
+                        <ytd-guide-entry-renderer id="collapser-item" role="button"
+                          class="style-scope ytd-guide-collapsible-entry-renderer"
+                          line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                            id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                            role="link" title="간략히 보기">
+                            <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer"
+                              style-target="host" tabindex="0"
+                              aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                              <yt-icon
+                                class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                                  class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                  <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                      xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                      focusable="false" aria-hidden="true"
+                                      style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                      <path
+                                        d="M5.293 15.207a1 1 0 001.414 0L12 9.914l5.293 5.293a1 1 0 101.414-1.414L12 7.086l-6.707 6.707a1 1 0 000 1.414Z">
+                                      </path>
+                                    </svg></div>
+                                </span></yt-icon>
+                              <yt-img-shadow height="24" width="24"
+                                class="style-scope ytd-guide-entry-renderer no-transition"
+                                hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                                  id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                                  width="24"></yt-img-shadow>
+                              <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">간략히
+                                보기</yt-formatted-string>
+                              <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                                size="16" disable-upgrade="" hidden="">
+                              </yt-icon>
+                              <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                              <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                                disable-upgrade="">
+                              </yt-icon>
+                              <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                            </tp-yt-paper-item>
+                          </a>
+                          <yt-interaction
+                            class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                            <div class="stroke style-scope yt-interaction"></div>
+                            <div class="fill style-scope yt-interaction"></div>
+                          </yt-interaction>
+                        </ytd-guide-entry-renderer>
+                      </div>
+                    </ytd-guide-collapsible-entry-renderer></div>
+                </ytd-guide-section-renderer><ytd-guide-section-renderer class="style-scope ytd-guide-renderer"
+                  guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-guide-section-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <h3 class="style-scope ytd-guide-section-renderer">
+                    <yt-formatted-string id="guide-section-title" link-inherit-color=""
+                      class="style-scope ytd-guide-section-renderer">YouTube 더보기</yt-formatted-string>
+                  </h3>
+                  <div id="items" class="style-scope ytd-guide-section-renderer"><ytd-guide-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="https://music.youtube.com/" title="YouTube Music">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24"
+                                  enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"
+                                  aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <g>
+                                    <circle id="XMLID_4814__yt209" fill="#FF0033" cx="12" cy="12" r="11"></circle>
+                                    <path fill="#FFFFFF"
+                                      d="M12,6.25c3.17,0,5.75,2.58,5.75,5.75s-2.58,5.75-5.75,5.75S6.25,15.17,6.25,12S8.83,6.25,12,6.25 M12,5.25   c-3.73,0-6.75,3.02-6.75,6.75s3.02,6.75,6.75,6.75s6.75-3.02,6.75-6.75S15.73,5.25,12,5.25L12,5.25z">
+                                    </path>
+                                    <polygon fill="#FFFFFF" points="10,15 15,12 10,9  "></polygon>
+                                  </g>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">YouTube
+                            Music</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer><ytd-guide-entry-renderer class="style-scope ytd-guide-section-renderer"
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="https://www.youtubekids.com/?source=youtube_web" title="YouTube Kids">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24"
+                                  enable-background="new 0 0 24 24" xml:space="preserve" focusable="false"
+                                  aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <g>
+                                    <g>
+                                      <path fill="#FF0033"
+                                        d="M22.64,13.2c-0.01-1.04-0.62-5.98-0.9-6.74c-0.19-0.5-0.58-1.4-1.31-1.95c-0.94-0.7-1.7-0.83-2.68-0.85    C17.06,3.64,6.12,5.03,4.79,5.51C3.8,5.88,3.03,6.35,2.42,6.95c-0.99,0.98-1.18,1.93-1.02,3.6c0.14,1.52,0.85,6.55,1.21,7.59    c0.39,1.15,1.11,2.03,2.3,2.16c3.62,0.39,4.48-1.6,12.9-1.58c2.55,0.01,3.82-1.11,4.35-2.08C22.77,15.49,22.65,13.99,22.64,13.2z">
+                                      </path>
+                                      <path fill="#212121"
+                                        d="M17.47,4.04C17.47,4.04,17.48,4.04,17.47,4.04c0.94,0.02,1.67,0.14,2.56,0.81    c0.7,0.53,1.08,1.39,1.25,1.86c0.28,0.73,0.85,5.44,0.86,6.43c0.01,0.76,0.12,2.19-0.47,3.28c-0.5,0.92-1.71,1.98-4.13,1.98    c-0.01,0-0.01,0-0.02,0c-0.04,0-0.07,0-0.11,0c-7.23,0-8.55,1.56-11.33,1.56c-0.27,0-0.56-0.02-0.87-0.05    c-1.13-0.12-1.82-0.96-2.19-2.06c-0.34-0.99-1.01-5.79-1.15-7.24c-0.15-1.6,0.03-2.51,0.98-3.44c0.58-0.57,1.32-1.02,2.27-1.37    C6.38,5.35,16.73,4.04,17.47,4.04 M17.47,3.2c-0.47,0-3.53,0.37-6.09,0.72C8.82,4.27,5.6,4.75,4.84,5.03    c-1.06,0.39-1.9,0.9-2.56,1.56C1.05,7.8,0.9,9.06,1.05,10.7c0.12,1.27,0.8,6.28,1.19,7.43c0.53,1.55,1.55,2.48,2.89,2.62    c0.33,0.04,0.64,0.05,0.96,0.05c1.17,0,2.1-0.25,3.18-0.54c1.69-0.45,3.8-1.02,8.15-1.02l0.11,0l0.02,0    c1.07,0,3.68-0.24,4.86-2.42c0.63-1.17,0.6-2.59,0.58-3.43c0-0.09,0-0.18-0.01-0.26c-0.01-1.01-0.59-5.85-0.92-6.72    c-0.38-1-0.89-1.75-1.53-2.23c-1.05-0.79-1.94-0.96-3.04-0.98l-0.01,0L17.47,3.2L17.47,3.2z">
+                                      </path>
+                                    </g>
+                                    <g>
+                                      <path fill="#FFFFFF"
+                                        d="M15.28,11.85c-0.03,0.02-0.05,0.03-0.08,0.05c-0.21,0.14-0.42,0.28-0.63,0.43    c-0.49,0.33-3.33,2.26-3.33,2.26c-0.24,0.18-0.7,0.47-0.87,0.38c-0.17-0.09-0.23-0.72-0.27-1.02l-0.01-0.07    c-0.05-0.36-0.46-3.83-0.51-4.21C9.56,9.56,9.5,9.17,9.62,9.08c0.13-0.1,0.47,0.01,0.58,0.05c0.66,0.21,3.93,1.35,4.95,1.86    c0.03,0.02,0.06,0.03,0.1,0.04c0.15,0.06,0.35,0.15,0.35,0.39C15.6,11.65,15.42,11.76,15.28,11.85z">
+                                      </path>
+                                      <path fill="#212121"
+                                        d="M10.04,9.59c1.14,0.38,3.77,1.32,5.01,1.87c-0.15,0.1-0.3,0.2-0.45,0.3c-0.58,0.39-3.94,2.68-3.94,2.68    l-0.02,0.01l-0.02,0.01c0,0,0,0,0,0c0-0.03-0.01-0.05-0.01-0.07l-0.02-0.13l-0.01-0.08c-0.04-0.31-0.31-2.58-0.48-3.94    C10.08,9.98,10.06,9.76,10.04,9.59 M9.4,8.56c-0.07,0-0.14,0.01-0.18,0.05c-0.15,0.11-0.07,0.58-0.05,0.7    c0.05,0.45,0.54,4.56,0.6,4.99l0.01,0.08c0.05,0.36,0.12,1.1,0.33,1.21c0.03,0.01,0.06,0.02,0.1,0.02c0.25,0,0.68-0.28,0.93-0.47    c0,0,3.36-2.29,3.94-2.68c0.25-0.17,0.5-0.34,0.75-0.51c0.03-0.02,0.06-0.04,0.1-0.06c0.17-0.1,0.38-0.23,0.38-0.5    c-0.01-0.29-0.24-0.39-0.41-0.46c-0.04-0.02-0.08-0.03-0.11-0.05c-1.21-0.61-5.09-1.96-5.87-2.21C9.8,8.63,9.58,8.56,9.4,8.56    L9.4,8.56z">
+                                      </path>
+                                    </g>
+                                  </g>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">YouTube
+                            Kids</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer></div>
+                </ytd-guide-section-renderer><ytd-guide-section-renderer class="style-scope ytd-guide-renderer"
+                  guide-persistent-and-visible=""><!--css-build:shady--><!--css_build_scope:ytd-guide-section-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js-->
+                  <h3 class="style-scope ytd-guide-section-renderer" hidden="">
+                    <yt-formatted-string id="guide-section-title" link-inherit-color=""
+                      class="style-scope ytd-guide-section-renderer"
+                      is-empty=""><!--css-build:shady--><!--css_build_scope:yt-formatted-string--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_formatted_string.yt.formatted.string.css.js--><yt-attributed-string
+                        class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
+                  </h3>
+                  <div id="items" class="style-scope ytd-guide-section-renderer"><ytd-guide-entry-renderer
+                      class="style-scope ytd-guide-section-renderer"
+                      line-end-style="none"><!--css-build:shady--><!--css_build_scope:ytd-guide-entry-renderer--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js--><a
+                        id="endpoint" class="yt-simple-endpoint style-scope ytd-guide-entry-renderer" tabindex="-1"
+                        role="link" href="/reporthistory" title="신고 기록">
+                        <tp-yt-paper-item role="link" class="style-scope ytd-guide-entry-renderer" style-target="host"
+                          tabindex="0"
+                          aria-disabled="false"><!--css-build:shady--><!--css_build_scope:tp-yt-paper-item--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,third_party.javascript.youtube_components.tp_yt_paper_item.tp.yt.paper.item.css.js-->
+                          <yt-icon
+                            class="guide-icon style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-icon--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.core.yt_icon.yt.icon.css.js--><span
+                              class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                              <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg
+                                  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                                  focusable="false" aria-hidden="true"
+                                  style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                  <path
+                                    d="m4 2.999-.146.073A1.55 1.55 0 003 4.454v16.545a1 1 0 102 0v-6.491a7.26 7.26 0 016.248.115l.752.376a8.94 8.94 0 008 0l.145-.073c.524-.262.855-.797.855-1.382V4.458a1.21 1.21 0 00-1.752-1.083 7.26 7.26 0 01-6.496 0L12 2.999a8.94 8.94 0 00-8 0Zm7.105 1.79v-.002l.752.376A9.26 9.26 0 0019 5.641v7.62a6.95 6.95 0 01-6.105-.052l-.752-.376A9.261 9.261 0 005 12.355v-7.62a6.94 6.94 0 016.105.054Z">
+                                  </path>
+                                </svg></div>
+                            </span></yt-icon>
+                          <yt-img-shadow height="24" width="24"
+                            class="style-scope ytd-guide-entry-renderer no-transition"
+                            hidden=""><!--css-build:shady--><!--css_build_scope:yt-img-shadow--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_img_shadow.yt.img.shadow.css.js--><img
+                              id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24"
+                              width="24"></yt-img-shadow>
+                          <yt-formatted-string class="title style-scope ytd-guide-entry-renderer">신고
+                            기록</yt-formatted-string>
+                          <yt-icon class="arrow-icon style-scope ytd-guide-entry-renderer" icon="chevron_right"
+                            size="16" disable-upgrade="" hidden="">
+                          </yt-icon>
+                          <span class="guide-entry-count style-scope ytd-guide-entry-renderer"> </span>
+                          <yt-icon class="guide-entry-badge style-scope ytd-guide-entry-renderer" size="16"
+                            disable-upgrade="">
+                          </yt-icon>
+                          <div id="newness-dot" class="style-scope ytd-guide-entry-renderer"></div>
+
+                        </tp-yt-paper-item>
+                      </a>
+                      <yt-interaction
+                        class="style-scope ytd-guide-entry-renderer"><!--css-build:shady--><!--css_build_scope:yt-interaction--><!--css_build_styles:video.youtube.src.web.polymer.shared.ui.styles.yt_base_styles.yt.base.styles.css.js,video.youtube.src.web.polymer.shared.ui.yt_interaction.yt.interaction.css.js-->
+                        <div class="stroke style-scope yt-interaction"></div>
+                        <div class="fill style-scope yt-interaction"></div>
+                      </yt-interaction>
+                    </ytd-guide-entry-renderer></div>
+                </ytd-guide-section-renderer></div>
+              <div id="footer" class="style-scope ytd-guide-renderer">
+                <div id="guide-links-primary" class="style-scope ytd-guide-renderer">
+                  <a slot="guide-links-primary" href="https://www.youtube.com/about/" style="display: none;">정보</a><a
+                    slot="guide-links-primary" href="https://www.youtube.com/about/press/"
+                    style="display: none;">보도자료</a><a slot="guide-links-primary"
+                    href="https://www.youtube.com/about/copyright/" style="display: none;">저작권</a><a
+                    slot="guide-links-primary" href="/t/contact_us/" style="display: none;">문의하기</a><a
+                    slot="guide-links-primary" href="https://www.youtube.com/creators/"
+                    style="display: none;">크리에이터</a><a slot="guide-links-primary" href="https://www.youtube.com/ads/"
+                    style="display: none;">광고</a><a slot="guide-links-primary"
+                    href="https://developers.google.com/youtube" style="display: none;">개발자</a>
+                </div>
+                <div id="guide-links-secondary" class="style-scope ytd-guide-renderer">
+                  <a slot="guide-links-secondary" href="/t/terms" style="display: none;">약관</a><a
+                    slot="guide-links-secondary" href="/t/privacy" style="display: none;">개인정보처리방침</a><a
+                    slot="guide-links-secondary" href="https://www.youtube.com/about/policies/"
+                    style="display: none;">정책 및 안전</a><a slot="guide-links-secondary"
+                    href="https://www.youtube.com/howyoutubeworks?utm_campaign=ytgen&amp;utm_source=ythp&amp;utm_medium=LeftNav&amp;utm_content=txt&amp;u=https%3A%2F%2Fwww.youtube.com%2Fhowyoutubeworks%3Futm_source%3Dythp%26utm_medium%3DLeftNav%26utm_campaign%3Dytgen"
+                    style="display: none;">YouTube 작동의 원리</a><a slot="guide-links-secondary" href="/new"
+                    style="display: none;">새로운 기능 테스트하기</a>
+                </div>
+
+                <div id="copyright" slot="copyright" style="display: none;">
+                  <div dir="ltr">© 2026 Google LLC, Sundar Pichai, 1600 Amphitheatre Parkway, Mountain View CA 94043,
+                    USA, 0807-882-594 (무료), yt-support-solutions-kr@google.com, 호스팅: Google LLC, <a
+                      href="http://www.ftc.go.kr/selectBizOvrCommPop.do?apvPermMgtNo=2022-공정-0001" target="_blank"
+                      style="text-decoration: none;color:var(--yt-spec-call-to-action);">사업자정보</a>, <a
+                      href="https://support.google.com/youtube?p=korea_report" target="_blank"
+                      style="text-decoration: none;color:var(--yt-spec-call-to-action);">불법촬영물 신고</a><br>크리에이터들이 유튜브 상에
+                    게시, 태그 또는 추천한 상품들은 판매자들의 약관에 따라 판매됩니다. 유튜브는 이러한 제품들을 판매하지 않으며, 그에 대한 책임을 지지 않습니다.</div>
+                </div>
+              </div>
+            </ytd-guide-renderer>
+            <dom-if class="style-scope ytd-app"><template is="dom-if"></template></dom-if>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </tp-yt-app-drawer>
+</body>
+
+</html>

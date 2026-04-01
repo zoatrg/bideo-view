@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/admin-layout}"
+      th:with="activeMenu='members'">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 상세 - BIDEO Admin</title>
+    <link rel="stylesheet" href="../../static/css/admin/admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div layout:fragment="content">
+    <a th:href="@{/admin/members}" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        목록으로 돌아가기
+    </a>
+
+    <div class="page-header">
+        <h1 class="page-title">
+            회원 상세
+            <span th:if="${member.status == 'ACTIVE'}" class="status-badge status-active">활동</span>
+            <span th:if="${member.status == 'SUSPENDED'}" class="status-badge status-urgent">정지</span>
+        </h1>
+    </div>
+
+    <div class="detail-layout">
+        <div class="detail-main">
+            <div class="detail-section">
+                <h3 class="detail-section-title">기본 정보</h3>
+                <div class="detail-field">
+                    <span class="detail-field-label">이메일</span>
+                    <span class="detail-field-value" th:text="${member.email}">user@email.com</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-field-label">닉네임</span>
+                    <span class="detail-field-value" th:text="${member.nickname}">닉네임</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-field-label">연락처</span>
+                    <span class="detail-field-value" th:text="${member.phone}">010-0000-0000</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-field-label">가입일</span>
+                    <span class="detail-field-value" th:text="${member.createdAt}">2024-01-01</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3 class="detail-section-title">계정 상태</h3>
+                <div class="detail-field">
+                    <span class="detail-field-label">회원 상태</span>
+                    <span class="detail-field-value">
+                        <span th:if="${member.status == 'ACTIVE'}" class="status-badge status-active">활동</span>
+                        <span th:if="${member.status == 'SUSPENDED'}" class="status-badge status-urgent">정지</span>
+                    </span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-field-label">최종 로그인</span>
+                    <span class="detail-field-value" th:text="${member.lastLoginAt}">2024-01-01 12:00</span>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h3 class="detail-section-title">활동 요약</h3>
+                <div class="detail-field">
+                    <span class="detail-field-label">예술관 수</span>
+                    <span class="detail-field-value"><span th:text="${member.galleryCount}">0</span> 건</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-field-label">팔로워 수</span>
+                    <span class="detail-field-value"><span th:text="${member.followerCount}">0</span> 명</span>
+                </div>
+                <div class="detail-field">
+                    <span class="detail-field-label">팔로잉 수</span>
+                    <span class="detail-field-value"><span th:text="${member.followingCount}">0</span> 명</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-sidebar">
+            <div class="detail-sidebar-card">
+                <div class="detail-sidebar-title">계정 관리</div>
+                <button th:if="${member.status == 'ACTIVE'}"
+                        class="btn btn-danger" style="width:100%"
+                        onclick="openModal('suspendModal')">계정 일시 정지</button>
+                <button th:if="${member.status == 'SUSPENDED'}"
+                        class="btn btn-primary" style="width:100%"
+                        onclick="openModal('unsuspendModal')">계정 정지 해제</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div layout:fragment="modals">
+    <div class="modal-overlay" id="suspendModal">
+        <div class="modal">
+            <div class="modal-header">정말 처리하시겠습니까?</div>
+            <div class="modal-body">이 작업은 취소할 수 없습니다.</div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('suspendModal')">취소</button>
+                <button class="btn btn-danger">확인</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="unsuspendModal">
+        <div class="modal">
+            <div class="modal-header">정말 처리하시겠습니까?</div>
+            <div class="modal-body">계정 정지를 해제합니다.</div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('unsuspendModal')">취소</button>
+                <button class="btn btn-primary">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

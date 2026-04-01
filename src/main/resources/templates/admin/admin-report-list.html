@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/admin-layout}"
+      th:with="activeMenu='reports'">
+<head>
+    <meta charset="UTF-8">
+    <title>신고관리 - BIDEO Admin</title>
+    <link rel="stylesheet" href="../../static/css/admin/admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="page-header">
+        <h1 class="page-title">신고관리</h1>
+    </div>
+
+    <div class="filter-bar">
+        <div class="filter-search">
+            <svg class="filter-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="신고자 검색...">
+        </div>
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-status="all">전체</button>
+            <button class="filter-tab" data-status="PENDING">접수됨</button>
+            <button class="filter-tab" data-status="REVIEWING">검토중</button>
+            <button class="filter-tab" data-status="RESOLVED">처리완료</button>
+            <button class="filter-tab" data-status="CANCELLED">취소됨</button>
+        </div>
+    </div>
+
+    <table class="data-table">
+        <thead>
+        <tr>
+            <th style="width:60px">번호</th>
+            <th style="width:120px">신고자</th>
+            <th style="width:100px">신고 분류</th>
+            <th>신고 사유</th>
+            <th style="width:140px">접수일</th>
+            <th style="width:90px">상태</th>
+            <th style="width:60px">상세</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="report, iter : ${reportList}">
+            <td th:text="${totalCount - iter.index}">1</td>
+            <td th:text="${report.reporterNickname}">신고자</td>
+            <td th:text="${report.category}">WORK</td>
+            <td>
+                <span th:text="${report.reason}">신고 사유</span>
+                <br th:if="${report.reasonDetail != null}">
+                <span th:if="${report.reasonDetail != null}" class="text-muted text-sm" th:text="${report.reasonDetail}"></span>
+            </td>
+            <td th:text="${report.createdAt}">2024-01-01</td>
+            <td>
+                <span th:if="${report.status == 'PENDING'}" class="status-badge status-pending">접수됨</span>
+                <span th:if="${report.status == 'REVIEWING'}" class="status-badge status-pending">검토중</span>
+                <span th:if="${report.status == 'RESOLVED'}" class="status-badge status-active">처리완료</span>
+                <span th:if="${report.status == 'CANCELLED'}" class="status-badge status-muted">취소됨</span>
+            </td>
+            <td><a th:href="@{/admin/reports/{id}(id=${report.id})}" class="btn-link">상세</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="empty-state" id="emptyState" style="display:none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg>
+        <p class="empty-state-text">접수된 신고가 없습니다</p>
+    </div>
+</div>
+</body>
+</html>

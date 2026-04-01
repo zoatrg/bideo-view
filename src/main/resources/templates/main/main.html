@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>영화 - Bideo</title>
+    <meta
+      name="description"
+      content="최신작 또는 명작 영화와 프로그램을 찾아보고, 익숙한 스토어프런트 구조로 탐색할 수 있는 Bideo 메인 화면입니다."
+    />
+    <meta
+      name="shell-head"
+      th:replace="templates/layout/youtube-shell :: ytShellHead('영화 - Bideo')"
+    />
+    <link rel="icon" href="../../static/images/favicon.png" />
+    <link rel="stylesheet" href="../../static/css/main/main-standardized.css" />
+    <link rel="stylesheet" href="../../static/css/main/auth-modal.css" />
+    <link rel="stylesheet" href="../../static/css/main/signup-modal.css" />
+  </head>
+  <body class="movies-body">
+    <div th:replace="templates/layout/youtube-shell :: ytShellChrome('home')"></div>
+
+    <main class="yt-shell__page-content movies-page" data-main-root>
+      <div class="movies-page__inner">
+        <header class="movies-page__header">
+          <div>
+            <p class="movies-page__eyebrow">영화 및 프로그램</p>
+            <h1>최신작 또는 명작 영화를 찾아보세요</h1>
+            <p class="movies-page__summary">
+              수상작, 독립 영화 등 다양한 작품을 집에서 편안하게 원하는 기기로
+              시청할 수 있도록 기존 스토어프런트 흐름을 유지한 화면입니다.
+            </p>
+          </div>
+        </header>
+
+        <section class="movies-chip-bar" aria-label="영화 필터">
+          <button class="movies-chip is-active" type="button" data-main-chip>
+            전체
+          </button>
+          <button class="movies-chip" type="button" data-main-chip>액션/어드벤처</button>
+          <button class="movies-chip" type="button" data-main-chip>애니메이션</button>
+          <button class="movies-chip" type="button" data-main-chip>가족</button>
+          <button class="movies-chip" type="button" data-main-chip>판타지</button>
+          <button class="movies-chip" type="button" data-main-chip>드라마</button>
+        </section>
+
+        <section class="movies-shelf" aria-labelledby="primetime-title">
+          <div class="movies-shelf__header">
+            <h2 id="primetime-title">나를 위한 Primetime 영화 추천</h2>
+            <div class="movies-shelf__controls">
+              <button
+                class="movies-shelf__control"
+                type="button"
+                aria-label="추천 영화 이전"
+                data-main-shelf-prev
+              >
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button
+                class="movies-shelf__control"
+                type="button"
+                aria-label="추천 영화 다음"
+                data-main-shelf-next
+              >
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="movies-shelf__track" data-main-shelf>
+            <article class="movie-card">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/Py0kfNI_WIg/movieposter_ko.webp"
+                  alt="아바타: 불과 재 포스터"
+                />
+                <span class="movie-card__length">3:17:09</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>아바타: 불과 재</h3>
+                <p>액션/어드벤처 • 2025</p>
+                <div class="movie-card__badges">
+                  <span class="movies-badge movies-badge--purchase">구매</span>
+                  <span class="movies-badge">12세 이상 관람가</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="movie-card">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/yRCSSbqPvhU/movieposter_ko.webp"
+                  alt="F1 (F1 The Movie) 포스터"
+                />
+                <span class="movie-card__length">2:35:16</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>F1 (F1 The Movie)</h3>
+                <p>액션/어드벤처 • 2025</p>
+                <div class="movie-card__badges">
+                  <span class="movies-badge movies-badge--purchase">구매</span>
+                  <span class="movies-badge">12세 이상 관람가</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="movie-card">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/30tsal7CSvQ/movieposter_ko.webp"
+                  alt="하늘의 푸르름을 아는 사람이여 포스터"
+                />
+                <span class="movie-card__length">1:47:30</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>하늘의 푸르름을 아는 사람이여</h3>
+                <p>판타지 • 2022</p>
+                <div class="movie-card__badges">
+                  <span class="movies-badge movies-badge--rent">구매 또는 대여</span>
+                  <span class="movies-badge">12세 이상 관람가</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="movie-card">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/-guCU4iR5G8/movieposter_ko.webp"
+                  alt="쥬라기 월드: 새로운 시작 포스터"
+                />
+                <span class="movie-card__length">2:13:39</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>쥬라기 월드: 새로운 시작</h3>
+                <p>액션/어드벤처 • 2025</p>
+                <div class="movie-card__badges">
+                  <span class="movies-badge movies-badge--rent">구매 또는 대여</span>
+                  <span class="movies-badge">12세 이상 관람가</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="movie-card">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/oUDkFKhw8J0/movieposter_ko.webp"
+                  alt="극장판 5등분의 신부 포스터"
+                />
+                <span class="movie-card__length">2:16:19</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>극장판 5등분의 신부</h3>
+                <p>애니메이션 • 2022</p>
+                <div class="movie-card__badges">
+                  <span class="movies-badge movies-badge--purchase">구매</span>
+                  <span class="movies-badge">15세 이상 관람가</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="movies-shelf" aria-labelledby="latest-title">
+          <div class="movies-shelf__header">
+            <h2 id="latest-title">최신작</h2>
+            <div class="movies-shelf__controls">
+              <button
+                class="movies-shelf__control"
+                type="button"
+                aria-label="최신작 이전"
+                data-main-shelf-prev
+              >
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button
+                class="movies-shelf__control"
+                type="button"
+                aria-label="최신작 다음"
+                data-main-shelf-next
+              >
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="movies-shelf__track" data-main-shelf>
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/TNhyjkkR484/movieposter_ko.webp"
+                  alt="최신작 추천 영화 포스터"
+                />
+                <span class="movie-card__length">2:07:18</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>심야 극장 스페셜</h3>
+                <p>드라마 • 큐레이션</p>
+              </div>
+            </article>
+
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/5aE5Sz9Gwys/movieposter_ko.webp"
+                  alt="최신작 추천 영화 포스터"
+                />
+                <span class="movie-card__length">1:58:41</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>시티 라이트 셀렉션</h3>
+                <p>로맨스 • 큐레이션</p>
+              </div>
+            </article>
+
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/yYdOMvBwJoY/movieposter_ko.webp"
+                  alt="최신작 추천 영화 포스터"
+                />
+                <span class="movie-card__length">2:24:15</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>주말 몰아보기 셀렉션</h3>
+                <p>스릴러 • 큐레이션</p>
+              </div>
+            </article>
+
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/g4Juo_3VJ6A/movieposter_ko.webp"
+                  alt="최신작 추천 영화 포스터"
+                />
+                <span class="movie-card__length">2:11:52</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>프라임 나이트 픽</h3>
+                <p>SF • 큐레이션</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="movies-shelf" aria-labelledby="classics-title">
+          <div class="movies-shelf__header">
+            <h2 id="classics-title">명작</h2>
+            <div class="movies-shelf__controls">
+              <button
+                class="movies-shelf__control"
+                type="button"
+                aria-label="명작 이전"
+                data-main-shelf-prev
+              >
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button
+                class="movies-shelf__control"
+                type="button"
+                aria-label="명작 다음"
+                data-main-shelf-next
+              >
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="movies-shelf__track" data-main-shelf>
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/HjobfBjr-og/movieposter_ko.webp"
+                  alt="명작 영화 포스터"
+                />
+                <span class="movie-card__length">2:05:33</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>클래식 무비 나이트</h3>
+                <p>드라마 • 큐레이션</p>
+              </div>
+            </article>
+
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/rE08150l4qA/movieposter_ko.webp"
+                  alt="명작 영화 포스터"
+                />
+                <span class="movie-card__length">1:49:03</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>황금기 셀렉션</h3>
+                <p>가족 • 큐레이션</p>
+              </div>
+            </article>
+
+            <article class="movie-card movie-card--compact">
+              <a class="movie-card__poster" href="#">
+                <img
+                  src="https://i.ytimg.com/vi_webp/TX5Fc3JCNzQ/movieposter_ko.webp"
+                  alt="명작 영화 포스터"
+                />
+                <span class="movie-card__length">2:01:27</span>
+              </a>
+              <div class="movie-card__meta">
+                <h3>큐레이터 추천작</h3>
+                <p>판타지 • 큐레이션</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script defer src="../../static/js/main/auth-modal.js"></script>
+    <script defer src="../../static/js/main/signup-modal.js"></script>
+    <script defer src="../../static/js/main/main-standardized.js"></script>
+    <script
+      th:replace="templates/layout/youtube-shell :: ytShellScripts()"
+    ></script>
+  </body>
+</html>

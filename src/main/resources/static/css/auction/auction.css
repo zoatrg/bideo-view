@@ -1,0 +1,356 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", "Noto Sans KR", Arial, sans-serif;
+    font-size: 14px;
+    color: #0f0f0f;
+    background-color: #ffffff;
+    min-width: 1440px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.Auction-Page-Wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Auction-Content-Layout {
+    display: flex;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+
+.Auction-Watch-Main {
+    flex: 1;
+    display: flex;
+    margin-top: 56px;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    max-width: 1440px;
+    align-self: flex-start;
+}
+
+.Auction-Video-Section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 900px;
+    min-width: 0;
+}
+
+.Auction-Player-Container {
+    width: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.Auction-Player-Screen {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 비율 */
+    position: relative;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.Auction-Bid-Panel {
+    width: 360px;
+    height: auto;
+    min-width: 320px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    margin-left: 24px;
+    flex-shrink: 0;
+}
+
+.Auction-Item-Info {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.Auction-Item-Title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f0f0f;
+    line-height: 1.4;
+}
+
+.Auction-Gallery-Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.Auction-Gallery-Profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.Auction-Gallery-Thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #aaaaaa;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.Auction-Gallery-Meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.Auction-Gallery-Name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f0f0f;
+}
+
+.Auction-Gallery-Followers {
+    font-size: 12px;
+    color: #606060;
+}
+
+.Auction-Gallery-FollowBtn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: #0f0f0f;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.Auction-Gallery-FollowBtn:hover {
+    background: #272727;
+}
+
+.Auction-Gallery-FollowBtn.following {
+    background: #f0f0f0;
+    color: #0f0f0f;
+}
+
+.Auction-Gallery-FollowBtn.following:hover {
+    background: #e0e0e0;
+}
+
+/* 입찰 헤더 */
+.Auction-Bid-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.Auction-Bid-Title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.Auction-Bid-TitleText {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f0f0f;
+}
+
+/* 입찰 메시지 목록 */
+.Auction-Bid-Messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.Auction-Bid-Messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.Auction-Bid-Messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+/* 입찰 남은 시간 */
+.Auction-Bid-Timer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    color: red;
+}
+
+/* 입찰 메시지 아이템 */
+.Auction-Bid-Item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    transition: background 0.15s;
+}
+
+.Auction-Bid-Item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.Auction-Bid-Avatar {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.Auction-Bid-AvatarCircle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #aaaaaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.Auction-Bid-Content {
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    line-height: 1.5;
+}
+
+.Auction-Bid-Username {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f0f0f;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.Auction-Bid-Text {
+    font-size: 13px;
+    color: #0f0f0f;
+    word-break: break-all;
+    flex: 1;
+    min-width: 0;
+}
+
+.Auction-RemainTimer-Text {
+    font-size: 15px;
+    white-space: nowrap;
+    word-break: break-all;
+    min-width: 0;
+}
+
+.Auction-RemainTimer-Time {
+    font-size: 15px;
+    white-space: nowrap;
+    word-break: break-all;
+    min-width: 0;
+}
+
+/* 입찰 입력창 */
+.Auction-Bid-InputArea {
+    border-top: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+
+.Auction-Bid-InputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    padding: 6px 12px;
+}
+
+.Auction-Bid-Input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: #606060;
+    min-width: 0;
+    padding-left: 6px;
+}
+
+.Auction-Bid-InputActions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.Auction-Bid-SubmitBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: #606060;
+    transition: background 0.2s;
+}
+
+.Auction-Bid-SubmitBtn:hover {
+    background: rgba(0, 0, 0, 0.06);
+    fill: #0f0f0f;
+}
+
+.Auction-Bid-SubmitIcon {
+    width: 22px;
+    height: 22px;
+}
+
+/* 토클용 css */
+.off {
+    display: none;
+}
