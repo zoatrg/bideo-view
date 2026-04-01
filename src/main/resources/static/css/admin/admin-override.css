@@ -1,7 +1,6 @@
 /* ============================================
    BIDEO Admin - Override CSS
-   Loaded AFTER admin.css to override bare element
-   selectors and provide admin-specific styles.
+   YouTube Studio white mode theme styles.
    ============================================ */
 
 /* === CSS Variables (YouTube Studio Theme) === */
@@ -84,12 +83,8 @@
 }
 
 /* ============================================
-   SECTION 1: Override bare element selectors
-   from admin.css that targeted custom tags
+   SECTION 1: Reset & Base
    ============================================ */
-
-/* Reset: ensure our standard tags don't inherit
-   unwanted styles from admin.css's html/body rules */
 * {
     margin: 0;
     padding: 0;
@@ -251,17 +246,7 @@ nav.ytcp-navigation-drawer * {
     border-radius: var(--ytcp-xl-border-radius);
 }
 
-.menu-item-link.style-scope.ytcp-navigation-drawer[selected]::before,
-.menu-item-link.style-scope.ytcp-navigation-drawer.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 4px;
-    background: var(--admin-accent);
-    border-radius: 0 var(--ytcp-s-border-radius) var(--ytcp-s-border-radius) 0;
-}
+/* Blue bar removed — active state shown by bg highlight only */
 
 .content-icon.style-scope {
     width: 24px;
@@ -353,14 +338,9 @@ nav.ytcp-navigation-drawer * {
     height: 48px;
 }
 
-/* Selection bar (sliding underline) */
+/* Selection bar hidden — using ::after underlines instead */
 .selection-bar {
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    background-color: var(--admin-text-primary);
-    transition: left 0.15s cubic-bezier(0.4, 0, 1, 1),
-                width 0.15s cubic-bezier(0.4, 0, 1, 1);
+    display: none;
 }
 
 /* Individual tab button */
@@ -384,21 +364,43 @@ nav.ytcp-navigation-drawer * {
     color: var(--admin-text-secondary);
     white-space: nowrap;
     transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
+    line-height: 1;
 }
 
 .filter-tab:first-child {
     margin-left: 0;
 }
 
+/* Underline: hidden by default, visible on hover and active */
+.filter-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    border-radius: 2px 2px 0 0;
+}
+
 .filter-tab:hover {
     color: var(--admin-text-primary);
-    background: transparent;
+    background: var(--admin-bg-sidebar-hover);
+    border-radius: 8px 8px 0 0;
+}
+
+.filter-tab:hover::after {
+    background: #c0c0c0;
 }
 
 .filter-tab.active {
     color: var(--admin-text-primary);
     background: transparent;
     border: none;
+}
+
+.filter-tab.active::after {
+    background: var(--admin-text-secondary);
 }
 
 /* Legacy filter-tabs wrapper (now replaced by tabs-wrapper/tabs-container in HTML) */
@@ -551,21 +553,23 @@ nav.ytcp-navigation-drawer * {
     transition: all 0.15s;
     white-space: nowrap;
     gap: 6px;
+    line-height: 1;
 }
 
 .btn-primary {
-    background: var(--admin-accent);
-    color: #fff;
+    background: transparent;
+    color: var(--admin-accent);
+    border: 1px solid var(--admin-accent);
 }
 
 .btn-primary:hover {
-    background: var(--admin-accent-hover);
+    background: rgba(6, 95, 212, 0.08);
 }
 
 .btn-outline {
     background: transparent;
     color: var(--admin-accent);
-    border: 1px solid var(--admin-border);
+    border: 1px solid var(--admin-accent);
 }
 
 .btn-outline:hover {
@@ -573,18 +577,20 @@ nav.ytcp-navigation-drawer * {
 }
 
 .btn-danger {
-    background: var(--admin-error);
-    color: #fff;
+    background: transparent;
+    color: var(--admin-error);
+    border: 1px solid var(--admin-error);
 }
 
 .btn-danger:hover {
-    background: #b00020;
+    background: rgba(204, 0, 0, 0.08);
 }
 
 .btn-sm {
     height: 30px;
     padding: 0 12px;
     font-size: 13px;
+    line-height: 1;
 }
 
 .btn-link {
@@ -602,12 +608,34 @@ nav.ytcp-navigation-drawer * {
 }
 
 /* ============================================
-   SECTION 9: Detail Page Layout
+   SECTION 9: Detail Page Layout (2-Column)
    ============================================ */
 
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.detail-header .page-title {
+    margin-bottom: 0;
+}
+
+.detail-columns {
+    display: flex;
+    gap: 12px;
+}
+
+.detail-col {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Legacy layout (keep for backward compat) */
 .detail-layout {
     display: flex;
-    gap: 24px;
+    gap: 12px;
 }
 
 .detail-main {
@@ -623,27 +651,27 @@ nav.ytcp-navigation-drawer * {
 .detail-section {
     background: var(--admin-bg-primary);
     border: 1px solid var(--admin-border);
-    border-radius: var(--ytcp-l-border-radius);
-    padding: 20px;
-    margin-bottom: 16px;
+    border-radius: var(--ytcp-xl-border-radius);
+    padding: 14px;
+    margin-bottom: 10px;
 }
 
 .detail-section-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--admin-text-primary);
-    margin-bottom: 16px;
-    padding-bottom: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--admin-border-light);
 }
 
 .detail-field {
     display: flex;
-    padding: 8px 0;
+    padding: 5px 0;
 }
 
 .detail-field-label {
-    width: 130px;
+    width: 110px;
     flex-shrink: 0;
     font-size: 13px;
     color: var(--admin-text-secondary);
@@ -651,18 +679,101 @@ nav.ytcp-navigation-drawer * {
 }
 
 .detail-field-value {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--admin-text-primary);
     flex: 1;
     word-break: break-all;
 }
 
+.detail-field-value.text-warn {
+    color: var(--admin-error);
+    font-weight: 500;
+}
+
+.detail-field-value.text-info {
+    color: var(--admin-accent);
+}
+
+/* Blue link tag for clickable names (e.g. report target → member detail) */
+.text-link {
+    color: var(--admin-accent);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.detail-field-value.text-success {
+    color: var(--admin-status-active);
+}
+
+.detail-field-value.text-muted {
+    color: var(--admin-text-disabled);
+}
+
+/* Summary amount card */
+.detail-amount-card {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--admin-accent);
+}
+
+/* Small action button for detail header */
+.btn-action-sm {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    height: 26px;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    font-size: 12px;
+    font-family: var(--admin-font);
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    background: transparent;
+    transition: background 0.15s;
+    line-height: 1;
+}
+
+.btn-action-sm.btn-primary {
+    color: var(--admin-accent);
+    border-color: var(--admin-accent);
+}
+
+.btn-action-sm.btn-primary:hover {
+    background: rgba(6, 95, 212, 0.08);
+}
+
+.btn-action-sm.btn-danger {
+    color: var(--admin-error);
+    border-color: var(--admin-error);
+}
+
+.btn-action-sm.btn-danger:hover {
+    background: rgba(204, 0, 0, 0.08);
+}
+
+.btn-action-sm.btn-outline {
+    color: var(--admin-accent);
+    border-color: var(--admin-accent);
+}
+
+.btn-action-sm.btn-outline:hover {
+    background: var(--admin-bg-sidebar-hover);
+}
+
 .detail-sidebar-card {
     background: var(--admin-bg-primary);
     border: 1px solid var(--admin-border);
-    border-radius: var(--ytcp-l-border-radius);
-    padding: 20px;
-    margin-bottom: 16px;
+    border-radius: var(--ytcp-xl-border-radius);
+    padding: 14px;
+    margin-bottom: 10px;
 }
 
 .detail-sidebar-title {
@@ -722,6 +833,7 @@ nav.ytcp-navigation-drawer * {
    SECTION 11: Modal
    ============================================ */
 
+/* YouTube Studio White Mode Modal */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -730,7 +842,7 @@ nav.ytcp-navigation-drawer * {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 200;
+    z-index: 2201;
     align-items: center;
     justify-content: center;
 }
@@ -740,24 +852,136 @@ nav.ytcp-navigation-drawer * {
 }
 
 .modal {
-    background: var(--admin-bg-primary);
-    border-radius: var(--ytcp-l-border-radius);
-    width: 480px;
-    max-width: 90vw;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    border-radius: 24px;
+    width: 576px;
+    min-width: 576px;
+    max-width: 576px;
+    min-height: 468px;
+    max-height: 763px;
+    box-shadow:
+        rgba(0,0,0,0.14) 0px 24px 38px 3px,
+        rgba(0,0,0,0.12) 0px 9px 46px 8px,
+        rgba(0,0,0,0.4) 0px 11px 15px -7px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--admin-text-primary);
+    border: 0 none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 48px 0;
 }
 
 .modal-header {
-    padding: 20px 24px 0;
-    font-size: 18px;
+    width: 576px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.modal-header-title {
+    font-size: 20px;
     font-weight: 500;
+    line-height: 28px;
+    color: var(--admin-text-primary);
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    padding: 7px 8px 5px;
+    margin: 12px 16px;
+    display: flex;
 }
 
 .modal-body {
-    padding: 16px 24px;
+    flex: 1;
+    overflow-y: visible;
+}
+
+.modal-body-scroll {
+    padding: 0 24px;
+    overflow-y: auto;
+    max-height: calc(763px - 64px - 68px);
+}
+
+.modal-body-text {
+    padding: 7px 0 17px;
+    font-size: 15px;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--admin-text-primary);
+}
+
+.modal-body-text p {
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.modal-body-text ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding: 0;
+    margin: 0 0 8px 24px;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.modal-body-text li {
+    list-style-type: disc;
+    list-style-position: outside;
+    display: list-item;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--admin-text-primary);
+}
+
+.modal-body-text a {
+    color: #3ea6ff;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.modal-body-text a:hover {
+    text-decoration: underline;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="date"] {
+    width: 100%;
+    height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--ytcp-m-border-radius);
     font-size: 14px;
-    color: var(--admin-text-secondary);
-    line-height: 1.6;
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    outline: none;
+    color: var(--admin-text-primary);
+    background: #ffffff;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
+
+.modal-body input[type="text"]:focus,
+.modal-body input[type="date"]:focus {
+    border-color: var(--admin-accent);
+}
+
+.modal-body input[readonly] {
+    background: var(--admin-bg-secondary);
+    cursor: default;
+    color: var(--admin-text-primary);
 }
 
 .modal-body textarea {
@@ -765,13 +989,15 @@ nav.ytcp-navigation-drawer * {
     min-height: 100px;
     padding: 12px;
     border: 1px solid var(--admin-border);
-    border-radius: var(--ytcp-s-border-radius);
+    border-radius: var(--ytcp-m-border-radius);
     font-size: 14px;
-    font-family: var(--admin-font);
+    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
     resize: vertical;
     margin-top: 8px;
     outline: none;
     color: var(--admin-text-primary);
+    background: #ffffff;
+    box-sizing: border-box;
 }
 
 .modal-body textarea:focus {
@@ -779,16 +1005,76 @@ nav.ytcp-navigation-drawer * {
 }
 
 .modal-body label {
+    display: block;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--admin-text-primary);
+    margin-top: 16px;
+}
+
+.modal-body label:first-child {
+    margin-top: 0;
 }
 
 .modal-footer {
-    padding: 12px 24px 20px;
+    width: 576px;
+    height: 68px;
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* YouTube Studio pill buttons for modals */
+.modal-footer .btn {
+    border-radius: 18px;
+    height: 36px;
+    min-height: 36px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 500;
+    line-height: 36px;
+    border: 0 none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.modal-footer .btn:last-child {
+    margin-right: 24px;
+}
+
+.modal-footer .btn-outline {
+    background: transparent;
+    color: var(--admin-text-secondary);
+    border: none;
+}
+
+.modal-footer .btn-outline:hover {
+    background: var(--admin-bg-sidebar-hover);
+}
+
+.modal-footer .btn-primary {
+    background: var(--admin-text-primary);
+    color: #ffffff;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #333333;
+}
+
+.modal-footer .btn-danger {
+    background: #cc0000;
+    color: #ffffff;
+}
+
+.modal-footer .btn-danger:hover {
+    background: #aa0000;
 }
 
 /* ============================================
@@ -862,7 +1148,189 @@ nav.ytcp-navigation-drawer * {
 }
 
 /* ============================================
-   SECTION 14: Responsive
+   SECTION 14.5: Table Pagination Footer
+   ============================================ */
+
+.table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px 16px;
+    border-top: 1px solid var(--admin-border);
+    font-size: 13px;
+    color: var(--admin-text-secondary);
+    gap: 16px;
+    user-select: none;
+}
+
+.table-footer .page-size-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Custom dropdown trigger (YouTube Studio style) */
+.page-size-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: var(--ytcp-s-border-radius);
+    transition: background 0.15s;
+    position: relative;
+}
+
+.page-size-trigger:hover {
+    background: var(--admin-bg-row-hover);
+}
+
+.page-size-trigger .trigger-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--admin-text-primary);
+}
+
+.page-size-trigger .trigger-arrow {
+    width: 16px;
+    height: 16px;
+    fill: var(--admin-text-secondary);
+    transition: transform 0.2s;
+}
+
+.page-size-trigger.open .trigger-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.page-size-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 4px;
+    background: var(--admin-bg-primary);
+    border-radius: var(--ytcp-m-border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+    min-width: 56px;
+    padding: 8px 0;
+    z-index: 50;
+}
+
+.page-size-menu.open {
+    display: block;
+}
+
+.page-size-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--admin-text-primary);
+    cursor: pointer;
+    transition: background 0.1s;
+    white-space: nowrap;
+}
+
+.page-size-menu-item:hover {
+    background: var(--admin-bg-row-hover);
+}
+
+.page-size-menu-item.selected {
+    background: var(--admin-bg-row-hover);
+    font-weight: 500;
+}
+
+.table-footer .page-description {
+    color: var(--admin-text-secondary);
+    white-space: nowrap;
+}
+
+.table-footer .page-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.table-footer .page-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--admin-text-secondary);
+    transition: background 0.15s;
+    padding: 0;
+}
+
+.table-footer .page-nav-btn:hover:not(:disabled) {
+    background: var(--admin-bg-row-hover);
+}
+
+.table-footer .page-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.table-footer .page-nav-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* ── Pagination: page number buttons (활성화 상태 포함) ── */
+.page-num-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--admin-text-secondary);
+    font-size: 13px;
+    font-family: var(--admin-font);
+    font-weight: 400;
+    line-height: 1;
+    transition: background 0.15s;
+    padding: 0;
+}
+
+.page-num-btn:hover {
+    background: var(--admin-bg-row-hover);
+}
+
+.page-num-btn.active {
+    background: transparent;
+    color: var(--admin-accent);
+    font-weight: 700;
+}
+
+.page-size-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-family: inherit;
+    color: #0d0d0d;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 20px 4px 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23606060' d='M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 16.914l6.707-6.707a1 1 0 000-1.414Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    outline: none;
+}
+
+/* ============================================
+   SECTION 15: Responsive
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -905,6 +1373,10 @@ nav.ytcp-navigation-drawer * {
     }
 
     .detail-layout {
+        flex-direction: column;
+    }
+
+    .detail-columns {
         flex-direction: column;
     }
 

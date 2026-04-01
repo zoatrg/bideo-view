@@ -187,16 +187,7 @@ a {
     font-weight: 500;
 }
 
-.sidebar-nav-item.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 4px;
-    background: var(--admin-text-sidebar-active);
-    border-radius: 0;
-}
+/* Blue bar removed — active state shown by bg highlight only */
 
 .sidebar-nav-icon {
     width: 24px;
@@ -423,12 +414,13 @@ a {
 }
 
 .btn-primary {
-    background: var(--admin-accent);
-    color: #fff;
+    background: transparent;
+    color: var(--admin-accent);
+    border: 1px solid var(--admin-accent);
 }
 
 .btn-primary:hover {
-    background: var(--admin-accent-hover);
+    background: rgba(6, 95, 212, 0.08);
 }
 
 .btn-outline {
@@ -442,12 +434,13 @@ a {
 }
 
 .btn-danger {
-    background: var(--admin-error);
-    color: #fff;
+    background: transparent;
+    color: var(--admin-error);
+    border: 1px solid var(--admin-error);
 }
 
 .btn-danger:hover {
-    background: #b00020;
+    background: rgba(204, 0, 0, 0.08);
 }
 
 .btn-sm {
@@ -632,6 +625,15 @@ a {
     display: flex;
     justify-content: flex-end;
     gap: 8px;
+}
+
+.modal-footer .btn-outline {
+    color: var(--admin-text-secondary);
+    border: none;
+}
+
+.modal-footer .btn-outline:hover {
+    background: var(--admin-bg-sidebar-hover);
 }
 
 /* === Toast === */
