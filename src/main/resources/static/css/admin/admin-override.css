@@ -385,8 +385,6 @@ nav.ytcp-navigation-drawer * {
 
 .filter-tab:hover {
     color: var(--admin-text-primary);
-    background: var(--admin-bg-sidebar-hover);
-    border-radius: 8px 8px 0 0;
 }
 
 .filter-tab:hover::after {
