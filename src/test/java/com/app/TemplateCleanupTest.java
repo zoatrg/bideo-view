@@ -98,6 +98,34 @@ class TemplateCleanupTest {
         assertTrue(shellScript.contains("data-yt-shell-menu-toggle"));
     }
 
+    @Test
+    void mainTemplateUsesOnlyStandardHtmlTagsForMoviesScreen() throws IOException {
+        String mainTemplate = readResource("templates/main/main.html");
+        String mainStyles = readResource("static/css/main/main-standardized.css");
+        String mainScript = readResource("static/js/main/main-standardized.js");
+
+        assertTrue(mainTemplate.contains("templates/layout/youtube-shell :: ytShellHead"));
+        assertTrue(mainTemplate.contains("templates/layout/youtube-shell :: ytShellChrome"));
+        assertTrue(mainTemplate.contains("templates/layout/youtube-shell :: ytShellScripts"));
+        assertTrue(mainTemplate.contains("../../static/css/main/main-standardized.css"));
+        assertTrue(mainTemplate.contains("../../static/js/main/main-standardized.js"));
+        assertTrue(mainTemplate.contains("data-main-root"));
+        assertTrue(mainTemplate.contains("영화 및 프로그램"));
+        assertTrue(mainTemplate.contains("나를 위한 Primetime 영화 추천"));
+        assertTrue(mainTemplate.contains("최신작"));
+        assertTrue(mainTemplate.contains("명작"));
+        assertTrue(mainTemplate.contains("아바타: 불과 재"));
+        assertTrue(mainTemplate.contains("F1 (F1 The Movie)"));
+        assertTrue(mainTemplate.contains("하늘의 푸르름을 아는 사람이여"));
+
+        assertFalse(mainTemplate.matches("(?s).*</?(?:ytd|yt|tp-yt|iron|paper|dom|badge-shape|custom-style|.*-view-model)[a-z0-9:_-]*\\b.*"));
+
+        assertTrue(mainStyles.contains(".movies-page"));
+        assertTrue(mainStyles.contains(".movies-shelf__track"));
+        assertTrue(mainScript.contains("data-main-shelf"));
+        assertTrue(mainScript.contains("data-main-chip"));
+    }
+
     private boolean resourceExists(String path) {
         return new ClassPathResource(path).exists();
     }
