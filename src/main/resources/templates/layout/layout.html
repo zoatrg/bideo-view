@@ -3,6 +3,8 @@
 
 <head>
   <th:block th:fragment="ytShellHead(pageTitle)">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${pageTitle}">Bideo</title>
     <link rel="stylesheet" href="../../static/css/common/font.css" />
     <link rel="stylesheet" href="../../static/css/layout/youtube-shell-overrides.css" />
@@ -58,6 +60,13 @@
         </div>
 
         <div class="yt-shell__actions">
+          <button class="yt-shell__icon-button yt-shell__search-toggle-mobile" type="button" aria-label="검색" data-yt-shell-search-toggle aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+              <path
+                d="M11 2a9 9 0 1 0 5.64 16.01l3.68 3.69 1.41-1.41-3.69-3.68A9 9 0 0 0 11 2Zm0 2a7 7 0 1 1 0 14a7 7 0 0 1 0-14Z"
+                fill="currentColor" />
+            </svg>
+          </button>
           <button class="yt-shell__pill-button" type="button" aria-label="만들기" data-yt-shell-create-toggle aria-expanded="false">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
               <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2Z" fill="currentColor" />
