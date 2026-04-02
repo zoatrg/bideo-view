@@ -35,6 +35,43 @@ ytd-carousel-header-renderer {
     background-color: #000; /* 전체 배경을 짙은 검은색으로 고정 */
 }
 
+#header.ytd-browse {
+    position: relative;
+}
+
+.gallery-top-actions {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-top-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 999px;
+    background: inherit;
+    color: #ffffff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.gallery-top-action-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.gallery-top-action-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
 ytd-default-promo-panel-renderer {
     display: flex;
     position: relative;
@@ -338,5 +375,44 @@ ytd-rich-shelf-renderer h2, .content-row-section h2 {
     ytd-default-promo-panel-renderer { height: 320px; }
     #hero { width: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50%); }
     #content.ytd-default-promo-panel-renderer { width: 100%; align-items: center; text-align: center; }
-    .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .video-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.work-action-sheet {
+    position: absolute;
+    left: 1651px;
+    top: 106px;
+    z-index: 3;
+    width: 180px;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.98);
+    color: #111111;
+    box-shadow: none;
+}
+
+.work-action-sheet button.danger {
+    color: #ed4956;
+    font-weight: 600;
+}
+.work-action-sheet button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 14px;
+    color: #262626;
+    cursor: pointer;
+    line-height: 1.5;
+}
+.work-action-sheet button + button {
+    border-top: 1px solid #efefef;
+}
+.work-action-sheet button.cancel{
+    color: #262626;
+}
+
+.work-action-sheet button + button {
+    border-top: 1px solid #efefef;
 }
