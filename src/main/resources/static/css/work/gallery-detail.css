@@ -1,0 +1,283 @@
+:root {
+    --main-bg: #ffffff;
+    --txt-black: #0f0f0f;
+    --txt-gray: #606060;
+    --yt-white: #ffffff;
+    --line: rgba(0, 0, 0, 0.1);
+    --yt-font: "Roboto", "Arial", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--yt-font);
+    background-color: var(--main-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base Layout */
+.gallery-container {
+    max-width: 100%;
+}
+
+/* [핵심] 50/50 무한 페이드 배너 스타일 */
+ytd-carousel-header-renderer {
+    display: block;
+    width: 100%;
+    background-color: #000; /* 전체 배경을 짙은 검은색으로 고정 */
+}
+
+ytd-default-promo-panel-renderer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 560px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/* 우측 사진 영역: 마스크 기법을 사용하여 왼쪽으로 갈수록 투명하게 소멸 */
+#hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%; /* 페이드 구간 확보를 위해 50%보다 넓게 설정 */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    /* 마스크 적용: 왼쪽(40%)까지는 완전 투명, 오른쪽(75%)부터 완전 불투명 */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 35%, rgba(0,0,0,0.5) 55%, black 80%);
+    mask-image: linear-gradient(to right, transparent 0%, transparent 35%, rgba(0,0,0,0.5) 55%, black 80%);
+}
+
+/* 텍스트 가독성을 위한 전체적인 어두운 톤 유지 */
+#scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 사진의 채도를 살짝 낮춰 텍스트 강조 */
+    z-index: 2;
+}
+
+/* 좌측 콘텐츠 영역: 검은색 배경 위에 배치 */
+#content.ytd-default-promo-panel-renderer {
+    position: relative;
+    z-index: 3;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: transparent; /* 배경은 부모의 #000을 따름 */
+}
+
+.promo-text-wrapper {
+    width: 100%;
+}
+
+#description.style-scope {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#hero-title.ytd-default-promo-panel-renderer {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0 0 32px 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.btn-play-all-main {
+    background-color: var(--yt-white);
+    color: #000;
+    border: none;
+    border-radius: 24px;
+    padding: 0 32px;
+    height: 48px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 60px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-play-all-main:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.05);
+}
+
+/* 하단 썸네일 내비게이션 */
+#pagination-thumbnails {
+    display: flex;
+    gap: 12px;
+}
+
+#pagination-thumbnails button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 90px;
+    opacity: 0.4;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+#pagination-thumbnails button.selected {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.thumb-img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.thumb-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+button.selected .progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    animation: yt-progress 7500ms linear forwards;
+}
+
+@keyframes yt-progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Navigation Tabs */
+.gallery-nav {
+    border-bottom: 1px solid var(--line);
+    background: var(--main-bg);
+}
+
+.gallery-nav ul {
+    list-style: none;
+    padding: 0 80px;
+    margin: 0;
+    display: flex;
+    height: 56px;
+    align-items: center;
+    gap: 40px;
+}
+
+.gallery-nav li {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--txt-gray);
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-nav li.active {
+    color: var(--txt-black);
+}
+
+.gallery-nav li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0f0f0f;
+}
+
+/* Contents Section */
+.gallery-content {
+    padding: 40px 80px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.shorts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.video-item .thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #eee;
+    margin-bottom: 12px;
+}
+
+.shorts-thumb {
+    aspect-ratio: 9 / 16 !important;
+}
+
+.video-item .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-meta h3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.item-meta p {
+    font-size: 14px;
+    color: var(--txt-gray);
+}
+
+ytd-rich-shelf-renderer h2, .content-row-section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    #content.ytd-default-promo-panel-renderer { padding: 0 40px; }
+    .gallery-nav ul, .gallery-content { padding-left: 40px; padding-right: 40px; }
+}
+
+@media (max-width: 768px) {
+    ytd-default-promo-panel-renderer { height: 450px; }
+    #hero { width: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50%); }
+    #content.ytd-default-promo-panel-renderer { width: 100%; align-items: center; text-align: center; }
+}

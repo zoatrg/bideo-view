@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Detail | BIDEO</title>
+    <th:block th:replace="templates/layout/youtube-shell :: ytShellHead('Gallery Detail - Bideo')"></th:block>
+    <!-- 새로 만든 CSS 파일 연결 (상대 경로) -->
+    <link rel="stylesheet" href="../../static/css/work/gallery-detail.css" th:href="@{/css/work/gallery-detail.css}">
+</head>
+<body class="gallery-detail-body">
+    <div th:replace="templates/layout/youtube-shell :: ytShellChrome('gallery')"></div>
+
+    <main class="yt-shell__page-content gallery-page">
+        <ytd-page-manager id="page-manager" class="style-scope ytd-app">
+            <ytd-browse class="style-scope ytd-page-manager" rounded-container="" page-subtype="home">
+                
+                <div id="header" class="style-scope ytd-browse">
+                    <ytd-carousel-header-renderer class="style-scope ytd-browse">
+                        <div id="contents" class="style-scope ytd-carousel-header-renderer">
+                            <ytd-carousel-item-renderer class="style-scope ytd-carousel-header-renderer grid grid-disabled">
+                                <div id="carousel-item" class="style-scope ytd-carousel-item-renderer">
+                                    <ytd-default-promo-panel-renderer class="style-scope ytd-carousel-item-renderer" panel-layout="DEFAULT_PROMO_PANEL_RENDERER_LAYOUT_B">
+                                        
+                                        <div id="hero" class="style-scope ytd-default-promo-panel-renderer" 
+                                             style="background-image: url('https://i.ytimg.com/vi/JUSvuYc02WA/maxresdefault.jpg');"></div>
+                                        <div id="scrim" class="style-scope ytd-default-promo-panel-renderer"></div>
+                                        
+                                        <div id="content" class="style-scope ytd-default-promo-panel-renderer grid grid-disabled">
+                                            <div class="promo-text-wrapper">
+                                                <yt-formatted-string id="description" class="style-scope ytd-default-promo-panel-renderer">
+                                                    <span style="color: rgba(255, 255, 255, 0.6); letter-spacing: 1px;">FEATURED CONTENT</span>
+                                                </yt-formatted-string>
+                                                
+                                                <h1 id="hero-title" class="style-scope ytd-default-promo-panel-renderer">PHOTO FINISH THRILLER! 📸</h1>
+                                                
+                                                <div id="action-button" class="style-scope ytd-default-promo-panel-renderer">
+                                                    <button class="btn-play-all-main">지금 시청하기</button>
+                                                </div>
+
+                                                <!-- [추가] 시청하기 아래 썸네일 내비게이션 영역 -->
+                                                <div id="pagination-thumbnails" class="style-scope ytd-carousel-item-renderer">
+                                                    <button class="selected style-scope ytd-carousel-item-renderer">
+                                                        <div class="thumb-img-wrapper">
+                                                            <img src="https://i.ytimg.com/vi/JUSvuYc02WA/hqdefault.jpg" alt="Thumb 1">
+                                                        </div>
+                                                        <div class="progress-bar style-scope ytd-carousel-item-renderer"></div>
+                                                    </button>
+                                                    <button class="style-scope ytd-carousel-item-renderer">
+                                                        <div class="thumb-img-wrapper">
+                                                            <img src="https://i.ytimg.com/vi/t8ENzGqyiMI/hqdefault.jpg" alt="Thumb 2">
+                                                        </div>
+                                                        <div class="progress-bar style-scope ytd-carousel-item-renderer"></div>
+                                                    </button>
+                                                    <button class="style-scope ytd-carousel-item-renderer">
+                                                        <div class="thumb-img-wrapper">
+                                                            <img src="https://i.ytimg.com/vi/nMQpvfvQwvQ/hqdefault.jpg" alt="Thumb 3">
+                                                        </div>
+                                                        <div class="progress-bar style-scope ytd-carousel-item-renderer"></div>
+                                                    </button>
+                                                    <button class="style-scope ytd-carousel-item-renderer">
+                                                        <div class="thumb-img-wrapper">
+                                                            <img src="https://i.ytimg.com/vi/qWgIS_sAY4o/hqdefault.jpg" alt="Thumb 4">
+                                                        </div>
+                                                        <div class="progress-bar style-scope ytd-carousel-item-renderer"></div>
+                                                    </button>
+                                                    <button class="style-scope ytd-carousel-item-renderer">
+                                                        <div class="thumb-img-wrapper">
+                                                            <img src="https://i.ytimg.com/vi/xYocCSrmvGw/hqdefault.jpg" alt="Thumb 5">
+                                                        </div>
+                                                        <div class="progress-bar style-scope ytd-carousel-item-renderer"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </ytd-default-promo-panel-renderer>
+                                </div>
+                            </ytd-carousel-item-renderer>
+                        </div>
+                    </ytd-carousel-header-renderer>
+
+                    <nav class="gallery-nav">
+                        <ul>
+                            <li class="active">홈</li>
+                            <li>동영상</li>
+                            <li>쇼츠</li>
+                            <li>재생목록</li>
+                            <li>커뮤니티</li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <ytd-two-column-browse-results-renderer class="style-scope ytd-browse grid grid-disabled">
+                    <div id="primary" class="style-scope ytd-two-column-browse-results-renderer">
+                        <ytd-rich-grid-renderer class="style-scope ytd-two-column-browse-results-renderer">
+                            <div id="contents" class="style-scope ytd-rich-grid-renderer">
+                                <!-- Shorts 섹션 -->
+                                <ytd-rich-section-renderer class="style-scope ytd-rich-grid-renderer">
+                                    <ytd-rich-shelf-renderer class="style-scope ytd-rich-section-renderer" is-shorts="">
+                                        <h2 class="style-scope ytd-rich-shelf-renderer">Shorts</h2>
+                                        <div class="video-grid shorts-grid">
+                                            <div class="video-item shorts-item" th:each="i : ${#numbers.sequence(1, 5)}">
+                                                <div class="thumb shorts-thumb">
+                                                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=640&q=80" alt="Shorts">
+                                                </div>
+                                                <div class="item-meta">
+                                                    <h3>Shorts 제목 샘플</h3>
+                                                    <p>조회수 100만회</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ytd-rich-shelf-renderer>
+                                </ytd-rich-section-renderer>
+
+                                <!-- 동영상 그리드 -->
+                                <div class="content-row-section">
+                                    <h2>동영상</h2>
+                                    <div class="video-grid">
+                                        <div class="video-item" th:each="i : ${#numbers.sequence(1, 8)}">
+                                            <div class="thumb">
+                                                <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=640&q=80" alt="Thumbnail">
+                                            </div>
+                                            <div class="item-meta">
+                                                <h3>일반 동영상 제목 샘플</h3>
+                                                <p>조회수 1.2만회 • 3일 전</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ytd-rich-grid-renderer>
+                    </div>
+                </ytd-two-column-browse-results-renderer>
+            </ytd-browse>
+        </ytd-page-manager>
+    </main>
+
+    <th:block th:replace="templates/layout/youtube-shell :: ytShellScripts()"></th:block>
+</body>
+</html>
