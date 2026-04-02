@@ -1,0 +1,598 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.Dashboard-Shell {
+    min-width: 0 !important;
+}
+
+body {
+    margin: 0;
+    color: #0f0f0f;
+    background: #fff;
+    font-family: "Roboto", "Noto Sans KR", Arial, sans-serif;
+}
+
+.Dashboard-Page {
+    width: 100%;
+    max-width: 1312px;
+    margin: 0 auto;
+    padding: 12px 20px 40px;
+}
+
+.Dashboard-MainTabs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px 18px;
+    overflow-x: auto;
+}
+
+.Dashboard-MainTab {
+    min-height: 36px;
+    padding: 0 16px;
+    border: 1px solid #dadce0;
+    border-radius: 999px;
+    background: #fff;
+    color: #606060;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.Dashboard-MainTab.is-active {
+    border-color: #0f0f0f;
+    background: #0f0f0f;
+    color: #fff;
+}
+
+.Dashboard-MainPanel {
+    display: none;
+}
+
+.Dashboard-MainPanel.is-active {
+    display: block;
+}
+
+.Dashboard-Header,
+.Dashboard-Toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.Dashboard-Header {
+    padding: 0 16px 8px;
+}
+
+.Dashboard-Title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.Dashboard-TonalButton {
+    min-height: 36px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: #f2f2f2;
+    color: #0f0f0f;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Dashboard-Toolbar {
+    padding: 0 16px;
+}
+
+.Dashboard-Tabs {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    min-width: 0;
+}
+
+.Dashboard-Tab {
+    position: relative;
+    border: 0;
+    background: transparent;
+    color: #606060;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 12px 0 14px;
+    cursor: pointer;
+}
+
+.Dashboard-Tab.is-active {
+    color: #0f0f0f;
+}
+
+.Dashboard-Tab.is-active::after {
+    content: none;
+}
+
+.Dashboard-TabIndicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #0f0f0f;
+    border-radius: 999px;
+    transition: transform 180ms ease, width 180ms ease;
+    pointer-events: none;
+}
+
+.Dashboard-DateButton {
+    display: grid;
+    justify-items: end;
+    row-gap: 1px;
+    border: 0;
+    background: transparent;
+    color: #0f0f0f;
+    position: relative;
+    padding: 4px 24px 10px 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.Dashboard-DatePicker {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.Dashboard-DateButton svg {
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Dashboard-DateRange {
+    font-size: 12px;
+    line-height: 18px;
+    color: #606060;
+    font-weight: 400;
+}
+
+.Dashboard-DateLabel {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.Dashboard-DateMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 10;
+    min-width: 160px;
+    padding: 8px;
+    border: 1px solid #e5e8eb;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.Dashboard-DateOption {
+    width: 100%;
+    min-height: 38px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: #4e5968;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.Dashboard-DateOption:hover,
+.Dashboard-DateOption.is-active {
+    background: #f2f4f6;
+    color: #191f28;
+}
+
+.Dashboard-Rule {
+    height: 1px;
+    margin-top: 1px;
+    background: #e5e5e5;
+}
+
+.Dashboard-Panel {
+    display: none;
+    min-width: 0;
+    padding: 18px 16px 0;
+}
+
+.Dashboard-Panel.is-active {
+    display: block;
+}
+
+.Dashboard-Card,
+.Dashboard-EmptyCard {
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: #fff;
+    min-width: 0;
+}
+
+.Dashboard-SummaryCard {
+    overflow: hidden;
+}
+
+.Dashboard-Metrics {
+    display: grid;
+}
+
+.Dashboard-Metrics--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.Dashboard-Metrics--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.Dashboard-Metric {
+    min-width: 0;
+    min-height: 82px;
+    padding: 12px 18px;
+    text-align: center;
+    border: 0;
+    background: #fff;
+    border-right: 1px solid #e5e5e5;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.Dashboard-Metric::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    transition: background-color 180ms ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.Dashboard-Metric:last-child {
+    border-right: 0;
+}
+
+.Dashboard-Metric.is-active {
+    background: #f8fbff;
+}
+
+.Dashboard-Metric.is-pressing::before {
+    background: rgba(49, 130, 246, 0.06);
+}
+
+.Dashboard-Metric.is-active .Dashboard-MetricKey {
+    color: #2563eb;
+}
+
+.Dashboard-MetricRipple {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    border-radius: 50%;
+    background: rgba(49, 130, 246, 0.24);
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.Dashboard-MetricRipple.is-pressing {
+    transition: transform 420ms ease-out, opacity 160ms ease-out;
+    transform: scale(var(--ripple-scale, 18));
+    opacity: 0.55;
+}
+
+.Dashboard-MetricRipple.is-releasing {
+    transition: opacity 240ms ease-out;
+    opacity: 0;
+}
+
+.Dashboard-MetricKey {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    color: #606060;
+    font-weight: 500;
+}
+
+.Dashboard-MetricValue {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-top: 3px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.Dashboard-Chart {
+    padding: 8px 18px 18px;
+}
+
+.Dashboard-ChartHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 18px;
+}
+
+.Dashboard-ChartEyebrow {
+    margin: 0;
+    color: #8b95a1;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.Dashboard-ChartTitle {
+    margin: 4px 0 0;
+    color: #191f28;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.Dashboard-ChartSummary {
+    margin: 0;
+    max-width: 360px;
+    color: #6b7684;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+}
+
+.Dashboard-ChartCanvasWrap {
+    min-height: 280px;
+    padding: 8px 0 4px;
+}
+
+.Dashboard-Grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.Dashboard-SectionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 18px 16px 0;
+}
+
+.Dashboard-InfoCard {
+    padding: 16px 20px 18px;
+}
+
+.Dashboard-CardHead h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+
+.Dashboard-CardHead p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: #606060;
+    overflow-wrap: anywhere;
+}
+
+.Dashboard-Chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.Dashboard-Chip {
+    min-height: 30px;
+    padding: 0 11px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    background: #fff;
+    color: #606060;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.Dashboard-Chip.is-active {
+    color: #0f0f0f;
+    background: #f8f8f8;
+}
+
+.Dashboard-Muted {
+    margin: 22px 0 0;
+    color: #606060;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.Dashboard-CardFooter {
+    margin-top: 18px;
+}
+
+.Dashboard-StackRows,
+.Dashboard-Blocks,
+.Dashboard-BarList {
+    display: grid;
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.Dashboard-StackRows {
+    border: 1px solid #efefef;
+    border-radius: 12px;
+    overflow: hidden;
+    gap: 0;
+}
+
+.Dashboard-StackRow,
+.Dashboard-Block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 0 18px;
+    background: #fafafa;
+    border-top: 1px solid #efefef;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.Dashboard-StackRow:first-child {
+    border-top: 0;
+}
+
+.Dashboard-Block {
+    border: 1px solid #efefef;
+    border-radius: 12px;
+}
+
+.Dashboard-BarRow {
+    display: grid;
+    grid-template-columns: 86px 1fr 32px;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.Dashboard-BarTrack {
+    height: 8px;
+    border-radius: 999px;
+    background: #efefef;
+    overflow: hidden;
+}
+
+.Dashboard-BarFill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: #7a70ff;
+}
+
+.Dashboard-BarFill--wide {
+    width: 68%;
+}
+
+.Dashboard-BarFill--narrow {
+    width: 22%;
+}
+
+.Dashboard-BarFill--none {
+    width: 0;
+}
+
+.Dashboard-EmptyCard {
+    padding: 32px 24px;
+}
+
+.Dashboard-EmptyCard strong {
+    display: block;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+.Dashboard-EmptyCard p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #606060;
+    line-height: 21px;
+}
+
+@media (max-width: 1024px) {
+    .Dashboard-Header,
+    .Dashboard-Toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Dashboard-DateButton {
+        justify-items: start;
+    }
+
+    .Dashboard-DateButton svg {
+        display: none;
+    }
+
+    .Dashboard-Metrics--4,
+    .Dashboard-Metrics--3,
+    .Dashboard-Grid,
+    .Dashboard-SectionGrid,
+    .Dashboard-ChartHeader {
+        grid-template-columns: 1fr;
+    }
+
+    .Dashboard-Metric {
+        text-align: left;
+        border-right: 0;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .Dashboard-Metric:first-child {
+        border-top: 0;
+    }
+
+    .Dashboard-ChartHeader {
+        display: grid;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    .Dashboard-Page {
+        padding-inline: 12px;
+    }
+
+    .Dashboard-Header,
+    .Dashboard-Toolbar,
+    .Dashboard-Panel {
+        padding-inline: 8px;
+    }
+
+    .Dashboard-Tabs {
+        width: 100%;
+        gap: 20px;
+        overflow-x: auto;
+    }
+
+    .Dashboard-CardHead h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .Dashboard-BarRow {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
