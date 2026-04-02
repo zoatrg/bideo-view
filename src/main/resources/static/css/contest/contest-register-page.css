@@ -18,6 +18,12 @@ button {
     color: inherit;
 }
 
+/* ===== 다크모드 오버라이드 ===== */
+#section {
+    background-color: #0f0f0f !important;
+    color: #f1f1f1;
+}
+
 /* ===== 페이지 ===== */
 .Register-Page {
     width: 100%;
@@ -31,7 +37,7 @@ button {
 .Register-Page-Title {
     font-size: 24px;
     font-weight: 400;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     line-height: 32px;
 }
 
@@ -60,12 +66,12 @@ button {
 .Register-Tab-Text {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 20px;
 }
 
 .Register-Tab--selected .Register-Tab-Text {
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
 }
 
 .Register-Tab-Indicator {
@@ -74,12 +80,12 @@ button {
     left: 16px;
     right: 16px;
     height: 2px;
-    background-color: var(--text-primary);
+    background-color: var(--dark-text-primary);
     border-radius: 1px;
 }
 
 .Register-Tab:hover .Register-Tab-Text {
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
 }
 
 /* 액션 버튼 그룹 */
@@ -97,8 +103,8 @@ button {
     height: 36px;
     padding: 0 16px;
     border-radius: 18px;
-    background-color: var(--bg-hover);
-    color: var(--text-primary);
+    background-color: var(--dark-bg-hover);
+    color: var(--dark-text-primary);
     font-size: 14px;
     font-weight: 500;
     white-space: nowrap;
@@ -117,14 +123,14 @@ button {
     border-radius: 18px;
     border: 1px solid #535353;
     background: transparent;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     font-size: 14px;
     font-weight: 500;
     white-space: nowrap;
 }
 
 .Register-Button-Outline:hover {
-    background-color: var(--bg-hover);
+    background-color: var(--dark-bg-hover);
     border-color: #717171;
 }
 
@@ -135,7 +141,7 @@ button {
     height: 36px;
     padding: 0 16px;
     border-radius: 18px;
-    background-color: var(--accent-blue);
+    background-color: var(--dark-accent-blue);
     color: #0f0f0f;
     font-size: 14px;
     font-weight: 500;
@@ -162,7 +168,7 @@ button {
 /* ===== 구분선 ===== */
 .Register-Divider {
     height: 1px;
-    background-color: var(--border-color);
+    background-color: var(--dark-border-color);
 }
 
 /* ===== 폼 영역 ===== */
@@ -178,7 +184,7 @@ button {
 .Register-Section-Title {
     font-size: 14px;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     line-height: 20px;
     margin-bottom: 4px;
 }
@@ -186,7 +192,7 @@ button {
 .Register-Section-Desc {
     font-size: 12px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 18px;
     margin-bottom: 16px;
 }
@@ -205,7 +211,7 @@ button {
 .Register-Upload-Guide {
     font-size: 12px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 18px;
     margin-bottom: 12px;
 }
@@ -215,7 +221,7 @@ button {
     width: 290px;
     height: 160px;
     border-radius: 8px;
-    background-color: var(--bg-secondary);
+    background-color: var(--dark-bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,7 +241,7 @@ button {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    background-color: var(--bg-secondary);
+    background-color: var(--dark-bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -255,7 +261,7 @@ button {
     width: 200px;
     height: 120px;
     border-radius: 8px;
-    background-color: var(--bg-secondary);
+    background-color: var(--dark-bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -284,22 +290,22 @@ button {
     border: 1px solid #535353;
     border-radius: 4px;
     background-color: transparent;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     font-size: 14px;
     font-family: inherit;
     outline: none;
 }
 
 .Register-Input::placeholder {
-    color: var(--text-muted);
+    color: var(--dark-text-muted);
 }
 
 .Register-Input:focus {
-    border-color: var(--accent-blue);
+    border-color: var(--dark-accent-blue);
 }
 
 .Register-Input[readonly] {
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     cursor: default;
 }
 
@@ -320,7 +326,7 @@ button {
     left: 16px;
     font-size: 11px;
     font-weight: 400;
-    color: var(--text-muted);
+    color: var(--dark-text-muted);
     line-height: 16px;
     pointer-events: none;
 }
@@ -343,12 +349,12 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
 }
 
 .Register-Input-CopyBtn:hover {
-    background-color: var(--bg-hover);
-    color: var(--text-primary);
+    background-color: var(--dark-bg-hover);
+    color: var(--dark-text-primary);
 }
 
 /* ===== 날짜 입력 행 ===== */
@@ -365,7 +371,7 @@ button {
 
 .Register-Date-Separator {
     font-size: 16px;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     padding-top: 8px;
 }
 
@@ -386,7 +392,7 @@ button {
     border: 1px solid #535353;
     border-radius: 4px;
     background-color: transparent;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     font-size: 14px;
     font-family: inherit;
     outline: none;
@@ -395,11 +401,11 @@ button {
 }
 
 .Register-Textarea::placeholder {
-    color: var(--text-muted);
+    color: var(--dark-text-muted);
 }
 
 .Register-Textarea:focus {
-    border-color: var(--accent-blue);
+    border-color: var(--dark-accent-blue);
 }
 
 [hidden] {
