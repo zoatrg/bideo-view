@@ -74,3 +74,55 @@
   --dark-accent-blue: #3ea6ff;
 
 }
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+html[data-theme="dark"] {
+  --color-text: var(--dark-text-primary);
+  --color-text-sub: var(--dark-text-secondary);
+  --color-text-muted: var(--dark-text-muted);
+  --color-border: var(--dark-border-color);
+  --color-border-strong: #4a4a4a;
+  --color-bg: var(--dark-bg-primary);
+  --color-bg-sub: #181818;
+  --color-bg-muted: var(--dark-bg-secondary);
+  --color-bg-disabled: #202020;
+  --color-surface: rgba(39, 39, 39, 0.92);
+  --color-overlay: rgba(0, 0, 0, 0.68);
+  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 20px 60px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.34);
+}
+
+.QuickThemeToggle {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 200;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 76px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+}
+
+html[data-theme="dark"] .QuickThemeToggle {
+  border-color: #454545;
+  background: rgba(39, 39, 39, 0.92);
+  color: var(--dark-text-primary);
+}
