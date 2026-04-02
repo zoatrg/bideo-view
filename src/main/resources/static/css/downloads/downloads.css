@@ -18,6 +18,12 @@ button {
     color: inherit;
 }
 
+/* ===== 다크모드 오버라이드 ===== */
+#section {
+    background-color: #0f0f0f !important;
+    color: #f1f1f1;
+}
+
 /* ===== 페이지 컨테이너 ===== */
 .Downloads-Page-Contents {
     width: 100%;
@@ -28,9 +34,9 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg-secondary);
+    background-color: var(--dark-bg-secondary);
     padding: 12px 16px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--dark-border-color);
     border-radius: 12px;
 }
 
@@ -48,7 +54,7 @@ button {
 .Downloads-Alert-Heading span {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     line-height: 20px;
     white-space: pre-wrap;
 }
@@ -56,7 +62,7 @@ button {
 .Downloads-Alert-Body span {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 20px;
     white-space: pre-wrap;
 }
@@ -77,7 +83,7 @@ button {
     padding: 0 16px;
     border: 1px solid #535353;
     border-radius: 18px;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     font-size: 14px;
     font-weight: 500;
     line-height: 36px;
@@ -86,7 +92,7 @@ button {
 }
 
 .Downloads-Button-Outline:hover {
-    background-color: var(--bg-hover);
+    background-color: var(--dark-bg-hover);
     border-color: #717171;
 }
 
@@ -117,7 +123,7 @@ button {
 
 /* ===== 셸프 헤더 ===== */
 .Downloads-Shelf-Body {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--dark-border-color);
     padding-bottom: 16px;
 }
 
@@ -139,14 +145,14 @@ button {
 .Downloads-Shelf-Title {
     font-size: 20px;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     line-height: 28px;
 }
 
 .Downloads-Shelf-Subtitle {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 20px;
 }
 
@@ -207,7 +213,7 @@ button {
 .Downloads-Time-Badge-Text {
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     line-height: 18px;
     letter-spacing: 0.5px;
 }
@@ -239,7 +245,7 @@ button {
 .Downloads-Video-Title {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
     line-height: 20px;
 }
 
@@ -254,12 +260,12 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--text-primary);
-    fill: var(--text-primary);
+    color: var(--dark-text-primary);
+    fill: var(--dark-text-primary);
 }
 
 .Downloads-Menu-Button:hover {
-    background-color: var(--bg-hover);
+    background-color: var(--dark-bg-hover);
 }
 
 .Downloads-Menu-Button svg {
@@ -272,12 +278,12 @@ button {
 .Downloads-Channel-Name {
     font-size: 12px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 18px;
 }
 
 .Downloads-Channel-Name:hover {
-    color: var(--text-primary);
+    color: var(--dark-text-primary);
 }
 
 /* ===== 메타데이터 ===== */
@@ -290,7 +296,7 @@ button {
 .Downloads-Meta-Item {
     font-size: 12px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 18px;
 }
 
@@ -304,7 +310,7 @@ button {
     margin-top: 4px;
     display: inline-flex;
     align-items: center;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--dark-border-color);
     border-radius: 4px;
     padding: 2px 6px;
 }
@@ -312,7 +318,7 @@ button {
 .Downloads-Status-Badge-Text {
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 18px;
 }
 
@@ -326,7 +332,7 @@ button {
 .Downloads-Message-Text {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 20px;
     text-align: center;
 }
@@ -363,7 +369,7 @@ button {
 .Downloads-Empty-Text {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--dark-text-secondary);
     line-height: 20px;
 }
 
