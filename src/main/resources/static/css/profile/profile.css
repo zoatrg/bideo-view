@@ -1,8 +1,10 @@
+/* 기본 바디 */
 body {
   background: #fff;
   color: #0f0f0f;
 }
 
+/* 프로필 페이지 래퍼 */
 .profilePage {
   min-height: 100vh;
   background: #fff;
@@ -22,16 +24,19 @@ body {
   min-height: calc(100vh - 56px);
 }
 
+/* 컨텐츠 영역 */
 .content {
   padding: 0 24px 80px 0;
 }
 
+/* 채널 섹션 / 영상 섹션 폭 */
 .channelSection,
 .videoSection {
   width: min(100%, 1304px);
   margin: 0 auto;
 }
 
+/* 배너 영역 */
 .banner {
   overflow: hidden;
   margin-top: 12px;
@@ -39,6 +44,7 @@ body {
   background: linear-gradient(120deg, #ff8a00 0%, #1f5eff 70%, #0d3ecf 100%);
 }
 
+/* 배너 내부 */
 .bannerArt {
   display: flex;
   flex-direction: column;
@@ -66,17 +72,20 @@ body {
   font-size: 14px;
 }
 
+/* 프로필 메타 영역 */
 .channelMeta {
   display: flex;
   gap: 24px;
   padding: 18px 0 12px;
 }
 
+/* 프로필 사진 */
 .avatar {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 96px;
+  min-width: 96px;
   height: 96px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ffb24d, #ff7a00);
@@ -92,10 +101,12 @@ body {
   object-fit: cover;
 }
 
+/* 프로필 정보 영역 */
 .metaInfo {
   min-width: 0;
 }
 
+/* 프로필 이름 */
 .channelTitle {
   font-size: 36px;
   line-height: 1.2;
@@ -103,6 +114,7 @@ body {
   letter-spacing: -0.03em;
 }
 
+/* 프로필 설명 텍스트 */
 .channelText {
   margin-top: 6px;
   color: #606060;
@@ -110,6 +122,7 @@ body {
   line-height: 1.5;
 }
 
+/* 프로필 뱃지 영역 */
 .profileBadgeRow {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +154,7 @@ body {
   color: #0f0f0f;
 }
 
+/* 액션 버튼 영역 */
 .channelActionRow {
   display: flex;
   margin-top: 14px;
@@ -223,6 +237,7 @@ body {
   filter: opacity(0.82);
 }
 
+/* 프로필 탭 영역 */
 .tabRow {
   display: flex;
   align-items: center;
@@ -230,6 +245,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
+/* 프로필 탭 버튼 */
 .tabBtn {
   position: relative;
   display: inline-flex;
@@ -279,16 +295,19 @@ body {
   height: 20px;
 }
 
+/* 작품 / 영상 섹션 */
 .videoSection {
   padding-top: 22px;
 }
 
+/* 정렬 필터 영역 */
 .filterRow {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
 }
 
+/* 정렬 버튼 */
 .filterBtn {
   height: 32px;
   padding: 0 14px;
@@ -311,16 +330,19 @@ body {
   color: #fff;
 }
 
+/* 작품 / 영상 카드 그리드 */
 .videoGrid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 26px 16px;
 }
 
+/* 영상 카드 */
 .videoCard {
   min-width: 0;
 }
 
+/* 썸네일 영역 */
 .videoThumb {
   position: relative;
   display: block;
@@ -366,6 +388,7 @@ body {
   transform: scale(1.02);
 }
 
+/* 영상 제목 */
 .videoTitle {
   margin-top: 10px;
   font-size: 13px;
@@ -378,6 +401,7 @@ body {
   color: #065fd4;
 }
 
+/* 영상 메타 */
 .videoMeta {
   margin-top: 6px;
   color: #606060;
@@ -421,6 +445,7 @@ body {
   }
 }
 
+/* 모달 공통 */
 .modal.none {
   display: none;
 }
@@ -436,6 +461,7 @@ body {
   background: rgba(15, 15, 15, 0.56);
 }
 
+/* 언팔로우 / 차단 모달 */
 .unsubscribeModalPanel {
   width: min(100%, 400px);
   border-radius: 16px;
@@ -499,6 +525,7 @@ body {
   background: #272727;
 }
 
+/* 공유 모달 */
 .workShareModalWrap {
   background: rgba(15, 15, 15, 0.62);
 }
@@ -719,6 +746,7 @@ body {
 }
 
 
+/* 더보기 버튼 */
 .moreBtn {
   min-width: 64px;
   height: 32px;
@@ -736,6 +764,7 @@ body {
   filter: opacity(0.72);
 }
 
+/* 설정 모달 */
 .profileSettingModalPanel {
   width: min(100%, 360px);
   border-radius: 20px;
@@ -799,6 +828,7 @@ body {
 
 
 
+/* 프로필 수정 모달 */
 .profileEditModalPanel {
   width: min(100%, 360px);
   border-radius: 20px;
@@ -875,6 +905,7 @@ body {
   display: none;
 }
 
+/* 아바타 수정 버튼 */
 .avatarEditable {
   position: relative;
   overflow: hidden;
@@ -924,6 +955,7 @@ body {
 
 
 
+/* 프로필 폼 */
 .profileFormBody {
   display: grid;
   gap: 12px;
@@ -987,6 +1019,7 @@ body {
   filter: opacity(0.82);
 }
 
+/* 팔로우 관리 모달 */
 .followManageModalPanel {
   width: min(100%, 560px);
   max-height: min(80vh, 720px);
@@ -1170,6 +1203,7 @@ body {
   padding: 0 14px;
 }
 
+/* 뱃지 관리 모달 */
 .badgeManageModalPanel {
   width: min(100%, 680px);
   max-height: min(84vh, 760px);
@@ -1296,6 +1330,7 @@ body {
   color: #6b7280;
 }
 
+/* 반응형 대응 */
 @media (max-width: 767px) {
   .followManageModalPanel {
     padding: 18px;

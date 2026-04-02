@@ -13,9 +13,12 @@
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
+    <!-- 내 프로필 메인 영역 -->
     <div id="section" class="profilePage section">
       <div class="content">
+        <!-- 채널 상단 영역 -->
         <div class="channelSection">
+          <!-- 배너 영역 -->
           <div class="banner">
             <div class="bannerArt">
               <span class="bannerBadge">배너 뱃지</span>
@@ -24,7 +27,9 @@
             </div>
           </div>
 
+          <!-- 프로필 메타 영역 -->
           <div class="channelMeta">
+            <!-- 프로필 사진 수정 버튼 -->
             <button type="button" class="avatar avatarEditable" data-profile-avatar-open>
               <span class="avatarValue" data-profile-avatar-value>N</span>
               <span class="avatarHover" aria-hidden="true">
@@ -34,6 +39,7 @@
                 </svg>
               </span>
             </button>
+            <!-- 프로필 정보 영역 -->
             <div class="metaInfo">
               <h1 class="channelTitle"><span data-profile-name>이름 영역</span> <a class="more" href="javascript:void(0)"></a></h1>
               <p class="channelText"><span data-profile-nickname>닉네임</span> · 팔로우 16.6만명 · 작품 1.56천개</p>
@@ -45,19 +51,23 @@
             </div>
           </div>
 
+          <!-- 프로필 탭 영역 -->
           <nav class="tabRow">
             <a href="javascript:void(0)" class="tabBtn is-active" data-channel-tab>예술관</a>
             <a href="javascript:void(0)" class="tabBtn" data-channel-tab>작품</a>
           </nav>
         </div>
 
+        <!-- 작품 / 영상 리스트 영역 -->
         <div class="videoSection">
+          <!-- 정렬 필터 영역 -->
           <div class="filterRow">
             <button type="button" class="filterBtn is-active" data-video-filter>최신순</button>
             <button type="button" class="filterBtn" data-video-filter>인기순</button>
             <button type="button" class="filterBtn" data-video-filter>오래된순</button>
           </div>
 
+          <!-- 작품 / 영상 카드 그리드 -->
           <div class="videoGrid">
             <article class="videoCard"><a href="javascript:void(0)" class="videoThumb thumb-01"><span>REAL ESTATE</span></a><h2 class="videoTitle">무주택자가 반드시 알아야 할 부동산 시장 흐름 정리</h2><p class="videoMeta">조회수 17만회 · 3주 전</p></article>
             <article class="videoCard"><a href="javascript:void(0)" class="videoThumb thumb-02"><span>AI PRODUCT</span></a><h2 class="videoTitle">개발자가 바로 써먹는 AI 프로덕트 설계 방법</h2><p class="videoMeta">조회수 8.7만회 · 1개월 전</p></article>
@@ -74,6 +84,7 @@
       </div>
     </div>
 
+    <!-- 프로필 수정 모달 -->
     <div id="profile-edit-modal" class="modal none">
       <div class="profileEditModalPanel">
         <div class="profileSettingModalHeader">
@@ -93,6 +104,7 @@
       </div>
     </div>
 
+    <!-- 프로필 설정 모달 -->
     <div id="profile-setting-modal" class="modal none">
       <div class="profileSettingModalPanel">
         <div class="profileSettingModalHeader">
@@ -109,6 +121,7 @@
       </div>
     </div>
 
+    <!-- 팔로우 관리 모달 -->
     <div id="follow-manage-modal" class="modal none">
       <div class="followManageModalPanel">
         <div class="profileSettingModalHeader">
@@ -138,6 +151,7 @@
       </div>
     </div>
 
+    <!-- 뱃지 관리 모달 -->
     <div id="badge-manage-modal" class="modal none">
       <div class="badgeManageModalPanel">
         <div class="profileSettingModalHeader">
@@ -154,6 +168,7 @@
       </div>
     </div>
 
+    <!-- 닉네임 수정 모달 -->
     <div id="nickname-edit-modal" class="modal none">
       <div class="profileEditModalPanel">
         <div class="profileSettingModalHeader">
@@ -171,6 +186,7 @@
       </div>
     </div>
 
+    <!-- 비밀번호 수정 모달 -->
     <div id="password-edit-modal" class="modal none">
       <div class="profileEditModalPanel">
         <div class="profileSettingModalHeader">
@@ -191,8 +207,10 @@
         </div>
       </div>
     </div>
-
+    
+    <!-- 공통 모달 스크립트 -->
     <script src="../../static/js/modal/event.js"></script>
+    <!-- 프로필 이벤트 스크립트 -->
     <script src="../../static/js/profile/event.js"></script>
   </body>
 </html>
