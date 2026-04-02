@@ -6,8 +6,10 @@ ex/
 key/
 *.zip
 application*
+src/main/resources/certs/
 .claude
 front
 ### STS ###
 .idea
 .gstack/
+certs

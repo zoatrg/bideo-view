@@ -116,6 +116,10 @@
   color: var(--yt-shell-muted);
 }
 
+.yt-shell__search-toggle-mobile {
+  display: none;
+}
+
 .yt-shell__search {
   display: flex;
   justify-content: center;
@@ -455,6 +459,10 @@ body[data-guide-collapsed="true"] .yt-shell__page-content {
     display: none;
   }
 
+  .yt-shell__search-toggle-mobile {
+    display: inline-flex;
+  }
+
   .yt-shell__guide {
     display: none;
   }
@@ -645,7 +653,7 @@ body[data-guide-collapsed="true"] .yt-shell__page-content {
     bottom: 0;
     width: 100% !important;
     max-width: 100%;
-    max-height: none;
+    max-height: none !important;
     border-radius: 0;
     box-shadow: none;
   }

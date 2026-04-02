@@ -1,0 +1,76 @@
+/* 토큰 영역 */
+:root {
+  /* 공통 */
+  --color-primary: #6800ea;
+  --color-primary-hover: #5300bb;
+  --color-primary-light: #f3e8ff;
+  --color-secondary: #5f6368;
+  --color-success: #20a464;
+  --color-warning: #f59e0b;
+  --color-danger: #e5484d;
+  --color-text: #0f172a;
+  --color-text-sub: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+  --color-bg: #ffffff;
+  --color-bg-sub: #f8fafc;
+  --color-bg-muted: #f3f4f6;
+  --color-bg-disabled: #eef2f7;
+  --color-surface: rgba(255, 255, 255, 0.88);
+  --color-overlay: rgba(15, 23, 42, 0.58);
+  --focus-ring: 0 0 0 4px rgba(255, 0, 51, 0.12);
+  --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 20px 60px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 30px 80px rgba(15, 23, 42, 0.18);
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 40px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --height-sm: 32px;
+  --height-md: 40px;
+  --height-lg: 48px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --z-dropdown: 40;
+  --z-modal: 80;
+  --z-toast: 120;
+
+  /* 레이아웃 변수 (layout.html 기준) */
+  --layout-header-height: 56px;
+  --layout-guide-width: 240px;
+  --layout-guide-collapsed-width: 72px;
+
+  /* 콘텐츠 영역 */
+  --content-top: var(--layout-header-height);
+  --content-left: var(--layout-guide-width);
+  --content-width: calc(100& - var(--layout-guide-width));
+  --content-padding: 24px;
+
+  /* 다크 테마 색상 */
+  --dark-bg-primary: #0f0f0f;
+  --dark-bg-secondary: #272727;
+  --dark-bg-hover: rgba(255, 255, 255, 0.1);
+  --dark-border-color: #3a3a3a;
+  --dark-text-primary: #f1f1f1;
+  --dark-text-secondary: #aaaaaa;
+  --dark-text-muted: #717171;
+  --dark-accent-blue: #3ea6ff;
+
+}
