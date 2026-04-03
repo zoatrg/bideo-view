@@ -1,10 +1,13 @@
+// 공유 상태
 const shareState = {
   selectedUsers: [],
 };
 
+// 프로필 이미지 임시 상태
 let pendingProfileAvatarImage = '';
 let pendingProfileAvatarMode = 'keep';
 
+// 아바타 호버 마크업
 const avatarHoverMarkup =
   '<span class="avatarHover" aria-hidden="true">' +
   '<svg viewBox="0 0 24 24" class="avatarHoverIcon">' +
@@ -13,14 +16,15 @@ const avatarHoverMarkup =
   '</svg>' +
   '</span>';
 
+// 기본 아바타 텍스트 계산
 function getDefaultAvatarText() {
-  const profileName = document.querySelector('[data-profile-name]')?.textContent?.trim() || 'N';
-  const compactName = profileName.replace(/\s+/g, '');
+  const profileNickname = document.querySelector('[data-profile-nickname]')?.textContent?.trim() || 'N';
+  const compactName = profileNickname.replace(/\s+/g, '');
   const hangulOnly = compactName.replace(/[^\uac00-\ud7a3]/g, '');
   const englishOnly = compactName.replace(/[^A-Za-z]/g, '');
 
   if (hangulOnly) {
-    return hangulOnly.slice(0, 2);
+    return hangulOnly.slice(-2);
   }
 
   if (englishOnly) {
@@ -30,24 +34,28 @@ function getDefaultAvatarText() {
   return compactName.charAt(0).toUpperCase() || 'N';
 }
 
+// 아바타 버튼 렌더링
 function renderAvatarButton(content) {
   const avatarOpen = document.querySelector('[data-profile-avatar-open]');
   if (!avatarOpen) return;
   avatarOpen.innerHTML = content + avatarHoverMarkup;
 }
 
+// 아바타 미리보기 렌더링
 function renderAvatarPreview(content) {
   const preview = document.querySelector('[data-profile-edit-preview]');
   if (!preview) return;
   preview.innerHTML = content;
 }
 
+// 기본 아바타 렌더링
 function renderDefaultAvatar() {
   const defaultText = getDefaultAvatarText();
   renderAvatarButton('<span class="avatarValue" data-profile-avatar-value>' + defaultText + '</span>');
   renderAvatarPreview(defaultText);
 }
 
+// 팔로우 관리 상태
 const followManageState = {
   activeTab: 'following',
   searchKeyword: '',
@@ -69,6 +77,7 @@ const followManageState = {
   },
 };
 
+// 뱃지 목록 데이터
 const BADGES = [
   { id: 'first_video', name: '첫 영상 업로드', grade: 'bronze', img: '../../static/images/badge/first_video_badge.png', owned: true },
   { id: 'write_contest', name: '공모전 참가', grade: 'bronze', img: '../../static/images/badge/write_contest_badge.png', owned: true },
@@ -81,6 +90,7 @@ const BADGES = [
   { id: 'gallery_views', name: '조회 1000만', grade: 'black', img: '../../static/images/badge/art_gallery_views_over_10_million.png', owned: false },
 ];
 
+// 뱃지 등급 라벨
 const GRADE_LABELS = {
   bronze: 'Bronze',
   silver: 'Silver',
@@ -88,8 +98,10 @@ const GRADE_LABELS = {
   black: 'Black',
 };
 
+// 선택된 대표 뱃지
 let selectedBadges = ['first_video', 'contest_award'];
 
+// 공유 칩 렌더링
 function renderShareChips() {
   const chips = document.querySelector('[data-share-chips]');
   const users = document.querySelectorAll('[data-share-user]');
@@ -106,12 +118,14 @@ function renderShareChips() {
   });
 }
 
+// 공유 버튼 상태 동기화
 function syncShareButtonState(isActive) {
   const shareButton = document.querySelector('[data-share-button]');
   if (!shareButton) return;
   shareButton.classList.toggle('is-shareBtn', isActive);
 }
 
+// 차단 버튼 상태 동기화
 function syncBlackButtonState(isBlocked) {
   const blackButton = document.querySelector('[data-black-button]');
   if (!blackButton) return;
@@ -120,6 +134,7 @@ function syncBlackButtonState(isBlocked) {
   blackButton.textContent = isBlocked ? '차단 해제' : '차단하기';
 }
 
+// 프로필 뱃지 렌더링
 function renderProfileBadges() {
   const container = document.querySelector('[data-profile-badges]');
 
@@ -136,6 +151,7 @@ function renderProfileBadges() {
     .join('');
 }
 
+// 뱃지 관리 그리드 렌더링
 function renderBadgeManageGrid() {
   const grid = document.querySelector('[data-badge-manage-grid]');
 
@@ -174,6 +190,7 @@ function renderBadgeManageGrid() {
   }).join('');
 }
 
+// 뱃지 선택 토글
 function toggleBadgeSelection(badgeId) {
   const badge = BADGES.find((item) => item.id === badgeId);
 
@@ -196,6 +213,7 @@ function toggleBadgeSelection(badgeId) {
   renderBadgeManageGrid();
 }
 
+// 팔로우 관리 요약 문구
 function getFollowManageSummary(tab, count) {
   if (tab === 'following') {
     return '현재 ' + count + '개의 팔로잉 계정을 관리하고 있습니다.';
@@ -208,6 +226,7 @@ function getFollowManageSummary(tab, count) {
   return '현재 ' + count + '개의 차단 계정을 관리하고 있습니다.';
 }
 
+// 팔로우 관리 빈 상태 문구
 function getFollowManageEmptyMessage(tab) {
   if (tab === 'following') {
     return '조건에 맞는 팔로잉 계정이 없습니다.';
@@ -220,10 +239,12 @@ function getFollowManageEmptyMessage(tab) {
   return '조건에 맞는 차단 계정이 없습니다.';
 }
 
+// 아바타 이니셜 추출
 function getInitialLetter(name) {
   return name ? name.trim().charAt(0) : '?';
 }
 
+// 팔로우 관리 액션 버튼 생성
 function getFollowManageActions(tab, item) {
   if (tab === 'following') {
     return '<button type="button" class="subscribeBtn is-subscribed" data-follow-manage-action="remove-following" data-follow-manage-id="' + item.id + '">팔로잉</button>';
@@ -243,6 +264,7 @@ function getFollowManageActions(tab, item) {
   return '<button type="button" class="followManageActionBtn" data-follow-manage-action="unblock" data-follow-manage-id="' + item.id + '">차단 해제</button>';
 }
 
+// 팔로우 관리 리스트 렌더링
 function renderFollowManageList() {
   const list = document.querySelector('[data-follow-manage-list]');
   const summary = document.querySelector('[data-follow-manage-summary]');
@@ -294,10 +316,12 @@ function renderFollowManageList() {
     .join('');
 }
 
+// 팔로우 관리 항목 제거
 function removeFollowManageItem(tab, itemId) {
   followManageState.lists[tab] = (followManageState.lists[tab] || []).filter((item) => item.id !== itemId);
 }
 
+// 클릭 이벤트 처리
 document.addEventListener('click', async (event) => {
   const modalOpenButton = event.target.closest('[data-modal-open]');
 
@@ -377,6 +401,10 @@ document.addEventListener('click', async (event) => {
     nicknameTargets.forEach((target) => {
       target.textContent = nextNickname;
     });
+
+    if (!document.querySelector('[data-profile-avatar-open] img')) {
+      renderDefaultAvatar();
+    }
 
     modalClose('nickname-edit-modal');
     return;
@@ -613,6 +641,7 @@ document.addEventListener('click', async (event) => {
   subscribeButton.textContent = subscribeButton.dataset.subscribeActive || '팔로잉';
 });
 
+// 입력 이벤트 처리
 document.addEventListener('input', (event) => {
   const followManageSearch = event.target.closest('[data-follow-manage-search]');
 
@@ -634,6 +663,7 @@ document.addEventListener('input', (event) => {
   }
 });
 
+// 파일 변경 이벤트 처리
 document.addEventListener('change', (event) => {
   const fileInput = event.target.closest('[data-profile-edit-file]');
 
@@ -655,6 +685,7 @@ document.addEventListener('change', (event) => {
   reader.readAsDataURL(file);
 });
 
+// 뱃지 / 팔로우 관리 클릭 이벤트
 document.addEventListener('click', (event) => {
   const badgeItem = event.target.closest('[data-badge-id]');
 
@@ -727,6 +758,7 @@ document.addEventListener('click', (event) => {
   }
 });
 
+// 모달 바깥 클릭 처리
 document.addEventListener('click', (event) => {
   const modal = event.target.closest('.modal');
   if (!modal || event.target !== modal) return;
@@ -736,17 +768,20 @@ document.addEventListener('click', (event) => {
   }
 });
 
+// ESC 키 처리
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     syncShareButtonState(false);
   }
 });
 
+// 초기 렌더링
 renderShareChips();
 syncBlackButtonState(document.querySelector('[data-black-button]')?.classList.contains('is-blocked') || false);
 renderFollowManageList();
 renderProfileBadges();
 
+// 기본 아바타 초기화
 if (document.querySelector('[data-profile-avatar-open]') && !document.querySelector('[data-profile-avatar-open] img')) {
   renderDefaultAvatar();
 }

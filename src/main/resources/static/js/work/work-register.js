@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var closeButton = document.getElementById("close-modal-button");
     var uploadCloseButton = document.getElementById("upload-close-button");
     var detailsCloseButton = document.getElementById("details-close-button");
+    var detailsBackButton = document.getElementById("details-back-button");
     var fileNameText = document.getElementById("selected-file-name");
     var detailsVideoTitle = document.getElementById("details-video-title");
     var videoFileLabel = document.getElementById("video-file-label");
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var playlistDropdownText = document.getElementById("playlist-dropdown-text");
     var playlistOptions = document.querySelectorAll(".playlist-option");
     var thumbnailUploadButtons = document.querySelectorAll(".thumbnail-upload-button");
+    var thumbnailFileInputs = document.querySelectorAll('input[id^="thumbnail-file-input-"]');
     var aiPromptModal = document.getElementById("ai-prompt-modal");
     var aiPromptCloseButton = document.getElementById("ai-prompt-close-button");
     var aiPromptInput = document.getElementById("ai-prompt-input");
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var aiPromptCloseTargets = document.querySelectorAll('[data-role="ai-prompt-close"]');
     var currentPreviewUrl = "";
     var currentAiPromptAttachmentUrl = "";
+    var thumbnailPreviewUrls = {};
 
     if (!modal || !dialogContent || !uploadScreen || !detailsScreen || !uploadPanel || !fileInput || !selectFileButton || !closeButton || !fileNameText) {
         return;
@@ -166,6 +169,45 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         aiPromptFileAttachment.hidden = false;
+    }
+
+    function renderThumbnailPreview(input, file) {
+        var placeholder;
+        var previewImage;
+        var oldUrl;
+
+        if (!input) {
+            return;
+        }
+
+        placeholder = input.closest(".thumbnail-placeholder");
+        if (!placeholder) {
+            return;
+        }
+
+        previewImage = placeholder.querySelector(".thumbnail-preview-image");
+        if (!previewImage) {
+            previewImage = document.createElement("img");
+            previewImage.className = "thumbnail-preview-image";
+            previewImage.alt = "썸네일 미리보기";
+            placeholder.appendChild(previewImage);
+        }
+
+        oldUrl = thumbnailPreviewUrls[input.id];
+        if (oldUrl) {
+            URL.revokeObjectURL(oldUrl);
+            delete thumbnailPreviewUrls[input.id];
+        }
+
+        if (!file || !file.type || file.type.indexOf("image/") !== 0) {
+            previewImage.removeAttribute("src");
+            placeholder.classList.remove("has-thumbnail-preview");
+            return;
+        }
+
+        thumbnailPreviewUrls[input.id] = URL.createObjectURL(file);
+        previewImage.src = thumbnailPreviewUrls[input.id];
+        placeholder.classList.add("has-thumbnail-preview");
     }
 
     function submitAiPrompt() {
@@ -381,6 +423,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function showUploadScreen() {
+        detailsScreen.hidden = true;
+        detailsScreen.classList.remove("is-active");
+        uploadScreen.hidden = false;
+        uploadScreen.classList.add("is-active");
+        dialogContent.classList.remove("is-details");
+    }
+
     function handleFiles(files) {
         var file = files && files[0];
 
@@ -437,6 +487,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (detailsCloseButton) {
         detailsCloseButton.addEventListener("click", closeModal);
+    }
+
+    if (detailsBackButton) {
+        detailsBackButton.addEventListener("click", showUploadScreen);
     }
 
     aiPromptCloseTargets.forEach(function (target) {
@@ -506,6 +560,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (targetInput) {
                 targetInput.click();
             }
+        });
+    });
+
+    thumbnailFileInputs.forEach(function (input) {
+        input.addEventListener("change", function () {
+            var file = input.files && input.files[0];
+            renderThumbnailPreview(input, file);
         });
     });
 
