@@ -28,9 +28,9 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg-secondary);
+    background-color: var(--color-bg-sub);
     padding: 12px 16px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-border);
     border-radius: 12px;
 }
 
@@ -48,7 +48,7 @@ button {
 .Downloads-Alert-Heading span {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--color-text);
     line-height: 20px;
     white-space: pre-wrap;
 }
@@ -56,7 +56,7 @@ button {
 .Downloads-Alert-Body span {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 20px;
     white-space: pre-wrap;
 }
@@ -75,9 +75,9 @@ button {
     overflow: hidden;
     height: 36px;
     padding: 0 16px;
-    border: 1px solid #535353;
+    border: 1px solid var(--color-border);
     border-radius: 18px;
-    color: var(--text-primary);
+    color: var(--color-text);
     font-size: 14px;
     font-weight: 500;
     line-height: 36px;
@@ -86,8 +86,8 @@ button {
 }
 
 .Downloads-Button-Outline:hover {
-    background-color: var(--bg-hover);
-    border-color: #717171;
+    background-color: var(--color-bg-muted);
+    border-color: var(--color-border-strong);
 }
 
 .Downloads-Button-Text {
@@ -115,9 +115,46 @@ button {
     border-radius: inherit;
 }
 
+/* ===== 필터 바 ===== */
+.Downloads-Filter-Bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.Downloads-Filter-Btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-sub);
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.Downloads-Filter-Btn:hover {
+    background-color: var(--color-bg-muted);
+    color: var(--color-text);
+}
+
+.Downloads-Filter-Btn--active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    font-weight: 600;
+}
+
+.Downloads-Filter-Btn--active:hover {
+    background-color: var(--color-primary-hover);
+    color: #ffffff;
+}
+
 /* ===== 셸프 헤더 ===== */
 .Downloads-Shelf-Body {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 16px;
 }
 
@@ -139,14 +176,14 @@ button {
 .Downloads-Shelf-Title {
     font-size: 20px;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--color-text);
     line-height: 28px;
 }
 
 .Downloads-Shelf-Subtitle {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 20px;
 }
 
@@ -207,7 +244,7 @@ button {
 .Downloads-Time-Badge-Text {
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: #ffffff;
     line-height: 18px;
     letter-spacing: 0.5px;
 }
@@ -239,7 +276,7 @@ button {
 .Downloads-Video-Title {
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--color-text);
     line-height: 20px;
 }
 
@@ -254,12 +291,12 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--text-primary);
-    fill: var(--text-primary);
+    color: var(--color-text-sub);
+    fill: var(--color-text-sub);
 }
 
 .Downloads-Menu-Button:hover {
-    background-color: var(--bg-hover);
+    background-color: var(--color-bg-muted);
 }
 
 .Downloads-Menu-Button svg {
@@ -272,12 +309,12 @@ button {
 .Downloads-Channel-Name {
     font-size: 12px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 18px;
 }
 
 .Downloads-Channel-Name:hover {
-    color: var(--text-primary);
+    color: var(--color-text);
 }
 
 /* ===== 메타데이터 ===== */
@@ -290,12 +327,12 @@ button {
 .Downloads-Meta-Item {
     font-size: 12px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 18px;
 }
 
 .Downloads-Meta-Item + .Downloads-Meta-Item::before {
-    content: "•";
+    content: "\2022";
     margin: 0 4px;
 }
 
@@ -304,7 +341,7 @@ button {
     margin-top: 4px;
     display: inline-flex;
     align-items: center;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-border);
     border-radius: 4px;
     padding: 2px 6px;
 }
@@ -312,7 +349,7 @@ button {
 .Downloads-Status-Badge-Text {
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 18px;
 }
 
@@ -326,7 +363,7 @@ button {
 .Downloads-Message-Text {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 20px;
     text-align: center;
 }
@@ -363,7 +400,7 @@ button {
 .Downloads-Empty-Text {
     font-size: 14px;
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--color-text-sub);
     line-height: 20px;
 }
 
