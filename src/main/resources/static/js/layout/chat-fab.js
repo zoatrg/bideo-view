@@ -75,8 +75,38 @@ document.addEventListener("DOMContentLoaded", function () {
     { id: "person-4", name: "Studio Namu", meta: "아트디렉션 파트너", avatar: "N" }
   ];
 
+  var backButton = document.querySelector("[data-yt-chat-back]");
+  var panelBody = document.querySelector(".yt-chat-panel__body");
+
   var activeRoomId = null;
   var composeOpen = false;
+
+  function isMobileChat() {
+    return window.matchMedia("(max-width: 640px)").matches;
+  }
+
+  function showThreadMobile() {
+    if (isMobileChat() && panelBody) {
+      panelBody.classList.add("is-thread-open");
+    }
+  }
+
+  function showListMobile() {
+    if (panelBody) {
+      panelBody.classList.remove("is-thread-open");
+    }
+    activeRoomId = null;
+    emptyState.hidden = false;
+    detail.hidden = true;
+    setComposerPlaceholder(null);
+    Array.from(roomList.querySelectorAll(".yt-chat-room")).forEach(function (button) {
+      button.classList.remove("is-active");
+    });
+  }
+
+  if (backButton) {
+    backButton.addEventListener("click", showListMobile);
+  }
 
   function escapeHtml(value) {
     return String(value)
@@ -87,13 +117,32 @@ document.addEventListener("DOMContentLoaded", function () {
       .replace(/'/g, "&#39;");
   }
 
-  function setComposeOpen(nextState) {
+  function setComposeOpen(nextState, skipAnimation) {
+    if (composeOpen === nextState) return;
     composeOpen = nextState;
-    peopleSearch.hidden = !nextState;
     composeToggle.setAttribute("aria-expanded", String(nextState));
-    if (!nextState && peopleInput) {
-      peopleInput.value = "";
-      renderPeopleList("");
+
+    if (nextState) {
+      peopleSearch.classList.remove("is-closing");
+      peopleSearch.hidden = false;
+    } else if (skipAnimation) {
+      peopleSearch.hidden = true;
+      peopleSearch.classList.remove("is-closing");
+      if (peopleInput) {
+        peopleInput.value = "";
+        renderPeopleList("");
+      }
+    } else {
+      peopleSearch.classList.add("is-closing");
+      peopleSearch.addEventListener("animationend", function handler() {
+        peopleSearch.removeEventListener("animationend", handler);
+        peopleSearch.hidden = true;
+        peopleSearch.classList.remove("is-closing");
+      });
+      if (peopleInput) {
+        peopleInput.value = "";
+        renderPeopleList("");
+      }
     }
   }
 
@@ -126,6 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
     panel.setAttribute("aria-hidden", "true");
     toggle.setAttribute("aria-expanded", "false");
     delete document.body.dataset.ytChatOpen;
+    if (panelBody) {
+      panelBody.classList.remove("is-thread-open");
+    }
     window.setTimeout(function () {
       if (!layer.classList.contains("is-open")) {
         layer.hidden = true;
@@ -162,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
     emptyState.hidden = true;
     detail.hidden = false;
     setComposerPlaceholder(room);
+    showThreadMobile();
     window.setTimeout(function () {
       composerInput.focus();
     }, 0);
@@ -349,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  setComposeOpen(false);
+  setComposeOpen(false, true);
   setComposerPlaceholder(null);
   renderPeopleList("");
   renderRoomList("");
