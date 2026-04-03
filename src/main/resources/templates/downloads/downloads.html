@@ -16,36 +16,18 @@
 <div id="section" class="Page-Content">
 <div class="Downloads-Page-Contents">
 
-    <!-- ===== 알림 배너 섹션 ===== -->
+    <!-- ===== 필터 ===== -->
     <div class="Downloads-Section">
         <div class="Downloads-Section-Content">
-            <div class="Downloads-Alert-Banner">
-                <div class="Downloads-Alert-Container">
-                    <div class="Downloads-Alert-TextWrap">
-                        <div class="Downloads-Alert-Content">
-                            <div class="Downloads-Alert-Heading">
-                                <span>스마트 오프라인 저장</span>
-                            </div>
-                            <div class="Downloads-Alert-Body">
-                                <span>자동 오프라인 저장을 이용하려면 사용 설정하세요.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Downloads-Alert-Action">
-                        <button class="Downloads-Button-Outline">
-                            <div class="Downloads-Button-Text">사용 설정</div>
-                            <div class="Downloads-Button-Feedback" aria-hidden="true">
-                                <div class="Downloads-Button-Feedback-Stroke"></div>
-                                <div class="Downloads-Button-Feedback-Fill"></div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
+            <div class="Downloads-Filter-Bar">
+                <button class="Downloads-Filter-Btn Downloads-Filter-Btn--active" data-filter="all">전체</button>
+                <button class="Downloads-Filter-Btn" data-filter="video">동영상</button>
+                <button class="Downloads-Filter-Btn" data-filter="contest">공모전</button>
             </div>
         </div>
     </div>
 
-    <!-- ===== 동영상 있을 때: 콘텐츠 셸프 섹션 ===== -->
+    <!-- ===== 콘텐츠 목록 ===== -->
     <div class="Downloads-Section">
         <div class="Downloads-Section-Content">
             <div class="Downloads-Shelf">
@@ -55,21 +37,19 @@
                     <div class="Downloads-Shelf-Header">
                         <h2 class="Downloads-Shelf-Heading">
                             <div class="Downloads-Shelf-TitleWrap">
-                                <div class="Downloads-Shelf-Title">내 오프라인 저장 콘텐츠</div>
-                                <div class="Downloads-Shelf-Subtitle">동영상 1개</div>
+                                <div class="Downloads-Shelf-Title">My bideo</div>
+                                <div class="Downloads-Shelf-Subtitle" id="shelfSubtitle">동영상 1개</div>
                             </div>
                         </h2>
                     </div>
 
                     <!-- 동영상 목록 -->
                     <div class="Downloads-VideoList-Container">
-                        <div class="Downloads-VideoList">
+                        <div class="Downloads-VideoList" id="downloadsList">
 
-                            <!-- 동영상 카드 1개 -->
-                            <div class="Downloads-Video-Item">
+                            <!-- 동영상 카드 -->
+                            <div class="Downloads-Video-Item" data-type="video">
                                 <div class="Downloads-Video-Card">
-
-                                    <!-- 썸네일 -->
                                     <div class="Downloads-Video-Thumbnail">
                                         <a class="Downloads-Thumbnail-Link" href="#">
                                             <img class="Downloads-Thumbnail-Image" alt="" src="https://i.ytimg.com/vi/32yiFNiSoj8/hqdefault.jpg" />
@@ -80,8 +60,6 @@
                                             </div>
                                         </a>
                                     </div>
-
-                                    <!-- 동영상 정보 -->
                                     <div class="Downloads-Video-Details">
                                         <div class="Downloads-Video-Meta">
                                             <h3 class="Downloads-Video-TitleWrap">
@@ -101,15 +79,42 @@
                                                     <span class="Downloads-Meta-Item">1시간 전</span>
                                                 </div>
                                             </div>
-                                            <div class="Downloads-Status-Badge">
-                                                <span class="Downloads-Status-Badge-Text">오프라인 저장됨</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 공모전 카드 (샘플) -->
+                            <div class="Downloads-Video-Item" data-type="contest">
+                                <div class="Downloads-Video-Card">
+                                    <div class="Downloads-Video-Thumbnail">
+                                        <a class="Downloads-Thumbnail-Link" href="#">
+                                            <img class="Downloads-Thumbnail-Image" alt="" src="https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg" />
+                                        </a>
+                                    </div>
+                                    <div class="Downloads-Video-Details">
+                                        <div class="Downloads-Video-Meta">
+                                            <h3 class="Downloads-Video-TitleWrap">
+                                                <a class="Downloads-Video-TitleLink" href="#">
+                                                    <span class="Downloads-Video-Title">2026 신인 영상 크리에이터 공모전</span>
+                                                </a>
+                                            </h3>
+                                            <button class="Downloads-Menu-Button" aria-label="작업 메뉴">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true">
+                                                    <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Z"></path>
+                                                </svg>
+                                            </button>
+                                            <div class="Downloads-Video-Metadata">
+                                                <div class="Downloads-Channel-Name">BIDEO 공식</div>
+                                                <div class="Downloads-Meta-Line">
+                                                    <span class="Downloads-Meta-Item">~2026.04.30</span>
+                                                    <span class="Downloads-Meta-Item">총 500만원</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                            <!-- /동영상 카드 -->
 
                         </div>
                     </div>
@@ -123,7 +128,7 @@
     <div class="Downloads-Section">
         <div class="Downloads-Section-Content">
             <div class="Downloads-Message">
-                <span class="Downloads-Message-Text">30일마다 1번 이상 기기가 인터넷에 연결되면 오프라인 저장 동영상을 계속 재생할 수 있습니다.</span>
+                <span class="Downloads-Message-Text">찜한 동영상과 공모전을 한곳에서 확인할 수 있습니다.</span>
             </div>
         </div>
     </div>
@@ -136,7 +141,7 @@
                     <img draggable="false" alt="" src="https://www.gstatic.com/youtube/img/useredu/downloads_empty_state.png" />
                 </div>
                 <div class="Downloads-Empty-Message">
-                    <span class="Downloads-Empty-Text">오프라인 저장한 동영상이 여기에 표시됩니다.</span>
+                    <span class="Downloads-Empty-Text">찜한 콘텐츠가 여기에 표시됩니다.</span>
                 </div>
             </div>
         </div>
@@ -145,5 +150,6 @@
 </div>
 </div>
 
+<script src="../../static/js/downloads/downloads.js"></script>
 </body>
 </html>

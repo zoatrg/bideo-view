@@ -18,12 +18,6 @@ button {
     color: inherit;
 }
 
-/* ===== 다크모드 (테스트용, 콘텐츠 영역만) ===== */
-#section {
-    background-color: #0f0f0f !important;
-    color: #f1f1f1 !important;
-}
-
 /* ===== 페이지 레이아웃 ===== */
 .Contest-Page {
     display: flex;
@@ -36,6 +30,87 @@ button {
 .Contest-List-Section {
     flex: 1;
     min-width: 0;
+}
+
+/* ===== 필터 바 ===== */
+.Contest-Filter-Bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.Contest-Filter-Group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Contest-Filter-Divider {
+    width: 1px;
+    height: 20px;
+    background-color: var(--color-border);
+    margin: 0 4px;
+}
+
+.Contest-Filter-Btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-sub);
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.Contest-Filter-Btn:hover {
+    background-color: var(--color-bg-muted);
+    color: var(--color-text);
+}
+
+.Contest-Filter-Btn--active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    font-weight: 600;
+}
+
+.Contest-Filter-Btn--active:hover {
+    background-color: var(--color-primary-hover);
+    color: #ffffff;
+}
+
+.Contest-Filter-Btn--toggle.Contest-Filter-Btn--selected {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    font-weight: 600;
+}
+
+.Contest-Filter-Btn--toggle.Contest-Filter-Btn--selected:hover {
+    background-color: #e8d5ff;
+}
+
+/* ===== 로딩 스피너 ===== */
+.Contest-List-Loader {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.Contest-List-Spinner {
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spinLoader 0.7s linear infinite;
+}
+
+@keyframes spinLoader {
+    to { transform: rotate(360deg); }
 }
 
 .Contest-List {
@@ -53,11 +128,11 @@ button {
 }
 
 .Contest-List-Item:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--color-bg-muted);
 }
 
 .Contest-List-Item--active {
-    background-color: var(--dark-bg-hover);
+    background-color: var(--color-bg-muted);
 }
 
 /* 드래그 핸들 */
@@ -73,7 +148,7 @@ button {
 .Contest-Item-DragHandle svg {
     width: 20px;
     height: 20px;
-    fill: var(--dark-text-muted);
+    fill: var(--color-text-muted);
 }
 
 /* 인덱스 번호 */
@@ -82,7 +157,7 @@ button {
     text-align: center;
     font-size: 14px;
     font-weight: 400;
-    color: var(--dark-text-secondary);
+    color: var(--color-text-sub);
     flex-shrink: 0;
 }
 
@@ -107,30 +182,6 @@ button {
     display: block;
 }
 
-.Contest-Thumbnail-Overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-}
-
-.Contest-Time-Badge {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
-    padding: 1px 4px;
-}
-
-.Contest-Time-Badge-Text {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--dark-text-primary);
-    line-height: 18px;
-}
 
 /* 아이템 정보 */
 .Contest-Item-Info {
@@ -141,8 +192,8 @@ button {
 
 .Contest-Item-Title {
     font-size: 14px;
-    font-weight: 400;
-    color: var(--dark-text-primary);
+    font-weight: 500;
+    color: var(--color-text);
     line-height: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -163,18 +214,18 @@ button {
 .Contest-Item-Date {
     font-size: 12px;
     font-weight: 400;
-    color: var(--dark-text-secondary);
+    color: var(--color-text-sub);
     line-height: 18px;
 }
 
 .Contest-Item-Separator {
     font-size: 12px;
-    color: var(--dark-text-secondary);
+    color: var(--color-text-muted);
     margin: 0 4px;
 }
 
 .Contest-Item-Channel:hover {
-    color: var(--dark-text-primary);
+    color: var(--color-text);
 }
 
 /* 액션 (점 3개 메뉴) */
@@ -190,7 +241,7 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: var(--dark-text-primary);
+    color: var(--color-text);
     opacity: 0;
     transition: opacity 0.15s;
 }
@@ -200,7 +251,7 @@ button {
 }
 
 .Contest-Item-MenuBtn:hover {
-    background-color: var(--dark-bg-hover);
+    background-color: var(--color-bg-muted);
 }
 
 .Contest-Item-MenuBtn svg {
@@ -263,9 +314,10 @@ button {
 }
 
 .Contest-Detail-Inner {
-    border: 1px solid var(--dark-border-color);
+    border: 1px solid var(--color-border);
     border-radius: 16px;
     overflow: hidden;
+    background-color: var(--color-bg);
 }
 
 /* 배너 */
@@ -273,7 +325,7 @@ button {
     width: 100%;
     height: 180px;
     overflow: hidden;
-    background-color: var(--dark-bg-secondary);
+    background-color: var(--color-bg-muted);
 }
 
 .Contest-Detail-BannerImage {
@@ -296,7 +348,7 @@ button {
     height: 56px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: var(--dark-bg-secondary);
+    background-color: var(--color-bg-muted);
     flex-shrink: 0;
 }
 
@@ -314,7 +366,7 @@ button {
 .Contest-Detail-Title {
     font-size: 20px;
     font-weight: 700;
-    color: var(--dark-text-primary);
+    color: var(--color-text);
     line-height: 28px;
     margin-bottom: 2px;
     white-space: nowrap;
@@ -325,14 +377,14 @@ button {
 .Contest-Detail-Host {
     font-size: 13px;
     font-weight: 400;
-    color: var(--dark-text-secondary);
+    color: var(--color-text-sub);
     line-height: 18px;
 }
 
 /* 구분선 */
 .Contest-Detail-Divider {
     height: 1px;
-    background-color: var(--dark-border-color);
+    background-color: var(--color-border);
     margin: 0 24px;
 }
 
@@ -353,13 +405,13 @@ button {
 .Contest-Detail-InfoLabel {
     font-size: 13px;
     font-weight: 400;
-    color: var(--dark-text-secondary);
+    color: var(--color-text-sub);
 }
 
 .Contest-Detail-InfoValue {
     font-size: 13px;
     font-weight: 500;
-    color: var(--dark-text-primary);
+    color: var(--color-text);
 }
 
 .Contest-Detail-Status {
@@ -370,22 +422,22 @@ button {
 }
 
 .Contest-Detail-Status--open {
-    background-color: #2ba640;
-    color: #ffffff;
+    background-color: #dcfce7;
+    color: #166534;
 }
 
 .Contest-Detail-Status--closing {
-    background-color: #e8a317;
-    color: #0f0f0f;
+    background-color: #fef3c7;
+    color: #92400e;
 }
 
 .Contest-Detail-Status--closed {
-    background-color: #535353;
-    color: #aaaaaa;
+    background-color: var(--color-bg-muted);
+    color: var(--color-text-muted);
 }
 
 .Contest-Detail-Prize {
-    color: #f5c518;
+    color: var(--color-primary);
     font-weight: 700;
 }
 
@@ -397,14 +449,14 @@ button {
 .Contest-Detail-DescTitle {
     font-size: 14px;
     font-weight: 700;
-    color: var(--dark-text-primary);
+    color: var(--color-text);
     margin-bottom: 8px;
 }
 
 .Contest-Detail-DescText {
     font-size: 13px;
     font-weight: 400;
-    color: var(--dark-text-secondary);
+    color: var(--color-text-sub);
     line-height: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 4;
@@ -420,7 +472,7 @@ button {
 .Contest-Detail-TagTitle {
     font-size: 14px;
     font-weight: 700;
-    color: var(--dark-text-primary);
+    color: var(--color-text);
     margin-bottom: 8px;
 }
 
@@ -434,10 +486,10 @@ button {
     display: inline-flex;
     padding: 4px 12px;
     border-radius: 14px;
-    background-color: var(--dark-bg-hover);
+    background-color: var(--color-primary-light);
     font-size: 12px;
     font-weight: 500;
-    color: var(--dark-accent-blue);
+    color: var(--color-primary);
 }
 
 /* 액션 버튼 */
@@ -451,8 +503,8 @@ button {
     flex: 1;
     height: 40px;
     border-radius: 20px;
-    background-color: var(--dark-accent-blue);
-    color: #0f0f0f;
+    background-color: var(--color-primary);
+    color: #ffffff;
     font-size: 14px;
     font-weight: 600;
     display: flex;
@@ -461,16 +513,16 @@ button {
 }
 
 .Contest-Detail-ApplyBtn:hover {
-    background-color: #65b8ff;
+    background-color: var(--color-primary-hover);
 }
 
 .Contest-Detail-ShareBtn {
     height: 40px;
     padding: 0 20px;
     border-radius: 20px;
-    border: 1px solid #535353;
+    border: 1px solid var(--color-border);
     background: transparent;
-    color: var(--dark-text-primary);
+    color: var(--color-text);
     font-size: 14px;
     font-weight: 500;
     display: flex;
@@ -479,17 +531,17 @@ button {
 }
 
 .Contest-Detail-ShareBtn:hover {
-    background-color: var(--dark-bg-hover);
-    border-color: #717171;
+    background-color: var(--color-bg-muted);
+    border-color: var(--color-border-strong);
 }
 
 .Contest-Detail-ReportBtn {
     height: 40px;
     padding: 0 20px;
     border-radius: 20px;
-    border: 1px solid #535353;
+    border: 1px solid var(--color-border);
     background: transparent;
-    color: #ff4e45;
+    color: var(--color-danger);
     font-size: 14px;
     font-weight: 500;
     display: flex;
@@ -498,8 +550,8 @@ button {
 }
 
 .Contest-Detail-ReportBtn:hover {
-    background-color: rgba(255, 78, 69, 0.1);
-    border-color: #ff4e45;
+    background-color: #fef2f2;
+    border-color: var(--color-danger);
 }
 
 [hidden] {
