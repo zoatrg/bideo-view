@@ -16,6 +16,18 @@
             <ytd-browse class="style-scope ytd-page-manager" rounded-container="" page-subtype="home">
                 
                 <div id="header" class="style-scope ytd-browse">
+                    <div class="gallery-top-actions" aria-label="상단 액션">
+                        <button class="gallery-top-action-button" type="button" aria-label="추가 작업" aria-expanded="false" data-role="gallery-top-menu-button">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Z"></path>
+                            </svg>
+                        </button>
+                        <button class="gallery-top-action-button" type="button" aria-label="닫기" data-role="gallery-close-button">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M17.293 5.293 12 10.586 6.707 5.293a1 1 0 10-1.414 1.414L10.586 12l-5.293 5.293a1 1 0 001.414 1.414L12 13.414l5.293 5.293a1 1 0 001.414-1.414L13.414 12l5.293-5.293a1 1 0 10-1.414-1.414Z"></path>
+                            </svg>
+                        </button>
+                    </div>
                     <ytd-carousel-header-renderer class="style-scope ytd-browse">
                         <div id="contents" class="style-scope ytd-carousel-header-renderer">
                             <ytd-carousel-item-renderer class="style-scope ytd-carousel-header-renderer grid grid-disabled">
@@ -23,7 +35,8 @@
                                     <ytd-default-promo-panel-renderer class="style-scope ytd-carousel-item-renderer" panel-layout="DEFAULT_PROMO_PANEL_RENDERER_LAYOUT_B">
                                         
                                         <div id="hero" class="style-scope ytd-default-promo-panel-renderer" 
-                                             style="background-image: url('https://i.ytimg.com/vi/JUSvuYc02WA/maxresdefault.jpg');"></div>
+                                             style="background-image: url('https://i.ytimg.com/vi/JUSvuYc02WA/maxresdefault.jpg');"> 
+                                            </div>
                                         <div id="scrim" class="style-scope ytd-default-promo-panel-renderer"></div>
                                        
                                         <!-- 예술관 내용 -->
@@ -157,15 +170,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="video-item" th:each="i : ${#numbers.sequence(1, 8)}">
-                                            <div class="thumb">
-                                                <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=640&q=80" alt="Thumbnail">
-                                            </div>
-                                            <div class="item-meta">
-                                                <h3>일반 동영상 제목 샘플</h3>
-                                                <p>조회수 1.2만회 • 3일 전</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +179,68 @@
             </ytd-browse>
         </ytd-page-manager>
     </main>
-
+    <div class="work-action-sheet" hidden data-role="gallery-top-action-menu" aria-hidden="true">
+        <button class="danger" type="button">수정하기</button>
+        <button class="danger" type="button">삭제하기</button>
+        <button class="cancel" type="button">취소</button>
+    </div>
     <th:block th:replace="templates/layout/youtube-shell :: ytShellScripts()"></th:block>
+    <script>
+        (() => {
+            const menuButton = document.querySelector('[data-role="gallery-top-menu-button"]');
+            const menu = document.querySelector('[data-role="gallery-top-action-menu"]');
+            const closeButton = document.querySelector('[data-role="gallery-close-button"]');
+
+            if (!menuButton || !menu) {
+                return;
+            }
+
+            const closeMenu = () => {
+                menu.hidden = true;
+                menu.setAttribute("aria-hidden", "true");
+                menuButton.setAttribute("aria-expanded", "false");
+            };
+
+            const openMenu = () => {
+                menu.hidden = false;
+                menu.setAttribute("aria-hidden", "false");
+                menuButton.setAttribute("aria-expanded", "true");
+            };
+
+            menuButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                if (menu.hidden) {
+                    openMenu();
+                    return;
+                }
+
+                closeMenu();
+            });
+
+            menu.addEventListener("click", (event) => {
+                const cancelButton = event.target.closest(".cancel");
+                event.stopPropagation();
+                if (cancelButton) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("click", closeMenu);
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            closeButton?.addEventListener("click", () => {
+                closeMenu();
+                if (window.history.length > 1) {
+                    window.history.back();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
+<!--  -->
