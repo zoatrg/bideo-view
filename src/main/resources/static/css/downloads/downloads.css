@@ -121,6 +121,43 @@ button {
     border-radius: inherit;
 }
 
+/* ===== 필터 바 ===== */
+.Downloads-Filter-Bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.Downloads-Filter-Btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-text-secondary);
+    background-color: transparent;
+    border: 1px solid var(--dark-border-color);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.Downloads-Filter-Btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--dark-text-primary);
+}
+
+.Downloads-Filter-Btn--active {
+    background-color: var(--dark-text-primary);
+    color: #0f0f0f;
+    border-color: var(--dark-text-primary);
+    font-weight: 600;
+}
+
+.Downloads-Filter-Btn--active:hover {
+    background-color: #d9d9d9;
+    color: #0f0f0f;
+}
+
 /* ===== 셸프 헤더 ===== */
 .Downloads-Shelf-Body {
     border-bottom: 1px solid var(--dark-border-color);

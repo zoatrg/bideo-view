@@ -31,6 +31,9 @@ button {
 
 /* ===== 페이지 헤더 ===== */
 .Register-Page-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -227,6 +230,13 @@ button {
     justify-content: center;
     flex-shrink: 0;
     overflow: hidden;
+    position: relative;
+}
+
+.Register-Banner-Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .Register-Banner-Placeholder {
@@ -406,6 +416,97 @@ button {
 
 .Register-Textarea:focus {
     border-color: var(--dark-accent-blue);
+}
+
+/* ===== 태그 입력 영역 ===== */
+.Register-Tag-Wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #535353;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: text;
+    min-height: 44px;
+}
+
+.Register-Tag-Wrap:focus-within {
+    border-color: var(--dark-accent-blue);
+}
+
+.Register-Tag-Input {
+    flex: 1;
+    min-width: 120px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--dark-text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    padding: 4px 0;
+}
+
+.Register-Tag-Input::placeholder {
+    color: var(--dark-text-muted);
+}
+
+.Register-Tag-Chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark-accent-blue);
+    white-space: nowrap;
+}
+
+.Register-Tag-Remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: none;
+    color: var(--dark-text-secondary);
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.Register-Tag-Remove:hover {
+    color: var(--dark-text-primary);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== 삭제 버튼 (하단) ===== */
+.Register-Delete-Section {
+    padding: 32px 0;
+    border-top: 1px solid #333;
+    margin-top: 24px;
+}
+
+.Register-Button-Delete {
+    padding: 10px 24px;
+    border-radius: 20px;
+    border: 1px solid #ff4e45;
+    background: transparent;
+    color: #ff4e45;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.Register-Button-Delete:hover {
+    background-color: rgba(255, 78, 69, 0.1);
 }
 
 [hidden] {
