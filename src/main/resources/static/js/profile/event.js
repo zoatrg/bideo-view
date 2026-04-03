@@ -18,13 +18,13 @@ const avatarHoverMarkup =
 
 // 기본 아바타 텍스트 계산
 function getDefaultAvatarText() {
-  const profileName = document.querySelector('[data-profile-name]')?.textContent?.trim() || 'N';
-  const compactName = profileName.replace(/\s+/g, '');
+  const profileNickname = document.querySelector('[data-profile-nickname]')?.textContent?.trim() || 'N';
+  const compactName = profileNickname.replace(/\s+/g, '');
   const hangulOnly = compactName.replace(/[^\uac00-\ud7a3]/g, '');
   const englishOnly = compactName.replace(/[^A-Za-z]/g, '');
 
   if (hangulOnly) {
-    return hangulOnly.slice(0, 2);
+    return hangulOnly.slice(-2);
   }
 
   if (englishOnly) {
@@ -401,6 +401,10 @@ document.addEventListener('click', async (event) => {
     nicknameTargets.forEach((target) => {
       target.textContent = nextNickname;
     });
+
+    if (!document.querySelector('[data-profile-avatar-open] img')) {
+      renderDefaultAvatar();
+    }
 
     modalClose('nickname-edit-modal');
     return;
