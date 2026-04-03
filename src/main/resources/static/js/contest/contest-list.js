@@ -19,7 +19,8 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-03-01",
             deadlineDate: "2026-04-30",
-            viewCount: 2340
+            viewCount: 2340,
+            scope: "joined"
         },
         {
             title: "감성 뮤직비디오 챌린지",
@@ -38,7 +39,8 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-02-15",
             deadlineDate: "2026-05-15",
-            viewCount: 1919
+            viewCount: 1919,
+            scope: "joined"
         },
         {
             title: "다큐멘터리 단편 영화제",
@@ -57,7 +59,8 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-01-10",
             deadlineDate: "2026-04-10",
-            viewCount: 5830
+            viewCount: 5830,
+            scope: "mine"
         },
         {
             title: "경제 교육 영상 콘테스트",
@@ -114,7 +117,8 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-04-01",
             deadlineDate: "2026-06-30",
-            viewCount: 1250
+            viewCount: 1250,
+            scope: "joined"
         },
         {
             title: "대학생 브이로그 챌린지",
@@ -209,7 +213,8 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-04-01",
             deadlineDate: "2026-08-01",
-            viewCount: 780
+            viewCount: 780,
+            scope: "mine"
         },
         {
             title: "K-POP 커버 댄스 영상 공모전",
@@ -228,7 +233,8 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-02-10",
             deadlineDate: "2026-04-08",
-            viewCount: 12300
+            viewCount: 12300,
+            scope: "joined"
         },
         {
             title: "요리 레시피 영상 콘테스트",
@@ -380,27 +386,36 @@ const ContestListModule = (function () {
             thumb: "https://i.ytimg.com/vi/nLD84OB7rO0/hqdefault.jpg",
             createdAt: "2026-04-03",
             deadlineDate: "2026-09-03",
-            viewCount: 620
+            viewCount: 620,
+            scope: "mine"
         }
     ];
 
     /* ───── 상태 ───── */
     var PAGE_SIZE = 5;
     var currentSort = "latest";
+    var currentScope = null; // null = 전체, "joined" = 내가 참여한, "mine" = 내가 올린
     var sortedData = [];
     var displayedCount = 0;
     var selectedIndex = -1;
     var isLoading = false;
     var observer = null;
 
-    /* ───── 정렬 ───── */
-    function sortData(type) {
+    /* ───── 필터링 + 정렬 ───── */
+    function filterAndSort(sortType, scope) {
         var copy = ITEMS_DATA.slice();
-        if (type === "latest") {
+
+        // 스코프 필터
+        if (scope) {
+            copy = copy.filter(function (item) { return item.scope === scope; });
+        }
+
+        // 정렬
+        if (sortType === "latest") {
             copy.sort(function (a, b) { return new Date(b.createdAt) - new Date(a.createdAt); });
-        } else if (type === "popular") {
+        } else if (sortType === "popular") {
             copy.sort(function (a, b) { return b.viewCount - a.viewCount; });
-        } else if (type === "deadline") {
+        } else if (sortType === "deadline") {
             copy.sort(function (a, b) { return new Date(a.deadlineDate) - new Date(b.deadlineDate); });
         }
         return copy;
@@ -474,7 +489,7 @@ const ContestListModule = (function () {
         var panel = document.getElementById("contestDetailPanel");
         panel.classList.remove("Contest-Detail-Panel--visible", "Contest-Detail-Panel--closing");
 
-        sortedData = sortData(currentSort);
+        sortedData = filterAndSort(currentSort, currentScope);
         renderBatch();
         setupObserver();
     }
@@ -493,17 +508,36 @@ const ContestListModule = (function () {
         observer.observe(loader);
     }
 
-    /* ───── 필터 클릭 ───── */
+    /* ───── 정렬 필터 클릭 ───── */
     function initFilters() {
-        var btns = document.querySelectorAll(".Contest-Filter-Btn");
-        btns.forEach(function (btn) {
+        var sortBtns = document.querySelectorAll(".Contest-Filter-Btn[data-sort]");
+        sortBtns.forEach(function (btn) {
             btn.addEventListener("click", function () {
                 if (btn.getAttribute("data-sort") === currentSort) return;
 
-                btns.forEach(function (b) { b.classList.remove("Contest-Filter-Btn--active"); });
+                sortBtns.forEach(function (b) { b.classList.remove("Contest-Filter-Btn--active"); });
                 btn.classList.add("Contest-Filter-Btn--active");
 
                 currentSort = btn.getAttribute("data-sort");
+                resetList();
+            });
+        });
+
+        // 스코프 토글 필터
+        var scopeBtns = document.querySelectorAll(".Contest-Filter-Btn--toggle");
+        scopeBtns.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var scope = btn.getAttribute("data-scope");
+
+                // 같은 버튼 다시 클릭 → 해제 (null로 복귀)
+                if (currentScope === scope) {
+                    btn.classList.remove("Contest-Filter-Btn--selected");
+                    currentScope = null;
+                } else {
+                    scopeBtns.forEach(function (b) { b.classList.remove("Contest-Filter-Btn--selected"); });
+                    btn.classList.add("Contest-Filter-Btn--selected");
+                    currentScope = scope;
+                }
                 resetList();
             });
         });
