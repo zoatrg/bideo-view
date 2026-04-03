@@ -1,12 +1,21 @@
+/* 기본 바디 */
 body {
   background: #fff;
   color: #0f0f0f;
 }
 
+/* 공통 */
+button[type="button"]:not(.work-share-user, .avatar),
+button[type="submit"] {
+  padding-top: 2px;
+}
+
+/* 프로필 페이지 래퍼 */
 .profilePage {
   min-height: 100vh;
   background: #fff;
 }
+
 
 .topbarPlaceholder {
   height: 56px;
@@ -22,23 +31,30 @@ body {
   min-height: calc(100vh - 56px);
 }
 
+/* 컨텐츠 영역 */
 .content {
   padding: 0 24px 80px 0;
 }
 
+/* 채널 섹션 / 영상 섹션 폭 */
 .channelSection,
 .videoSection {
   width: min(100%, 1304px);
   margin: 0 auto;
 }
 
+/* 배너 영역 */
 .banner {
   overflow: hidden;
   margin-top: 12px;
   border-radius: 12px;
-  background: linear-gradient(120deg, #ff8a00 0%, #1f5eff 70%, #0d3ecf 100%);
+  background:
+    radial-gradient(circle at 18% 24%, rgba(0, 213, 255, 0.28), transparent 22%),
+    radial-gradient(circle at 84% 20%, rgba(255, 79, 216, 0.22), transparent 24%),
+    linear-gradient(120deg, #2a0a54 0%, var(--color-primary) 52%, #00a9d6 100%);
 }
 
+/* 배너 내부 */
 .bannerArt {
   display: flex;
   flex-direction: column;
@@ -66,20 +82,23 @@ body {
   font-size: 14px;
 }
 
+/* 프로필 메타 영역 */
 .channelMeta {
   display: flex;
   gap: 24px;
   padding: 18px 0 12px;
 }
 
+/* 프로필 사진 */
 .avatar {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 96px;
+  min-width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffb24d, #ff7a00);
+  background: linear-gradient(135deg, var(--color-accent-pink), var(--color-primary));
   color: #fff;
   font-size: 38px;
   font-weight: 800;
@@ -92,10 +111,12 @@ body {
   object-fit: cover;
 }
 
+/* 프로필 정보 영역 */
 .metaInfo {
   min-width: 0;
 }
 
+/* 프로필 이름 */
 .channelTitle {
   font-size: 36px;
   line-height: 1.2;
@@ -103,6 +124,7 @@ body {
   letter-spacing: -0.03em;
 }
 
+/* 프로필 설명 텍스트 */
 .channelText {
   margin-top: 6px;
   color: #606060;
@@ -110,6 +132,7 @@ body {
   line-height: 1.5;
 }
 
+/* 프로필 뱃지 영역 */
 .profileBadgeRow {
   display: flex;
   flex-wrap: wrap;
@@ -118,29 +141,49 @@ body {
 }
 
 .profileBadgeChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 34px;
-  padding: 0 12px 0 8px;
-  border: 1px solid #eceef2;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 8px 20px rgba(15, 15, 15, 0.06);
-}
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    height: 34px;
+    padding: 0 8px;
+    border: 1px solid #eceef2;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(15, 15, 15, 0.06);
+    overflow: hidden;
+    transition: padding 0.22s ease, gap 0.22s ease;
+  }
 
 .profileBadgeChip img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
 
 .profileBadgeChip span {
-  font-size: 12px;
-  font-weight: 700;
-  color: #0f0f0f;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-4px);
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0f0f0f;
+    transition: max-width 0.22s ease, opacity 0.18s ease, transform 0.22s ease;
+  }
+
+.profileBadgeChip:hover span {
+    max-width: 120px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+.profileBadgeChip:hover {
+    gap: 6px;
+    padding: 0 12px 0 8px;
 }
 
+/* 액션 버튼 영역 */
 .channelActionRow {
   display: flex;
   margin-top: 14px;
@@ -154,25 +197,26 @@ body {
 
 /* 팔로우/팔로잉 */
 .subscribeBtn {
-  min-width: 64px;
-  height: 32px;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 999px;
-  background: #0f0f0f;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.18s ease, color 0.18s ease;
-}
+    min-width: 64px;
+    height: 32px;
+    padding: 0 16px;
+    padding-top: 2px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease;
+  }
 .subscribeBtn:hover {
   filter: opacity(0.82);
 }
 .subscribeBtn.is-subscribed {
-  background: transparent;
-  color: #0f0f0f;
-  border: 1px solid #aaa;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid rgba(104, 0, 234, 0.18);
 }
 .subscribeBtn.is-subscribed:hover {
   filter: opacity(0.82);
@@ -180,49 +224,52 @@ body {
 
 /* 공유하기 */
 .shareBtn {
-  min-width: 64px;
-  height: 32px;
-  padding: 0 16px;
-  border: 1px solid #ccc;
-  border-radius: 999px;
-  background: #fff;
-  color: #000;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.18s ease, color 0.18s ease;
-}
+    min-width: 64px;
+    height: 32px;
+    padding: 0 16px;
+    padding-top: 2px;
+    border: 1px solid rgba(0, 213, 255, 0.22);
+    border-radius: 999px;
+    background: var(--color-accent-cyan-soft);
+    color: #007e99;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease;
+  }
 .shareBtn:hover {
-  background: #fafafa;
+  background: #dff9ff;
 }
 
 
 /* 차단하기 */
 .blackBtn{
-  min-width: 64px;
-  height: 32px;
-  padding: 0 16px;
-  border: 1px solid red;
-  border-radius: 999px;
-  background: #fff;
-  color: red;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.18s ease, color 0.18s ease;
-}
+    min-width: 64px;
+    height: 32px;
+    padding: 0 16px;
+    padding-top: 2px;
+    border: 1px solid rgba(255, 95, 109, 0.28);
+    border-radius: 999px;
+    background: #fff;
+    color: #d63a57;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease;
+  }
 .blackBtn:hover {
-  background: #fffcfc;
-  color: #ff1111;
+  background: var(--color-accent-coral-soft);
+  color: #c92c49;
 }
 .blackBtn.is-blackBtn {
-  background: #ff1111;
-  color: #fffcfc;
+  background: linear-gradient(135deg, var(--color-accent-coral), #d63a57);
+  color: #fff;
 }
 .blackBtn.is-blackBtn:hover {
   filter: opacity(0.82);
 }
 
+/* 프로필 탭 영역 */
 .tabRow {
   display: flex;
   align-items: center;
@@ -230,6 +277,7 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
+/* 프로필 탭 버튼 */
 .tabBtn {
   position: relative;
   display: inline-flex;
@@ -247,7 +295,7 @@ body {
   right: 0;
   bottom: -1px;
   height: 3px;
-  background: #0f0f0f;
+  background: var(--color-primary);
   opacity: 0;
 }
 
@@ -279,16 +327,19 @@ body {
   height: 20px;
 }
 
+/* 작품 / 영상 섹션 */
 .videoSection {
   padding-top: 22px;
 }
 
+/* 정렬 필터 영역 */
 .filterRow {
   display: flex;
   gap: 8px;
   margin-bottom: 16px;
 }
 
+/* 정렬 버튼 */
 .filterBtn {
   height: 32px;
   padding: 0 14px;
@@ -303,24 +354,27 @@ body {
 }
 
 .filterBtn:hover {
-  background: #e8e8e8;
+  background: var(--color-primary-light);
 }
 
 .filterBtn.is-active {
-  background: #0f0f0f;
+  background: var(--color-primary);
   color: #fff;
 }
 
+/* 작품 / 영상 카드 그리드 */
 .videoGrid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 26px 16px;
 }
 
+/* 영상 카드 */
 .videoCard {
   min-width: 0;
 }
 
+/* 썸네일 영역 */
 .videoThumb {
   position: relative;
   display: block;
@@ -344,15 +398,15 @@ body {
 }
 
 .thumb-01 { background: linear-gradient(135deg, #8e98a6, #2d3138 58%, #111); }
-.thumb-02 { background: linear-gradient(135deg, #39a0ff, #1838d1 60%, #091867); }
-.thumb-03 { background: linear-gradient(135deg, #f3f6ff, #d0d9ff 50%, #7e70ff); }
+.thumb-02 { background: linear-gradient(135deg, #4ce2ff, #00a9d6 60%, #143a7a); }
+.thumb-03 { background: linear-gradient(135deg, #fff3fd, #e9d5ff 50%, #7c3aed); }
 .thumb-04 { background: linear-gradient(135deg, #245026, #7ab54f 52%, #c3ec75); }
 .thumb-05 { background: linear-gradient(135deg, #65442f, #1a1a1a 60%, #000); }
-.thumb-06 { background: linear-gradient(135deg, #3b3050, #9c6700 58%, #f0b600); }
+.thumb-06 { background: linear-gradient(135deg, #351a63, #6800ea 58%, #ff4fd8); }
 .thumb-07 { background: linear-gradient(135deg, #d6dce3, #7b8692 60%, #23272d); }
 .thumb-08 { background: linear-gradient(135deg, #fff7d6, #f0c55a 48%, #d24b00); }
 .thumb-09 { background: linear-gradient(135deg, #f7c7cf, #9c5763 58%, #3f1c22); }
-.thumb-10 { background: linear-gradient(135deg, #d5dbff, #4e63ff 56%, #17307c); }
+.thumb-10 { background: linear-gradient(135deg, #d9f8ff, #00d5ff 56%, #6800ea); }
 
 .videoThumb::after {
   content: "";
@@ -366,6 +420,7 @@ body {
   transform: scale(1.02);
 }
 
+/* 영상 제목 */
 .videoTitle {
   margin-top: 10px;
   font-size: 13px;
@@ -375,9 +430,10 @@ body {
 }
 
 .videoCard:hover .videoTitle {
-  color: #065fd4;
+  color: var(--color-primary);
 }
 
+/* 영상 메타 */
 .videoMeta {
   margin-top: 6px;
   color: #606060;
@@ -421,6 +477,7 @@ body {
   }
 }
 
+/* 모달 공통 */
 .modal.none {
   display: none;
 }
@@ -436,6 +493,7 @@ body {
   background: rgba(15, 15, 15, 0.56);
 }
 
+/* 언팔로우 / 차단 모달 */
 .unsubscribeModalPanel {
   width: min(100%, 400px);
   border-radius: 16px;
@@ -470,13 +528,14 @@ body {
 }
 
 .unsubscribeModalButton {
-  min-width: 92px;
-  height: 32px;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
+    min-width: 92px;
+    height: 32px;
+    padding: 0 16px;
+    padding-top: 2px;
+    border: 0;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
   cursor: pointer;
   transition: background-color 0.18s ease, color 0.18s ease;
 }
@@ -487,18 +546,19 @@ body {
 }
 
 .unsubscribeModalButtonGhost:hover {
-  background: #e8e8e8;
+  background: var(--color-primary-light);
 }
 
 .unsubscribeModalButtonPrimary {
-  background: #0f0f0f;
+  background: var(--color-primary);
   color: #fff;
 }
 
 .unsubscribeModalButtonPrimary:hover {
-  background: #272727;
+  background: var(--color-primary-hover);
 }
 
+/* 공유 모달 */
 .workShareModalWrap {
   background: rgba(15, 15, 15, 0.62);
 }
@@ -543,7 +603,7 @@ body {
 }
 
 .work-share-modal__close:hover {
-  background: #f3f4f6;
+  background: var(--color-primary-light);
 }
 
 .work-share-modal__link-row {
@@ -571,14 +631,15 @@ body {
 
 .work-share-modal__link-copy,
 .work-share-modal__send {
-  flex: none;
-  min-width: 82px;
-  height: 46px;
-  padding: 0 16px;
-  border: 0;
-  border-radius: 14px;
-  background: #0f0f0f;
-  color: #fff;
+    flex: none;
+    min-width: 82px;
+    height: 46px;
+    padding: 0 16px;
+    padding-top: 2px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent-indigo));
+    color: #fff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -586,7 +647,7 @@ body {
 
 .work-share-modal__link-copy:hover,
 .work-share-modal__send:hover {
-  background: #272727;
+  filter: brightness(0.96);
 }
 
 .work-share-modal__receiver {
@@ -625,8 +686,8 @@ body {
   height: 32px;
   padding: 0 12px;
   border-radius: 999px;
-  background: #eef2ff;
-  color: #312e81;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
   font-size: 13px;
   font-weight: 600;
 }
@@ -676,8 +737,8 @@ body {
 
 .work-share-user:hover,
 .work-share-user.is-selected {
-  background: #f8fafc;
-  border-color: #cfd6df;
+  background: var(--color-primary-light);
+  border-color: rgba(104, 0, 234, 0.22);
 }
 
 .work-share-user__avatar {
@@ -687,8 +748,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #dbeafe, #c4b5fd);
-  color: #312e81;
+  background: linear-gradient(135deg, var(--color-accent-cyan-soft), #d7c4ff);
+  color: var(--color-primary);
   font-size: 15px;
   font-weight: 700;
 }
@@ -719,23 +780,26 @@ body {
 }
 
 
+/* 더보기 버튼 */
 .moreBtn {
   min-width: 64px;
   height: 32px;
   padding: 0 16px;
-  border: 1px solid #d9d9d9;
+  border: 1px solid rgba(104, 0, 234, 0.16);
   border-radius: 999px;
   background: #fff;
   color: #0f0f0f;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  padding-top: 1px;
 }
 
 .moreBtn:hover {
   filter: opacity(0.72);
 }
 
+/* 설정 모달 */
 .profileSettingModalPanel {
   width: min(100%, 360px);
   border-radius: 20px;
@@ -770,7 +834,7 @@ body {
 }
 
 .profileSettingModalClose:hover {
-  background: #f2f2f2;
+  background: var(--color-primary-light);
 }
 
 .profileSettingModalList {
@@ -791,7 +855,7 @@ body {
 }
 
 .profileSettingModalItem:hover {
-  background: #f7f7f7;
+  background: var(--color-primary-light);
 }
 
 
@@ -799,6 +863,7 @@ body {
 
 
 
+/* 프로필 수정 모달 */
 .profileEditModalPanel {
   width: min(100%, 360px);
   border-radius: 20px;
@@ -825,7 +890,7 @@ body {
   height: 112px;
   overflow: hidden;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffb24d, #ff7a00);
+  background: linear-gradient(135deg, var(--color-accent-pink), var(--color-primary));
   color: #fff;
   font-size: 42px;
   font-weight: 800;
@@ -845,11 +910,12 @@ body {
   height: 38px;
   padding: 0 16px;
   border-radius: 999px;
-  background: #0f0f0f;
+  background: var(--color-primary);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  padding-top: 2px;
 }
 
 .profileEditUpload:hover {
@@ -868,13 +934,14 @@ body {
 }
 
 .profileEditReset:hover {
-  color: #0f0f0f;
+  color: var(--color-primary);
 }
 
 [data-profile-edit-file] {
   display: none;
 }
 
+/* 아바타 수정 버튼 */
 .avatarEditable {
   position: relative;
   overflow: hidden;
@@ -924,6 +991,7 @@ body {
 
 
 
+/* 프로필 폼 */
 .profileFormBody {
   display: grid;
   gap: 12px;
@@ -948,7 +1016,7 @@ body {
 }
 
 .profileFormInput:focus {
-  border-color: #0f0f0f;
+  border-color: var(--color-primary);
 }
 
 .profileFormActionRow {
@@ -959,18 +1027,22 @@ body {
 }
 
 .profileFormBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 72px;
   height: 36px;
   padding: 0 16px;
   border: 0;
   border-radius: 999px;
   font-size: 14px;
+  line-height: 20px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .profileFormBtnGhost {
-  background: #f2f2f2;
+  background: var(--color-primary-light);
   color: #0f0f0f;
 }
 
@@ -979,7 +1051,7 @@ body {
 }
 
 .profileFormBtnPrimary {
-  background: #0f0f0f;
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -987,6 +1059,7 @@ body {
   filter: opacity(0.82);
 }
 
+/* 팔로우 관리 모달 */
 .followManageModalPanel {
   width: min(100%, 560px);
   max-height: min(80vh, 720px);
@@ -1004,6 +1077,9 @@ body {
 }
 
 .followManageTab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 88px;
   height: 36px;
   padding: 0 14px;
@@ -1012,12 +1088,13 @@ body {
   background: #f2f4f7;
   color: #4b5563;
   font-size: 14px;
+  line-height: 20px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .followManageTab.is-active {
-  background: #0f0f0f;
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -1038,7 +1115,7 @@ body {
 }
 
 .followManageSearchInput:focus {
-  border-color: #0f0f0f;
+  border-color: var(--color-primary);
 }
 
 .followManageSummary {
@@ -1081,7 +1158,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ffd38a, #ff8a00);
+  background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-primary));
   color: #fff;
   font-size: 18px;
   font-weight: 700;
@@ -1110,8 +1187,8 @@ body {
   height: 22px;
   padding: 0 8px;
   border-radius: 999px;
-  background: #eef2ff;
-  color: #4338ca;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
   font-size: 11px;
   font-weight: 700;
 }
@@ -1154,22 +1231,23 @@ body {
 }
 
 .followManageActionBtn.is-primary {
-  border-color: #0f0f0f;
-  background: #0f0f0f;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
   color: #fff;
 }
 
 .followManageActionBtn.is-danger {
-  border-color: #ef4444;
-  color: #ef4444;
+  border-color: var(--color-accent-coral);
+  color: var(--color-accent-coral);
 }
 
 .followManageActions .subscribeBtn {
   min-width: 86px;
   height: 34px;
-  padding: 0 14px;
+  padding: 2px 14px 0;
 }
 
+/* 뱃지 관리 모달 */
 .badgeManageModalPanel {
   width: min(100%, 680px);
   max-height: min(84vh, 760px);
@@ -1226,7 +1304,7 @@ body {
 }
 
 .badgeGradeDivider--gold span {
-  color: #ca8a04;
+  color: #b26a00;
 }
 
 .badgeGradeDivider--black span {
@@ -1252,8 +1330,8 @@ body {
 }
 
 .badgeManageItem.is-selected {
-  border-color: #0f0f0f;
-  box-shadow: 0 18px 34px rgba(15, 15, 15, 0.12);
+  border-color: var(--color-primary);
+  box-shadow: 0 18px 34px rgba(104, 0, 234, 0.14);
 }
 
 .badgeManageItem.is-locked {
@@ -1274,7 +1352,7 @@ body {
   width: 72px;
   height: 72px;
   border-radius: 18px;
-  background: linear-gradient(180deg, #fafafa, #f3f4f6);
+  background: linear-gradient(180deg, #fbf7ff, #f4efff);
 }
 
 .badgeManageIcon img {
@@ -1296,6 +1374,7 @@ body {
   color: #6b7280;
 }
 
+/* 반응형 대응 */
 @media (max-width: 767px) {
   .followManageModalPanel {
     padding: 18px;
