@@ -21,9 +21,16 @@
 
         <!-- 필터 바 -->
         <div class="Contest-Filter-Bar">
-            <button class="Contest-Filter-Btn Contest-Filter-Btn--active" data-sort="latest">최신순</button>
-            <button class="Contest-Filter-Btn" data-sort="popular">인기순</button>
-            <button class="Contest-Filter-Btn" data-sort="deadline">마감순</button>
+            <div class="Contest-Filter-Group">
+                <button class="Contest-Filter-Btn Contest-Filter-Btn--active" data-sort="latest">최신순</button>
+                <button class="Contest-Filter-Btn" data-sort="popular">인기순</button>
+                <button class="Contest-Filter-Btn" data-sort="deadline">마감순</button>
+            </div>
+            <div class="Contest-Filter-Divider"></div>
+            <div class="Contest-Filter-Group">
+                <button class="Contest-Filter-Btn Contest-Filter-Btn--toggle" data-scope="joined">내가 참여한 공모전</button>
+                <button class="Contest-Filter-Btn Contest-Filter-Btn--toggle" data-scope="mine">내가 올린 공모전</button>
+            </div>
         </div>
 
         <!-- 리스트 아이템들 (JS에서 동적 렌더링) -->

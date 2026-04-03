@@ -60,17 +60,16 @@
   /* 콘텐츠 영역 */
   --content-top: var(--layout-header-height);
   --content-left: var(--layout-guide-width);
-  --content-width: calc(100& - var(--layout-guide-width));
+  --content-width: calc(100% - var(--layout-guide-width));
   --content-padding: 24px;
+}
 
-  /* 다크 테마 색상 */
-  --dark-bg-primary: #0f0f0f;
-  --dark-bg-secondary: #272727;
-  --dark-bg-hover: rgba(255, 255, 255, 0.1);
-  --dark-border-color: #3a3a3a;
-  --dark-text-primary: #f1f1f1;
-  --dark-text-secondary: #aaaaaa;
-  --dark-text-muted: #717171;
-  --dark-accent-blue: #3ea6ff;
-
+/* 페이지 콘텐츠 래퍼: 레이아웃 안쪽에 딱 맞게 배치 */
+.Page-Content {
+    margin-top: var(--layout-header-height);
+    margin-left: var(--layout-guide-width);
+    min-height: calc(100vh - var(--layout-header-height));
+    padding: var(--content-padding);
+    background-color: var(--color-bg);
+    color: var(--color-text);
 }
